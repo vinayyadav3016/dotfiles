@@ -15,7 +15,9 @@ set statusline+=\ --
 set statusline+=\  
 set statusline+=%f
 set statusline+=%=
-set statusline+=%{&ff}
+set statusline+=%2n
+set statusline+=\ --  
+set statusline+=\ %{&ff}
 set statusline+=\ --
 set statusline+=\ (
 set statusline+=%l
@@ -31,14 +33,6 @@ set statusline+=\%3p%%
 "
 "let g:netrw_list_hide='.+'
 
-" Pathogen configuration
-call pathogen#infect()
-call pathogen#helptags()
-filetype on
-filetype plugin on
-filetype plugin indent on
-syntax on
-
 """
 let g:pathogen_disabled = []
 
@@ -52,9 +46,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 """"  vim-neatstatus  Configuration
 call add(g:pathogen_disabled, 'vim-neatstatus')
 
+""""  Vim-R-plugin  Configuration
+"call add(g:pathogen_disabled, 'Vim-R-plugin')
+
+""""  sqlcomplete  Configuration
+"call add(g:pathogen_disabled, 'sqlcomplete')
 
 """"  pymode  Configuration
-call add(g:pathogen_disabled, 'pymode')
+call add(g:pathogen_disabled, 'python-mode')
 
 """"  bash-support  Configuration
 "call add(g:pathogen_disabled, 'bash-support')
@@ -77,10 +76,21 @@ call add(g:pathogen_disabled, 'pymode')
 
 """ syntastic configuration
 let g:syntastic_python_checkers = ['pylint']
-"call add(g:pathogen_disabled, 'syntastic')
+call add(g:pathogen_disabled, 'syntastic')
 
 """" YouCompleteMe Configuration
 "call add(g:pathogen_disabled, 'YouCompleteMe')
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py"
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Pathogen configuration
+call pathogen#infect()
+call pathogen#helptags()
+filetype on
+filetype plugin on
+filetype plugin indent on
+syntax on
+
+
