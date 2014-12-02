@@ -3,6 +3,8 @@ set exrc
 set secure
 set colorcolumn=110
 set number
+set ts=2
+set sw=2
 "autocmd BufEnter * set mouse=
 highlight ColorColumn ctermbg=lightgray
 set backspace=2
@@ -43,6 +45,13 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+""""  vim-indent-guides  Configuration
+let g:indent_guides_enable_on_vim_startup=1
+"let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+"call add(g:pathogen_disabled,'vim-indent-guides')
+
+
 """"  vim-cmake-project  Configuration
 let g:cmake_project_bar_width=40
 "call add(g:pathogen_disabled,'vim-cmake-project')
@@ -54,9 +63,10 @@ call add(g:pathogen_disabled,'vim-latex')
 call add(g:pathogen_disabled, 'vim-neatstatus')
 
 """"  Vim-R-plugin  Configuration 
-"call add(g:pathogen_disabled, 'Vim-R-plugin') 
+call add(g:pathogen_disabled, 'Vim-R-plugin') 
+
 """"  sqlcomplete  Configuration
-"call add(g:pathogen_disabled, 'sqlcomplete')
+call add(g:pathogen_disabled, 'sqlcomplete')
 
 """"  pymode  Configuration
 call add(g:pathogen_disabled, 'python-mode')
