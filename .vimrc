@@ -5,6 +5,7 @@ set colorcolumn=110
 set number
 set ts=2
 set sw=2
+let mapleader=","
 "autocmd BufEnter * set mouse=
 highlight ColorColumn ctermbg=lightgray
 set backspace=2
@@ -40,7 +41,8 @@ let g:pathogen_disabled = []
 
 """"  nerdtree  Configuration
 "call add(g:pathogen_disabled, 'nerdtree')
-"autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree
+let g:NERDTreeWinSize=21
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -49,11 +51,34 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:indent_guides_enable_on_vim_startup=1
 "let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
+let g:indent_guides_color_change_percent = 10
+let g:indent_guides_auto_colors = 0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+	  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 "call add(g:pathogen_disabled,'vim-indent-guides')
 
-""""  nerdtree  Configuration
-let g:NERDTreeWinSize=21
-"call add(g:pathogen_disabled,'nerdtree')
+""""  tagbar  Configuration
+"call add(g:pathogen_disabled,'tagbar')
+autocmd vimenter * Tagbar
+let g:tagbar_width = 25
+
+""""  minibufexpl  Configuration
+"call add(g:pathogen_disabled,'minibufexpl')
+hi MBENormal               guifg=#808080 guibg=fg
+hi MBEChanged              guifg=#CD5907 guibg=fg
+hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
+hi MBEVisibleChanged       guifg=#F1266F guibg=fg
+hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
+hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
+let g:miniBufExplMapWindowNavVim=1
+let g:miniBufExplMapWindowNavArrows=1
+let g:miniBufExplMapCTabSwitchBufs=1
+let g:miniBufExplModSelTarget=1 
+noremap <C-TAB>   :MBEbn<CR>
+noremap <C-S-TAB> :MBEbp<CR>
+
+""""  vim-windowswap  Configuration
+"call add(g:pathogen_disabled,'vim-windowswap')
 
 """"  project-1.4.1  Configuration
 "call add(g:pathogen_disabled,'project-1.4.1')
@@ -119,5 +144,5 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 syntax on
-
+autocmd VimEnter * wincmd l
 
