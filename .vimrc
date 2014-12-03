@@ -51,6 +51,12 @@ let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
 "call add(g:pathogen_disabled,'vim-indent-guides')
 
+""""  nerdtree  Configuration
+let g:NERDTreeWinSize=21
+"call add(g:pathogen_disabled,'nerdtree')
+
+""""  project-1.4.1  Configuration
+"call add(g:pathogen_disabled,'project-1.4.1')
 
 """"  vim-cmake-project  Configuration
 let g:cmake_project_bar_width=40
@@ -75,7 +81,12 @@ call add(g:pathogen_disabled, 'python-mode')
 "call add(g:pathogen_disabled, 'bash-support')
 
 """"  cvim  Configuration
+let  g:C_UseTool_cmake='yes' 
+let  g:C_UseTool_doxygen='yes' 
 "call add(g:pathogen_disabled, 'cvim')
+
+""""  vim-fswitch  Configuration
+"call add(g:pathogen_disabled,'vim-fswitch')
 
 """"  tagbar  Configuration
 "call add(g:pathogen_disabled, 'tagbar')
