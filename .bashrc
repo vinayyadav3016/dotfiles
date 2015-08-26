@@ -3,7 +3,10 @@
 # for examples
 
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -28,7 +31,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
@@ -85,7 +88,14 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
+alias df='df -h'
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+alias ports='netstat -tulanp'
+alias mkdir='mkdir -pv'
+#alias fsize='for fol in `ls -Ad */`; do du -h $fol 2>/dev/null| tail -1 ; done'
+alias fsize='du -h -d 1'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -102,11 +112,37 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
+  fi
 fi
 
-source /opt/ros/fuerte/setup.bash
-export ROS_WORKSPACE=~/ros_workspace
-export ROS_PACKAGE_PATH=$ROS_WORKSPACE:$ROS_PACKAGE_PATH
-export PATH=$PATH:~/android-studio/bin
+### change prompt '${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+PS1="\[\e[0;31m\]=====================================\[\e[m\]\n\[\e[0;32m\]\u@\H\[\e[m\]:[\l]:[\j]:\[\e[0;31m\]\w/\[\e[m\]\n[\[\e[1;34m\]\t\[\e[m\]-\[\e[1;31m\]\#\[\e[m\]]\$ "
+
+### For Cuda tool-kit
+export PATH=/usr/local/cuda-7.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64:$LD_LIBRARY_PATH
+### paths
+if [[ -z "$ROS_WORKSPACE" ]]
+then
+  export PATH=${PATH}:~/Android/Sdk/tools/:~/Android/Sdk/platform-tools/:~/packages/eclipse/
+  source /opt/ros/indigo/setup.bash
+  export PROJECTS=~/projects
+  export ROS_WORKSPACE=${PROJECTS}/ros-projects/
+  export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:${ROS_WORKSPACE}
+fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="~/bin:$PATH"
+### For youtube videos
+export GOOGLE_API_KEY=AIzaSyDuH3VUOvffMGsXcguoB_iWeWEtUMBcBOg
+export PYTHONPATH=/home/vinay/packages/caffe/python:$PYTHONPATH
+## for Auro
+source ~/ros/auro_repo/sandbox/devel/setup.sh
+export ROS_PACKAGE_PATH=~/ros/auro_repo/auro_resources:/home/vinay/ros/auro_repo/auro_vehicle:$ROS_PACKAGE_PATH
