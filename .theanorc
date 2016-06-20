@@ -1,0 +1,10 @@
+[global]
+floatX = float32
+device = gpu0
+#device = cpu
+exception_verbosity=high
+on_unused_input=warn
+[nvcc]
+fastmath = True
+[lib]
+cnmem=.1
