@@ -59,7 +59,7 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$'
 fi
 unset color_prompt force_color_prompt
 
@@ -124,14 +124,15 @@ fi
 PS1="\[\e[0;31m\]=====================================\[\e[m\]\n\[\e[0;32m\]\u@\H\[\e[m\]:[\l]:[\j]:\[\e[0;31m\]\w/\[\e[m\]\n[\[\e[1;34m\]\t\[\e[m\]-\[\e[1;31m\]\#\[\e[m\]]\$ "
 
 ### For Cuda tool-kit
-export PATH=/usr/local/cuda-7.0/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/lib/nvidia/:/usr/lib64/nvidia/:$LD_LIBRARY_PATH
+export LANG=en_US.UTF-8
 ### paths
 if [[ -z "$ROS_WORKSPACE" ]]
 then
-  export PATH=${PATH}:~/Android/Sdk/tools/:~/Android/Sdk/platform-tools/:~/packages/eclipse/
-  source /opt/ros/indigo/setup.bash
+  source /opt/ros/jade/setup.bash
   export PROJECTS=~/projects
   export ROS_WORKSPACE=${PROJECTS}/ros-projects/
   export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:${ROS_WORKSPACE}
@@ -141,8 +142,8 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="~/bin:$PATH"
 ### For youtube videos
-export GOOGLE_API_KEY=AIzaSyDuH3VUOvffMGsXcguoB_iWeWEtUMBcBOg
-export PYTHONPATH=/home/vinay/packages/caffe/python:$PYTHONPATH
-## for Auro
-source ~/ros/auro_repo/sandbox/devel/setup.sh
-export ROS_PACKAGE_PATH=~/ros/auro_repo/auro_resources:/home/vinay/ros/auro_repo/auro_vehicle:$ROS_PACKAGE_PATH
+export GOOGLE_API_KEY=
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+### XGBoost
+export PYTHONPATH=~/packages/xgboost/python-package/
