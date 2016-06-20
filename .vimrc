@@ -1,148 +1,260 @@
-" Vim configuration
+" Type :so % to refresh .vimrc after making changes
+
+" Use Vim settings, rather then Vi settings. This setting must be as early as
+" possible, as it has side effects.
+scriptencoding utf-8
+set encoding=utf-8
 set exrc
 set secure
-set colorcolumn=110
-set number
-set ts=2
-set sw=2
+set nocompatible
+set ts=4
+set sw=4
 let mapleader=","
 "autocmd BufEnter * set mouse=
-highlight ColorColumn ctermbg=lightgray
+set colorcolumn=80
+highlight ColorColumn ctermbg=red
 set backspace=2
 set cursorline
-highlight CursorLine ctermbg=lightgray
+highlight CursorLine ctermbg=black
 set laststatus=2
-set statusline=
-set statusline+=%m
-set statusline+=\ -- 
-set statusline+=\  
-set statusline+=%f
-set statusline+=%=
-set statusline+=%2n
-set statusline+=\ --  
-set statusline+=\ %{&ff}
-set statusline+=\ --
-set statusline+=\ (
-set statusline+=%l
-set statusline+=,
-set statusline+=%v
-set statusline+=)
-set statusline+=/%4L
-set statusline+=\ --
-set statusline+=\%3p%%
-"set statusline+=\ -\ 	
-"set statusline+=%{&ff}
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-"
-"let g:netrw_list_hide='.+'
+" Leader - ( Spacebar )
+let mapleader = " "
 
-"""
-let g:pathogen_disabled = []
+set backspace=2   " Backspace deletes like most programs in insert mode
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set history=50
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete command
+set laststatus=2  " Always display the status line
+set autowrite     " Automatically :write before running commands
+set autoread      " Reload files changed outside vim
+" Trigger autoread when changing buffers or coming back to vim in terminal.
+au FocusGained,BufEnter * :silent! !
 
-""""  nerdtree  Configuration
-"call add(g:pathogen_disabled, 'nerdtree')
-autocmd vimenter * NERDTree
-let g:NERDTreeWinSize=21
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"Set default font in mac vim and gvim
+set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+set cursorline    " highlight the current line
+set visualbell    " stop that ANNOYING beeping
+set wildmenu
+set wildmode=list:longest,full
 
-""""  vim-indent-guides  Configuration
-let g:indent_guides_enable_on_vim_startup=1
-"let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-let g:indent_guides_color_change_percent = 10
-let g:indent_guides_auto_colors = 0
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-	  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-"call add(g:pathogen_disabled,'vim-indent-guides')
+"Allow usage of mouse in iTerm
+"set ttyfast
+"set mouse=a
+" set ttymouse=xterm2
 
-""""  tagbar  Configuration
-"call add(g:pathogen_disabled,'tagbar')
-autocmd vimenter * Tagbar
-let g:tagbar_width = 25
+" Make searching better
+set gdefault      " Never have to type /g at the end of search / replace again
+set ignorecase    " case insensitive searching (unless specified)
+set smartcase
+set hlsearch
+nnoremap <silent> <leader>, :noh<cr> " Stop highlight after searching
+set incsearch
+set showmatch
 
-""""  minibufexpl  Configuration
-"call add(g:pathogen_disabled,'minibufexpl')
-hi MBENormal               guifg=#808080 guibg=fg
-hi MBEChanged              guifg=#CD5907 guibg=fg
-hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
-hi MBEVisibleChanged       guifg=#F1266F guibg=fg
-hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
-hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
-let g:miniBufExplMapWindowNavVim=1
-let g:miniBufExplMapWindowNavArrows=1
-let g:miniBufExplMapCTabSwitchBufs=1
-let g:miniBufExplModSelTarget=1 
-noremap <C-TAB>   :MBEbn<CR>
-noremap <C-S-TAB> :MBEbp<CR>
+" Softtabs, 2 spaces
+set tabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
 
-""""  vim-windowswap  Configuration
-"call add(g:pathogen_disabled,'vim-windowswap')
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
-""""  project-1.4.1  Configuration
-"call add(g:pathogen_disabled,'project-1.4.1')
+" Make it obvious where 80 characters is
+set textwidth=80
+" set formatoptions=cq
+set formatoptions=qrn1
+set wrapmargin=0
+set colorcolumn=+1
 
-""""  vim-cmake-project  Configuration
-let g:cmake_project_bar_width=40
-"call add(g:pathogen_disabled,'vim-cmake-project')
+" Numbers
+set number
+set numberwidth=5
 
-""""  vim-latex  Configuration
-call add(g:pathogen_disabled,'vim-latex')
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 
-""""  vim-neatstatus  Configuration
-call add(g:pathogen_disabled, 'vim-neatstatus')
+" Auto resize Vim splits to active split
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
 
-""""  Vim-R-plugin  Configuration 
-call add(g:pathogen_disabled, 'Vim-R-plugin') 
+"HTML Editing
+set matchpairs+=<:>
 
-""""  sqlcomplete  Configuration
-call add(g:pathogen_disabled, 'sqlcomplete')
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
 
-""""  pymode  Configuration
-call add(g:pathogen_disabled, 'python-mode')
+" ================ Scrolling ========================
 
-""""  bash-support  Configuration
-"call add(g:pathogen_disabled, 'bash-support')
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
 
-""""  cvim  Configuration
-let  g:C_UseTool_cmake='yes' 
-let  g:C_UseTool_doxygen='yes' 
-"call add(g:pathogen_disabled, 'cvim')
+"Toggle relative numbering, and set to absolute on loss of focus or insert mode
+set rnu
+function! ToggleNumbersOn()
+    set nu!
+    set rnu
+endfunction
+function! ToggleRelativeOn()
+    set rnu!
+    set nu
+endfunction
+autocmd FocusLost * call ToggleRelativeOn()
+autocmd FocusGained * call ToggleRelativeOn()
+autocmd InsertEnter * call ToggleRelativeOn()
+autocmd InsertLeave * call ToggleRelativeOn()
 
-""""  vim-fswitch  Configuration
-"call add(g:pathogen_disabled,'vim-fswitch')
+"Use enter to create new lines w/o entering insert mode
+nnoremap <CR> o<Esc>
+"Below is to fix issues with the ABOVE mappings in quickfix window
+autocmd CmdwinEnter * nnoremap <CR> <CR>
+autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
-""""  tagbar  Configuration
-"call add(g:pathogen_disabled, 'tagbar')
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+" <c-h> is interpreted as <bs> in neovim
+" This is a bandaid fix until the team decides how
+" they want to handle fixing it...(https://github.com/neovim/neovim/issues/2048)
+nnoremap <silent> <bs> :TmuxNavigateLeft<cr>
 
-""""  ultisnips  Configuration
-"call add(g:pathogen_disabled, 'ultisnips')
+" Navigate properly when lines are wrapped
+nnoremap j gj
+nnoremap k gk
 
-""""  vim-fugitive  Configuration
-"call add(g:pathogen_disabled, 'vim-fugitive')
+" Use tab to jump between blocks, because it's easier
+nnoremap <tab> %
+vnoremap <tab> %
 
-""""  vim-ros  Configuration
-"call add(g:pathogen_disabled, 'vim-ros')
+" Set spellfile to location that is guaranteed to exist, can be symlinked to
+" Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
+set spellfile=$HOME/.vim-spell-en.utf-8.add
 
+" Always use vertical diffs
+set diffopt+=vertical
 
-""" syntastic configuration
-let g:syntastic_python_checkers = ['pylint']
-call add(g:pathogen_disabled, 'syntastic')
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+endif
 
-"""" YouCompleteMe Configuration
-"call add(g:pathogen_disabled, 'YouCompleteMe')
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py"
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+" Load up all of our plugins
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pathogen configuration
-call pathogen#infect()
-call pathogen#helptags()
-filetype on
-filetype plugin on
 filetype plugin indent on
-syntax on
-autocmd VimEnter * wincmd l
+
+""" SYSTEM CLIPBOARD COPY & PASTE SUPPORT
+set pastetoggle=<F2> "F2 before pasting to preserve indentation
+"Copy paste to/from clipboard
+vnoremap <C-c> "*y
+map <silent><Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
+map <silent><Leader><S-p> :set paste<CR>O<esc>"*]p:set nopaste<cr>"
+
+""" MORE AWESOME HOTKEYS
+"
+"
+" Run the q macro
+nnoremap <leader>q @q
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" bind \ (backward slash) to grep shortcut
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
+
+"Map Ctrl + S to save in any mode
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
+" Also map leader + s
+map <leader>s <C-S>
+
+" Quickly close windows
+nnoremap <leader>x :x<cr>
+nnoremap <leader>X :q!<cr>
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
+" resize panes
+nnoremap <silent> <Right> :vertical resize +5<cr>
+nnoremap <silent> <Left> :vertical resize -5<cr>
+nnoremap <silent> <Up> :resize +5<cr>
+nnoremap <silent> <Down> :resize -5<cr>
+
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <S-Tab> <c-n>
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" AUTOCOMMANDS - Do stuff
+
+" Save whenever switching windows or leaving vim. This is useful when running
+" the tests inside vim without having to save all files first.
+au FocusLost,WinLeave * :silent! wa
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+"update dir to current file
+"autocmd BufEnter * silent! cd %:p:h
+
+augroup vimrcEx
+  autocmd!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  " Set syntax highlighting for specific file types
+  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+  " autocmd BufRead *.jsx set ft=jsx.html
+  " autocmd BufNewFile *.jsx set ft=jsx.html
+
+  " Enable spellchecking for Markdown
+  autocmd FileType markdown setlocal spell
+
+  " Automatically wrap at 80 characters for Markdown
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+  " Automatically wrap at 72 characters and spell check git commit messages
+  autocmd FileType gitcommit setlocal textwidth=72
+  autocmd FileType gitcommit setlocal spell
+
+  " Allow stylesheets to autocomplete hyphenated words
+  autocmd FileType css,scss,sass,less setlocal iskeyword+=-
+augroup END
+
+
+" Tab completion
+" will insert tab at beginning of line,
+" will use completion if not at beginning
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
 
