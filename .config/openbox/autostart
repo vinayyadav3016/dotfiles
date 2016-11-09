@@ -20,5 +20,6 @@ sleep 3
 xfce4-panel &
 sleep 3
 pcmanfm --desktop &
+xscreensaver &
 #guake &
 #sleep

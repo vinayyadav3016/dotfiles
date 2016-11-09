@@ -383,9 +383,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Pacman File Manager</name>
+          <name>Thunar File Manager</name>
         </startupnotify>
-        <command>pcmanfm</command>
+        <command>thunar</command>
       </action>
     </keybind>
     <keybind key="C-A-t">
@@ -395,6 +395,20 @@
           <name>Gnome Ternimal</name>
         </startupnotify>
         <command>gnome-terminal</command>
+      </action>
+    </keybind>
+    <keybind key="W-x">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>oblogut</name>
+        </startupnotify>
+        <command>oblogout</command>
+      </action>
+    </keybind>
+    <keybind key="XF86TouchpadToggle">
+      <action name="Execute">
+        <command/>
       </action>
     </keybind>
   </keyboard>
@@ -852,5 +866,11 @@
 
   # end of the example
 -->
+    <application name="oblogout">
+      <position force="yes">
+        <monitor>1</monitor>
+      </position>
+      <fullscreen>yes</fullscreen>
+    </application>
   </applications>
 </openbox_config>
