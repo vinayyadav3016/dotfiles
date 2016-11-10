@@ -15,6 +15,7 @@ set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
+set $HELPER /home/vinay/.config/i3/helpers
 
 set $mod Mod4
 
@@ -33,6 +34,9 @@ font pango:System Francisco Display 11
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+# Disable mounse focus
+focus_follows_mouse no
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -44,8 +48,8 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -142,7 +146,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec $HELPER/logout.py
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -181,11 +186,12 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-		output eDP1
-		tray_output none
-		mode hide
+		#output eDP1
+		#tray_output none
+		#mode hide
 		#position top
 		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
+		status_command $HELPER/conky-i3bar
 		colors {
 			background $bg-color
 			separator #757575
@@ -215,7 +221,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /home/vinay/bin/toggletouchpad.sh # toggle touchpad
+bindsym XF86TouchpadToggle exec $HELPER/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -228,7 +234,7 @@ exec_always --no-startup-id compton -f
 
 ## xfce4 panels
 exec --no-startup-id xfsettingsd --sm-client-disable &
-exec --no-startup-id xfce4-panel --disable-wm-check
+#exec --no-startup-id xfce4-panel --disable-wm-check
 exec --no-startup-id xfce4-power-manager &
 exec --no-startup-id nm-applet
 exec --no-startup-ip pcmanfm --desktop
@@ -238,3 +244,20 @@ exec --no-startup-ip pcmanfm --desktop
 
 # bar toggle, hide or show 
 bindsym $mod+m bar mode toggle
+
+## Application if need floating
+for_window [class="^Thunar$"] floating enable
+#for_window [class="^ThunarHome$"] floating enable
+for_window [class="^Pcmanfm$"] floating enable
+for_window [title="^File Operation Progress$"] floating enable
+for_window [title="^Current Media Information$"] floating enable
+for_window [class="^Xfrun4$"] floating enable
+#for_window [class="Xfce4-appfinder"] floating enable
+for_window [class="^cameraclient$"] floating enable
+for_window [class="^blueman-manager$"] floating enable
+for_window [class="^galculator$"] floating enable
+for_window [class="^Vlc"] floating enable
+for_window [class="^Yad"] floating enable
+for_window [class="^gnuplot"] floating enable
+for_window [class="^Pulseaudio-equalizer"] floating enable
+for_window [title="^TerminalHtop$"] floating enable
