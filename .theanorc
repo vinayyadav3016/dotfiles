@@ -8,3 +8,5 @@ on_unused_input=warn
 fastmath = True
 [lib]
 cnmem=.1
+[blas]
+ldflags = -lopenblas

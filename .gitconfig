@@ -1,0 +1,7 @@
+[user]
+	email = vinayyadav3016@gmail.com
+	name = vinayyadav3016
+[core]
+	excludesfile = /home/vinay/.gitignore_global
+[credential]
+	helper = /usr/lib/git-core/git-credential-gnome-keyring
