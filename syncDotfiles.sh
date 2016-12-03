@@ -22,4 +22,5 @@ rm ${BACKUPFILELIST}
 cd dotfiles/
 git pull origin master
 cd ..
+rm -rf dotfiles.tar.gz 
 tar -czf dotfiles.tar.gz dotfiles
