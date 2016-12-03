@@ -63,7 +63,10 @@ set noexpandtab
 set autoindent
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+set list
+" set listchars=tab:»·,trail:·,nbsp:·
+set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮,nbsp:·
+set showbreak=↪
 
 " Make it obvious where 80 characters is
 set textwidth=80
@@ -157,9 +160,13 @@ endif
 
 filetype plugin indent on
 "autocmd Filetype python setlocal expandtab
+
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
-set pastetoggle=<F2> "F2 before pasting to preserve indentation
+" set pastetoggle=<F2> "F2 before pasting to preserve indentation
+set pastetoggle=<leader>v
+
 "Copy paste to/from clipboard
 vnoremap <C-c> "*y
 map <silent><Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"

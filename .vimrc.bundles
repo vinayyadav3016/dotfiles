@@ -105,13 +105,16 @@ set background=dark
 " Allow powerline symbols to show up
 let g:airline_powerline_fonts = 1
 
-" [2]
+" [2] NerdTree
 map <silent> <C-n> :NERDTreeToggle<cr>
 " nnoremap <C-t> :call ToggleRelativeOn()<cr>
 map <silent> <leader>k :NERDTreeToggle<cr>
 map <silent> <leader>t :call ToggleRelativeOn()<cr>
 " Close vim if only NERDTree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeDirArrowExpandable = '▷'
+let NERDTreeDirArrowCollapsible = '▼'
+let g:fzf_layout = { 'down': '~25%'  }
 
 " [3]
 " Allow moving around between Tmux windows
