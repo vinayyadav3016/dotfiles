@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -122,6 +122,7 @@ fi
 
 ### change prompt '${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 PS1="\[\e[0;31m\]=====================================\[\e[m\]\n\[\e[0;32m\]\u@\H\[\e[m\]:[\l]:[\j]:\[\e[0;31m\]\w/\[\e[m\]\n[\[\e[1;34m\]\t\[\e[m\]-\[\e[1;31m\]\#\[\e[m\]]\$ "
+export EDITOR=vim
 
 ### For Cuda tool-kit
 export PATH=/usr/local/cuda/bin:$PATH
@@ -136,14 +137,13 @@ then
   export PROJECTS=~/projects
   export ROS_WORKSPACE=${PROJECTS}/ros-projects/
   export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:${ROS_WORKSPACE}
+  export LD_LIBRARY_PATH=~/.ros/libs/:${LD_LIBRARY_PATH}
 fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="~/bin:$PATH"
-### For youtube videos
-export GOOGLE_API_KEY=
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 ### XGBoost
-export PYTHONPATH=~/packages/xgboost/python-package/
+export PYTHONPATH=$PYTHONPATH:~/packages/xgboost/python-package/
