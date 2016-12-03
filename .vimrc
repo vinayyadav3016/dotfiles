@@ -18,7 +18,7 @@ set cursorline
 highlight CursorLine ctermbg=black
 set laststatus=2
 " Leader - ( Spacebar )
-let mapleader = " "
+" let mapleader = " "
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -57,8 +57,10 @@ set showmatch
 " Softtabs, 2 spaces
 set tabstop=4
 set shiftwidth=4
-set shiftround
-set expandtab
+"set shiftround
+set softtabstop=0
+set noexpandtab
+set autoindent
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -154,7 +156,8 @@ if filereadable(expand("~/.vimrc.bundles"))
 endif
 
 filetype plugin indent on
-
+"autocmd Filetype python setlocal expandtab
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
 set pastetoggle=<F2> "F2 before pasting to preserve indentation
 "Copy paste to/from clipboard

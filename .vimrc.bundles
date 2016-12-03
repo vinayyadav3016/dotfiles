@@ -11,6 +11,10 @@ call plug#begin('~/.vim/bundle/')
 
 """ Theme / Pretty stuff
 """
+
+" [0] let vundle manage
+Plug 'VundleVim/Vundle.vim'
+
 " [1]
 Plug 'altercation/vim-colors-solarized'
 " Awesome looking meta at bottom
@@ -47,6 +51,7 @@ Plug 'tpope/vim-repeat' "allow plugins to utilize . command
 Plug 'tpope/vim-surround' "easily surround things...just read docs for info
 Plug 'vim-scripts/matchit.zip' " % also matches HTML tags / words / etc
 Plug 'duff/vim-scratch' "Open a throwaway scratch buffer
+
 ""
 
 """ Utilities / Extras / Etc
@@ -74,13 +79,11 @@ Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 " [11]
 Plug 'editorconfig/editorconfig-vim'
 " [12]
-Plug 'cvim'
-Plug 'tagbar'
+Plug 'vim-scripts/c.vim'
+Plug 'majutsushi/tagbar'
 
 " [13]
 Plug 'joonty/vdebug'
-
-
 
 """ TODO / Plugins to evaluate
 " Figure out how to create / version control my own snippets
@@ -104,7 +107,9 @@ let g:airline_powerline_fonts = 1
 
 " [2]
 map <silent> <C-n> :NERDTreeToggle<cr>
-nnoremap <C-t> :call ToggleRelativeOn()<cr>
+" nnoremap <C-t> :call ToggleRelativeOn()<cr>
+map <silent> <leader>k :NERDTreeToggle<cr>
+map <silent> <leader>t :call ToggleRelativeOn()<cr>
 " Close vim if only NERDTree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
