@@ -3,5 +3,6 @@
 	name = vinayyadav3016
 [core]
 	excludesfile = /home/vinay/.gitignore_global
+	pager = "less -+$LESS -R"
 [credential]
 	helper = /usr/lib/git-core/git-credential-gnome-keyring
