@@ -17,6 +17,8 @@ Plug 'VundleVim/Vundle.vim'
 
 " [1]
 Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 " Awesome looking meta at bottom
 " Fugitive will help with git related stuff, and show branch on status
 Plug 'tpope/vim-fugitive' | Plug 'bling/vim-airline'
@@ -101,7 +103,9 @@ call plug#end()
 syntax enable
 let g:solarized_termcolors=16
 set background=dark
-"colorscheme solarized
+colorscheme solarized
+" colorscheme dracula
+" colorscheme octol
 " Allow powerline symbols to show up
 let g:airline_powerline_fonts = 1
 

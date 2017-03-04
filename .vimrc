@@ -65,7 +65,8 @@ set autoindent
 " Display extra whitespace
 set list
 " set listchars=tab:»·,trail:·,nbsp:·
-set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮,nbsp:·
+set listchars=tab:»·,trail:⋅,extends:❯,precedes:❮,nbsp:·
+" set listchars=tab:→·,eol:¬,trail:⋅,extends:❯,precedes:❮,nbsp:·
 set showbreak=↪
 
 " Make it obvious where 80 characters is
@@ -159,9 +160,9 @@ if filereadable(expand("~/.vimrc.bundles"))
 endif
 
 filetype plugin indent on
-"autocmd Filetype python setlocal expandtab
+autocmd Filetype python setlocal expandtab
 
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+"autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
 
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
 " set pastetoggle=<F2> "F2 before pasting to preserve indentation

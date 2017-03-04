@@ -72,34 +72,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias df='df -h'
-alias mv='mv -i'
-alias cp='cp -i'
-alias ln='ln -i'
-alias ports='netstat -tulanp'
-alias mkdir='mkdir -pv'
-#alias fsize='for fol in `ls -Ad */`; do du -h $fol 2>/dev/null| tail -1 ; done'
-alias fsize='du -h -d 1'
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -124,26 +96,6 @@ fi
 PS1="\[\e[0;31m\]=====================================\[\e[m\]\n\[\e[0;32m\]\u@\H\[\e[m\]:[\l]:[\j]:\[\e[0;31m\]\w/\[\e[m\]\n[\[\e[1;34m\]\t\[\e[m\]-\[\e[1;31m\]\#\[\e[m\]]\$ "
 export EDITOR=vim
 
-### For Cuda tool-kit
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/usr/lib/nvidia/:/usr/lib64/nvidia/:$LD_LIBRARY_PATH
-export LANG=en_US.UTF-8
-### paths
-if [[ -z "$ROS_WORKSPACE" ]]
-then
-  source /opt/ros/jade/setup.bash
-  export PROJECTS=~/projects
-  export ROS_WORKSPACE=${PROJECTS}/ros-projects/
-  export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:${ROS_WORKSPACE}
-  export LD_LIBRARY_PATH=~/.ros/libs/:${LD_LIBRARY_PATH}
+if [ -f ~/.bashrc.local ]; then
+    . ~/.bashrc.local
 fi
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="~/bin:$PATH"
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
-### XGBoost
-export PYTHONPATH=$PYTHONPATH:~/packages/xgboost/python-package/
