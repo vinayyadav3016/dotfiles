@@ -160,9 +160,9 @@ if filereadable(expand("~/.vimrc.bundles"))
 endif
 
 filetype plugin indent on
-"autocmd Filetype python setlocal expandtab
+autocmd Filetype python setlocal expandtab
 
-autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
+"autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
 
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
 " set pastetoggle=<F2> "F2 before pasting to preserve indentation
