@@ -1,8 +1,8 @@
 #!/bin/bash
 
-BACKUPFILE=/home/vinay/SharedData/Backup/`date +%Y-%m-%d`.tar
-BACKUPFILELIST=/home/vinay/SharedData/Backup/listoffiles.txt
-EXCLUDEFILE=/home/vinay/SharedData/Backup/excludefolders.txt
+BACKUPFILE=/home/vinay/SharedData/Backup/Devices/AsusJK/`date +%Y-%m-%d`.tar
+BACKUPFILELIST=/home/vinay/SharedData/Backup/Devices/AsusJK/listoffiles.txt
+EXCLUDEFILE=/home/vinay/SharedData/Backup/Devices/AsusJK/excludefolders.txt
 
 #### Get file list
 ls -ad ~/.* | sed 1,2d | grep -v -f ${EXCLUDEFILE} > ${BACKUPFILELIST}
@@ -22,5 +22,5 @@ rm ${BACKUPFILELIST}
 cd dotfiles/
 git pull origin master
 cd ..
-rm -rf dotfiles.tar.gz 
+rm -rf dotfiles.tar.gz
 tar -czf dotfiles.tar.gz dotfiles
