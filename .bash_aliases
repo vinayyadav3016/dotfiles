@@ -20,6 +20,7 @@ alias cp='cp -i'
 alias ln='ln -i'
 alias ports='netstat -tulanp'
 alias mkdir='mkdir -pv'
+alias clrcnsl='printf "\033c"'
 #alias fsize='for fol in `ls -Ad */`; do du -h $fol 2>/dev/null| tail -1 ; done'
 alias fsize='du -h -d 1'
 # Add an "alert" alias for long running commands.  Use like so:
