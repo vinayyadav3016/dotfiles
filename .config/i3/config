@@ -106,8 +106,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace01 
-set $workspace02 
+set $workspace01 Firefox
+set $workspace02 Vlc
 set $workspace03 03
 set $workspace04 04
 set $workspace05 05
@@ -115,7 +115,7 @@ set $workspace06 06
 set $workspace07 07
 set $workspace08 08
 set $workspace09 09
-set $workspace10 10
+set $workspace10 Tor
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace01
@@ -186,12 +186,12 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-		output eDP-1
+		#output eDP-1
 		#tray_output none
 		mode hide
 		position top
 		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
-		status_command $HELPER/conky-i3bar
+		#status_command $HELPER/conky-i3bar
 		colors {
 			background $bg-color
 			separator #757575
@@ -237,13 +237,17 @@ exec --no-startup-id xfsettingsd --sm-client-disable
 exec --no-startup-id xfce4-panel --disable-wm-check
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nm-applet
+exec --no-startup-id redshift
 exec --no-startup-ip pcmanfm --desktop
 
 ## multi monitor settings
 #exec --no-startup-id sh $HOME/.screenlayout/horizontal.sh
 
 # bar toggle, hide or show 
-bindsym $mod+m bar mode toggle
+#bindsym $mod+m bar mode toggle
+## Move workspace to other monitor
+bindsym $mod+m move workspace to output left
+bindsym $mod+Shift+m move workspace to output right
 
 ## Application if need floating
 for_window [class="^Thunar$"] floating enable
