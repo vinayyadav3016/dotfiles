@@ -27,20 +27,22 @@ template8 ${template4 \1}${template4 \2}
 
 # if running on battery no keyboard layout is show because of xset
 #{ "full_text" : "${if_up wlan0}↓${downspeed wlan0} ↑${upspeed wlan0}${endif}", "color" : "\#ffffff", "name" : "wlan_speed"},\
+#{ "full_text" : " ${fs_free /}", "color" : "${if_match ${fs_free_perc}<10}\#ff0000${else}\#ffffff${endif}", "name" : "disk" },\
+#{ "full_text" : " ${fs_free /home}", "color" : "${if_match ${fs_free_perc}<10}\#ff0000${else}\#ffffff${endif}", "name" : "disk" },\
+#{ "full_text" : "${time %k:%M}", "color" : "\#ffff00", "name" : "time" },\
+#[{ "full_text" : "${template9 AC ADP1}", "color" : "\#${template8 AC ADP1}", "name" : "keyboard" },\
+#{ "full_text" : "", "color" : "\#ffffff", "name" : "display" },\
+#{ "full_text" : "${cpu cpu0}/${cpu cpu1}/${cpu cpu2}/${cpu cpu3}/${cpu cpu4}/${cpu cpu5}/${cpu cpu6}/${cpu cpu7}/  ${cpu}%", "color" : "${if_match ${acpitemp}>60}\#ff0000${else}${if_match ${acpitemp}>55}\#ff6000${else}${if_match ${acpitemp}>50}\#ffff00${else}\#ffffff${endif}${endif}${endif}", "name" : "cpu" },\
+#{ "full_text" : " ${memperc}% ${mem} ${buffers} ${cached} ${memfree}", "color" : "${if_match ${memperc}<70}\#ffffff${else}\#ff0000${endif}", "name" : "memory" },\
+#{ "full_text" : "${if_match ${battery_percent}>80}${else}${if_match ${battery_percent}>50}${else}${if_match ${battery_percent}>20}${else}${endif}${endif}${endif} ${battery_percent}%${if_empty ${battery_time}}${else} ${battery_time}${endif}",\
+#      "color" : "${if_match ${battery_percent}>50}\#ffffff${else}${if_match ${battery_percent}>20}\#ffff00${else}\#ff0000${endif}${endif}", "name" : "battery" },\
+#{ "full_text" : "${template7 wlan0 wlan1 wlp1s0}", "color" : "\#ffffff", "name" : "wlan"},\
+#{ "full_text" : "${template3 eth0 eth1 p3p1}", "color" : "\#ffffff", "name" : "lan" },\
+#{ "full_text" : "${if_up tap0}${endif}", "color" : "\#0000ff", "name" : "vpn"},\
+#{ "full_text" : " ${time %a %d %b %k:%M}", "color" : "\#ffffff", "name" : "date" },\
+# "full_text" : "${if_existing /tmp/newMail}${if_existing /tmp/newMail 0}${else}${if_existing /tmp/newMail 1}${else}${exec cat /tmp/newMail}${endif}${endif}${endif}", "color" : "\#ff0000", "name" : "mail" },\
 #      
 TEXT
-[{ "full_text" : "${template9 AC ADP1}", "color" : "\#${template8 AC ADP1}", "name" : "keyboard" },\
-{ "full_text" : " ${fs_free /}", "color" : "${if_match ${fs_free_perc}<10}\#ff0000${else}\#ffffff${endif}", "name" : "disk" },\
-{ "full_text" : " ${fs_free /home}", "color" : "${if_match ${fs_free_perc}<10}\#ff0000${else}\#ffffff${endif}", "name" : "disk" },\
-{ "full_text" : " ${cpu}%", "color" : "${if_match ${acpitemp}>70}\#ff0000${else}${if_match ${acpitemp}>65}\#ff6000${else}${if_match ${acpitemp}>60}\#ffff00${else}\#ffffff${endif}${endif}${endif}", "name" : "cpu" },\
-{ "full_text" : " ${memperc}%", "color" : "${if_match ${memperc}<90}\#ffffff${else}\#ff0000${endif}", "name" : "memory" },\
-{ "full_text" : "${if_match ${battery_percent}>80}${else}${if_match ${battery_percent}>50}${else}${if_match ${battery_percent}>20}${else}${endif}${endif}${endif} ${battery_percent}%${if_empty ${battery_time}}${else} ${battery_time}${endif}",\
-      "color" : "${if_match ${battery_percent}>50}\#ffffff${else}${if_match ${battery_percent}>20}\#ffff00${else}\#ff0000${endif}${endif}", "name" : "battery" },\
-{ "full_text" : "${template7 wlan0 wlan1 wlp1s0}", "color" : "\#ffffff", "name" : "wlan"},\
-{ "full_text" : "${template3 eth0 eth1 p3p1}", "color" : "\#ffffff", "name" : "lan" },\
-{ "full_text" : "${if_up tap0}${endif}", "color" : "\#0000ff", "name" : "vpn"},\
-{ "full_text" : " ${time %a %d %b}", "color" : "\#ffffff", "name" : "date" },\
-{ "full_text" : "${time %k:%M}", "color" : "\#ffff00", "name" : "time" },\
-{ "full_text" : "${if_existing /tmp/newMail}${if_existing /tmp/newMail 0}${else}${if_existing /tmp/newMail 1}${else}${exec cat /tmp/newMail}${endif}${endif}${endif}", "color" : "\#ff0000", "name" : "mail" },\
-{ "full_text" : "", "color" : "\#ffffff", "name" : "display" },\
-{ "full_text" : "   ", "color" : "\#ffffff", "name" : "logout" }],
+[
+{ "full_text" : "   ", "color" : "\#ffffff", "name" : "logout" }
+],
