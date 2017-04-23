@@ -236,9 +236,11 @@ exec_always --no-startup-id compton -f
 exec --no-startup-id xfsettingsd --sm-client-disable
 exec --no-startup-id xfce4-panel --disable-wm-check
 exec --no-startup-id xfce4-power-manager
+## others
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 exec --no-startup-ip pcmanfm --desktop
+exec --no-startup-ip xautolock -time 5 -locker i3lock
 
 ## multi monitor settings
 #exec --no-startup-id sh $HOME/.screenlayout/horizontal.sh
