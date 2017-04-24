@@ -4,8 +4,6 @@
 " possible, as it has side effects.
 scriptencoding utf-8
 set encoding=utf-8
-set exrc
-set secure
 set nocompatible
 set ts=4
 set sw=4
@@ -271,4 +269,6 @@ function! InsertTabWrapper()
         return "\<c-p>"
     endif
 endfunction
-
+" For per project configuration
+set exrc
+set secure
