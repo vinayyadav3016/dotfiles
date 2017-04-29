@@ -239,8 +239,8 @@ exec --no-startup-id xfce4-power-manager
 ## others
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
-exec --no-startup-id pcmanfm --desktop
-exec --no-startup-id xautolock -time 5 -locker i3lock
+#exec --no-startup-id pcmanfm --desktop
+exec --no-startup-id xautolock -time 5 -locker 'i3lock --color "$bg-color"'
 
 ## multi monitor settings
 #exec --no-startup-id sh $HOME/.screenlayout/horizontal.sh
