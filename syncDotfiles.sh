@@ -8,9 +8,10 @@ EXCLUDEFILE=/home/vinay/SharedData/Backup/Devices/AsusJK/excludefolders.txt
 ls -ad ~/.* | sed 1,2d | grep -v -f ${EXCLUDEFILE} > ${BACKUPFILELIST}
 
 echo 'Backing up ' `wc -l ${BACKUPFILELIST} | cut -d ' ' -f 1` "INODES"
-
+#####
+yaourt -Qaa > packages.txt
 #####Back them up
-tar -cf ${BACKUPFILE} -T ${BACKUPFILELIST}
+tar -cf ${BACKUPFILE} -T ${BACKUPFILELIST} packages.txt
 
 ####### compress it
 gzip ${BACKUPFILE}
@@ -23,4 +24,5 @@ cd dotfiles/
 git pull origin master
 cd ..
 rm -rf dotfiles.tar.gz
+rm -f packages.txt
 tar -czf dotfiles.tar.gz dotfiles
