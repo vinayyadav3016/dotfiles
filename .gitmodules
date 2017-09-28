@@ -1,4 +1,4 @@
 [submodule ".oh-my-zsh.git"]
-	path = .oh-my-zsh.git
+	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
 	branch = master
