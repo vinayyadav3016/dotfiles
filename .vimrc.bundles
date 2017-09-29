@@ -87,11 +87,16 @@ Plug 'majutsushi/tagbar'
 " [13]
 Plug 'joonty/vdebug'
 
+" [14]
+Plug 'godlygeek/tabular'
+
 """ TODO / Plugins to evaluate
 " Figure out how to create / version control my own snippets
 " Figure out how to change matchit to ALSO use <tab>
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'junegunn/vim-easy-align'
+
+
 call plug#end()
 
 """" PLUGIN RELATED TWEAKS

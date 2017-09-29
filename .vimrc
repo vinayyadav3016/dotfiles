@@ -60,6 +60,9 @@ set softtabstop=0
 set noexpandtab
 set autoindent
 
+" Set foldmethod
+set foldmethod=syntax
+
 " Display extra whitespace
 set list
 " set listchars=tab:»·,trail:·,nbsp:·
