@@ -94,7 +94,9 @@ fi
 
 ### change prompt '${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 PS1="\[\e[0;31m\]=====================================\[\e[m\]\n\[\e[0;32m\]\u@\H\[\e[m\]:[\l]:[\j]:\[\e[0;31m\]\w/\[\e[m\]\n[\[\e[1;34m\]\t\[\e[m\]-\[\e[1;31m\]\#\[\e[m\]]\$ "
+
 export EDITOR=vim
+set -o vi
 
 if [ -f ~/.bashrc.local ]; then
     . ~/.bashrc.local
