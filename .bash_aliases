@@ -23,6 +23,8 @@ alias mkdir='mkdir -pv'
 alias clrcnsl='printf "\033c"'
 #alias fsize='for fol in `ls -Ad */`; do du -h $fol 2>/dev/null| tail -1 ; done'
 alias fsize='du -h -d 1'
+alias pacnor='pacman -Qt'
+alias upyaourt='yaourt -Sua'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

@@ -274,6 +274,8 @@ for_window [title="^TerminalHtop$"] floating enable
 ### Application to be put on specific workspace
 assign [class="Firefox"] $workspace01
 assign [class="Vlc"] $workspace02
+assign [class="Texmaker"] $workspace06
+assign [class="Wine"] $workspace06
 assign [class="okular"] $workspace08
 assign [class="^Thunar$"] $workspace09
 assign [class="^Pcmanfm$"] $workspace09
