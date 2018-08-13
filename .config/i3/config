@@ -173,7 +173,11 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode  "resize"
+bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+y resize shrink width 10 px or 10 ppt
+bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
 # Window colors
 #                       border             background         text                 indicator
 client.focused          $bg-color          $bg-color          $text-color          #003f00
@@ -188,10 +192,11 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 bar {
 		#output eDP-1
 		#tray_output none
-		mode hide
+		#mode hide
 		position top
 		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
 		#status_command $HELPER/conky-i3bar
+		status_command bumblebee-status -m weather caffeine load cpu memory nvidiagpu date time cmus pasink pasource -p interval=2.5 memory.format="{percent:05.02f}%" time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline
 		colors {
 			background $bg-color
 			separator #757575
@@ -209,7 +214,7 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+Shift+z move workspace back_and_forth
 
 ### Add lock keys
-bindsym $mod+x exec i3lock --color "$bg-color"
+bindsym $mod+x exec i3lock -i ~/.config/i3/lock_screen/lock.png
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $AudioSink +5% #increase sound volume
@@ -234,16 +239,19 @@ exec_always --no-startup-id compton -f
 
 ## xfce4 panels
 exec --no-startup-id xfsettingsd --sm-client-disable
-exec --no-startup-id xfce4-panel --disable-wm-check
+#exec --no-startup-id xfce4-panel --disable-wm-check
 exec --no-startup-id xfce4-power-manager
 ## others
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 #exec --no-startup-id pcmanfm --desktop
-exec --no-startup-id xautolock -time 5 -locker 'i3lock --color "$bg-color"'
+#exec --no-startup-id xautolock -time 5 -locker 'i3lock --color "$bg-color"'
 
 ## Wallpaper
 exec --no-startup-id nitrogen --restore
+
+## caffiene
+exec --no-startup-id caffeine -f
 
 ## multi monitor settings
 #exec --no-startup-id sh $HOME/.screenlayout/horizontal.sh
@@ -276,6 +284,7 @@ assign [class="Firefox"] $workspace01
 assign [class="Vlc"] $workspace02
 assign [class="Texmaker"] $workspace06
 assign [class="Wine"] $workspace06
+assign [class="Virtual"] $workspace07
 assign [class="okular"] $workspace08
 assign [class="^Thunar$"] $workspace09
 assign [class="^Pcmanfm$"] $workspace09
