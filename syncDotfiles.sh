@@ -1,28 +1,32 @@
 #!/bin/bash
 
-BACKUPFILE=/home/vinay/SharedData/Backup/Devices/AsusJK/`date +%Y-%m-%d`.tar
-BACKUPFILELIST=/home/vinay/SharedData/Backup/Devices/AsusJK/listoffiles.txt
-EXCLUDEFILE=/home/vinay/SharedData/Backup/Devices/AsusJK/excludefolders.txt
+############################## Settings  #######################################
+BACKUPFOLDER=/home/vinay/SharedData/Backup/Devices/JOKER
+BACKUPFILE=${BACKUPFOLDER}/`date +%Y-%m-%d`.tar
+BACKUPFILELIST=${BACKUPFOLDER}/listoffiles.txt
+EXCLUDEFILE=${BACKUPFOLDER}/excludefolders.txt
 
-#### Get file list
+########################## Get file list #######################################
 ls -ad ~/.* | sed 1,2d | grep -v -f ${EXCLUDEFILE} > ${BACKUPFILELIST}
-
 echo 'Backing up ' `wc -l ${BACKUPFILELIST} | cut -d ' ' -f 1` "INODES"
-#####
-yaourt -Qaa > packages.txt
-#####Back them up
-tar -cf ${BACKUPFILE} -T ${BACKUPFILELIST} packages.txt
 
-####### compress it
-gzip ${BACKUPFILE}
+######################## Packages ##############################################
+pacman -Qqe > ${BACKUPFOLDER}/native_package.txt
+pacman -Qm  > ${BACKUPFOLDER}/mannual_package.txt
 
-### Remove file
+##################### Back them up #############################################
+tar -czf ${BACKUPFILE} -T ${BACKUPFILELIST} packages.txt
+
+############################ Remove file #######################################
 rm ${BACKUPFILELIST}
+rm ${BACKUPFOLDER}/native_package.txt
+rm ${BACKUPFOLDER}/mannual_package.txt
 
-### update dot files
-cd dotfiles/
+############################ Update dot files ##################################
+cd ${BACKUPFOLDER}/dotfiles/
 git pull origin master
-cd ..
+cd ${BACKUPFOLDER}
 rm -rf dotfiles.tar.gz
-rm -f packages.txt
 tar -czf dotfiles.tar.gz dotfiles
+
+################################################################################
