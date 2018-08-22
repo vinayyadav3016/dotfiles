@@ -16,6 +16,7 @@ set backspace=2
 set cursorline
 highlight CursorLine ctermbg=black
 set laststatus=2
+set path+=**
 " Leader - ( Spacebar )
 " let mapleader = " "
 
@@ -157,12 +158,17 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+" Disable session plugin
+" let g:loaded_session = 1
+
 " Load up all of our plugins
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
 filetype plugin indent on
+vnoremap > >gv
+vnoremap < <gv
 autocmd Filetype python setlocal expandtab
 
 "autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4

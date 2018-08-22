@@ -22,6 +22,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " Awesome looking meta at bottom
 " Fugitive will help with git related stuff, and show branch on status
 Plug 'tpope/vim-fugitive' | Plug 'bling/vim-airline'
+Plug 'tpope/vim-surround'
 ""
 
 """ Some ESSENTIAL IDE like plugins for Vim
@@ -92,6 +93,19 @@ Plug 'godlygeek/tabular'
 
 " [15]
 Plug 'lervag/vimtex'
+
+" [16]
+Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+
+" [17]
+Plug 'tmhedberg/matchit'
+
+" [18]
+Plug 'vim-scripts/ZoomWin'
+
+" [19]
+Plug 'vim-scripts/tComment'
 
 """ TODO / Plugins to evaluate
 " Figure out how to create / version control my own snippets
@@ -184,6 +198,10 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" [16]
+set sessionoptions-=options
+let g:session_autosave = 'no'
 
 " Not sure what the below code does...look into Tern docs etc and figure it out?
 " Found this snippet on a forum post that says it gets everything working

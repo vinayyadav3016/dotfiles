@@ -43,6 +43,7 @@ floating_modifier $mod
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Shift+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -196,7 +197,7 @@ bar {
 		position top
 		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
 		#status_command $HELPER/conky-i3bar
-		status_command bumblebee-status -m weather caffeine load cpu memory nvidiagpu date time cmus pasink pasource -p interval=2.5 memory.format="{percent:05.02f}%" time.format="%H:%M CW %V" date.format="%a, %b %d %Y" -t solarized-powerline
+		status_command bumblebee-status -m weather caffeine load cpu memory nvidiagpu date time cmus pasink pasource -p interval=2.5 memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%a, %b %d %Y" -t solarized-powerline
 		colors {
 			background $bg-color
 			separator #757575
