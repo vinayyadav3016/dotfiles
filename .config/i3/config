@@ -252,7 +252,7 @@ exec --no-startup-id redshift
 exec --no-startup-id nitrogen --restore
 
 ## caffiene
-exec --no-startup-id caffeine -f
+exec --no-startup-id caffeine
 
 ## multi monitor settings
 #exec --no-startup-id sh $HOME/.screenlayout/horizontal.sh
@@ -282,7 +282,7 @@ for_window [title="^TerminalHtop$"] floating enable
 
 ### Application to be put on specific workspace
 assign [class="Firefox"] $workspace01
-assign [class="Vlc"] $workspace02
+assign [class="vlc"] $workspace02
 assign [class="Texmaker"] $workspace06
 assign [class="Wine"] $workspace06
 assign [class="Virtual"] $workspace07
