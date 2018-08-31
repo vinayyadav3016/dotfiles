@@ -107,6 +107,12 @@ Plug 'vim-scripts/ZoomWin'
 " [19]
 Plug 'vim-scripts/tComment'
 
+" [20]
+Plug 'ledger/vim-ledger'
+
+" [21]
+Plug 'jceb/vim-orgmode'
+
 """ TODO / Plugins to evaluate
 " Figure out how to create / version control my own snippets
 " Figure out how to change matchit to ALSO use <tab>
