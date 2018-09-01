@@ -1,0 +1,39 @@
+theme = "slick"
+icons = "awesome"
+
+[[block]]
+block = "temperature"
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m} {5m} {15m}"
+
+[[block]]
+block = "cpu"
+interval = 0.7
+
+[[block]]
+block = "memory"
+interval = 5
+info_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "nvidia_gpu"
+#label = "GT 1030"
+show_memory = true
+#show_clocks = true
+interval = 1
+
+[[block]]
+block = "uptime"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %Y/%m/%d %R"

@@ -197,7 +197,8 @@ bar {
 		position top
 		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
 		#status_command $HELPER/conky-i3bar
-		status_command bumblebee-status -m weather caffeine load cpu memory nvidiagpu date time cmus pasink pasource -p interval=2.5 memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%a, %b %d %Y" -t solarized-powerline
+		#status_command bumblebee-status -m weather load cpu memory nvidiagpu date time cmus pasink pasource -p interval=2.5 memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%a, %b %d %Y" -t solarized-powerline
+		status_command i3status-rs ~/.config/i3/helpers/config.toml
 		colors {
 			background $bg-color
 			separator #757575
