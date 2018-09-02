@@ -1,8 +1,9 @@
 #!/bin/bash
 
+DEVICE=JOKER
 ############################## Settings  #######################################
-BACKUPFOLDER=/home/vinay/SharedData/Backup/Devices/JOKER
-BACKUPFILE=${BACKUPFOLDER}/`date +%Y-%m-%d`.tar
+BACKUPFOLDER=/home/vinay/SharedData/Backup/Devices/${DEVICE}
+BACKUPFILE=${BACKUPFOLDER}/${DEVICE}_home_dotfile_`date +%Y-%m-%d`.tar.gz
 BACKUPFILELIST=${BACKUPFOLDER}/listoffiles.txt
 EXCLUDEFILE=${BACKUPFOLDER}/excludefolders.txt
 
@@ -15,7 +16,13 @@ pacman -Qqe > ${BACKUPFOLDER}/native_package.txt
 pacman -Qm  > ${BACKUPFOLDER}/mannual_package.txt
 
 ##################### Back them up #############################################
-tar -czf ${BACKUPFILE} -T ${BACKUPFILELIST} packages.txt
+tar -I pigz -cf ${BACKUPFILE} -T ${BACKUPFILELIST} packages.txt
+
+##################### Back them up #############################################
+BACKUPFILE=${BACKUPFOLDER}/${DEVICE}_etc_`date +%Y-%m-%d`.tar.gz
+sudo tar -I pigz -cf ${BACKUPFILE} /etc
+BACKUPFILE=${BACKUPFOLDER}/${DEVICE}_boot_`date +%Y-%m-%d`.tar.gz
+sudo tar -I pigz -cf ${BACKUPFILE} /boot
 
 ############################ Remove file #######################################
 rm ${BACKUPFILELIST}
