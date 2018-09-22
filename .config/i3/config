@@ -106,17 +106,36 @@ bindsym $mod+a focus parent
 
 # focus the child container
 bindsym $mod+Shift+a focus child
-
-set $workspace01 01_
-set $workspace02 02_♪
-set $workspace03 03
-set $workspace04 04
-set $workspace05 05
-set $workspace06 06
-set $workspace07 07_VM
-set $workspace08 08_Doc
-set $workspace09 09_Tmp
-set $workspace10 10_Tor
+# 
+#et $workspace01 01_
+#et $workspace02 02_♪
+#et $workspace03 03
+#et $workspace04 04
+#et $workspace05 05
+#et $workspace06 06_
+#et $workspace07 07_
+#et $workspace08 08_
+#et $workspace09 09_
+#et $workspace10 10_
+####
+set $workspace01 1
+set $workspace02 2
+set $workspace03 3
+set $workspace04 4
+set $workspace05 5
+set $workspace06 6
+set $workspace07 7
+set $workspace08 8
+set $workspace09 9
+set $workspace10 
+set $workspace11 
+set $workspace12 
+set $workspace13 ♪
+set $workspace14 
+set $workspace15 
+set $workspace16 
+set $workspace17 
+set $workspace18 
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace01
@@ -130,6 +149,26 @@ bindsym $mod+8 workspace $workspace08
 bindsym $mod+9 workspace $workspace09
 bindsym $mod+0 workspace $workspace10
 
+# addition switch to workspace
+bindsym F1 workspace $workspace11
+bindsym F2 workspace $workspace12
+bindsym F3 workspace $workspace13
+bindsym F4 workspace $workspace14
+bindsym F5 workspace $workspace15
+bindsym F6 workspace $workspace16
+bindsym F7 workspace $workspace17
+bindsym F8 workspace $workspace18
+#bindsym F9 workspace $workspace19
+bindsym $mod+mod1+1 workspace $workspace11
+bindsym $mod+mod1+2 workspace $workspace12
+bindsym $mod+mod1+3 workspace $workspace13
+bindsym $mod+mod1+4 workspace $workspace14
+bindsym $mod+mod1+5 workspace $workspace15
+bindsym $mod+mod1+6 workspace $workspace16
+bindsym $mod+mod1+7 workspace $workspace17
+bindsym $mod+mod1+8 workspace $workspace18
+#bindsym $mod+mod1+9 workspace $workspace19
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace01
 bindsym $mod+Shift+2 move container to workspace $workspace02
@@ -141,6 +180,15 @@ bindsym $mod+Shift+7 move container to workspace $workspace07
 bindsym $mod+Shift+8 move container to workspace $workspace08
 bindsym $mod+Shift+9 move container to workspace $workspace09
 bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+F1 move container to workspace $workspace11
+bindsym $mod+Shift+F2 move container to workspace $workspace12
+bindsym $mod+Shift+F3 move container to workspace $workspace13
+bindsym $mod+Shift+F4 move container to workspace $workspace14
+bindsym $mod+Shift+F5 move container to workspace $workspace15
+bindsym $mod+Shift+F6 move container to workspace $workspace16
+bindsym $mod+Shift+F7 move container to workspace $workspace17
+bindsym $mod+Shift+F8 move container to workspace $workspace18
+#bindsym $mod+Shift+F9 move container to workspace $workspace19
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -284,14 +332,20 @@ for_window [title="^TerminalHtop$"] floating enable
 for_window [class="Xfce4-notes"] floating enable
 
 ### Application to be put on specific workspace
-assign [class="Firefox"] $workspace01
-assign [class="vlc"] $workspace02
-assign [class="Texmaker"] $workspace06
-assign [class="Wine"] $workspace06
-assign [class="Virtual"] $workspace07
-assign [class="okular"] $workspace08
-assign [class="^Thunar$"] $workspace09
-assign [class="^Pcmanfm$"] $workspace09
-assign [class="^Pulseaudio-equalizer"] $workspace09
-assign [class="Tor Browser"] $workspace10
-assign [class="Transmission-gtk"] $workspace10
+assign [class="Firefox"]      $workspace11
+assign [class="Chrome"]       $workspace12
+assign [class="vlc"]          $workspace13
+assign [class="pulseaudio"]   $workspace13
+assign [class="retro"]        $workspace14
+###
+assign [class="Texmaker"]     $workspace15
+assign [class="okular"]       $workspace16
+assign [class="QuiteRss"]     $workspace16
+assign [class="Wine"]         $workspace17
+assign [class="Virtual"]      $workspace17
+assign [class="Tor"]          $workspace18
+assign [class="Transmission"] $workspace18
+###
+assign [class="^Thunar$"]     $workspace10
+assign [class="^Pcmanfm$"]    $workspace10
+assign [class="springseed"]   $workspace10
