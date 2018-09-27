@@ -16,8 +16,7 @@ pacman -Qqe > ${BACKUPFOLDER}/native_package.txt
 pacman -Qm  > ${BACKUPFOLDER}/mannual_package.txt
 
 ##################### Back them up #############################################
-tar -I pigz -cf ${BACKUPFILE} -T ${BACKUPFILELIST} packages.txt
-
+tar -I pigz -cf ${BACKUPFILE} -T ${BACKUPFILELIST} ${BACKUPFOLDER}/native_package.txt ${BACKUPFOLDER}/mannual_package.txt
 ##################### Back them up #############################################
 BACKUPFILE=${BACKUPFOLDER}/${DEVICE}_etc_`date +%Y-%m-%d`.tar.gz
 sudo tar -I pigz -cf ${BACKUPFILE} /etc

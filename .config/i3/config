@@ -150,14 +150,14 @@ bindsym $mod+9 workspace $workspace09
 bindsym $mod+0 workspace $workspace10
 
 # addition switch to workspace
-bindsym F1 workspace $workspace11
-bindsym F2 workspace $workspace12
-bindsym F3 workspace $workspace13
-bindsym F4 workspace $workspace14
-bindsym F5 workspace $workspace15
-bindsym F6 workspace $workspace16
-bindsym F7 workspace $workspace17
-bindsym F8 workspace $workspace18
+bindsym $mod+F1 workspace $workspace11
+bindsym $mod+F2 workspace $workspace12
+bindsym $mod+F3 workspace $workspace13
+bindsym $mod+F4 workspace $workspace14
+bindsym $mod+F5 workspace $workspace15
+bindsym $mod+F6 workspace $workspace16
+bindsym $mod+F7 workspace $workspace17
+bindsym $mod+F8 workspace $workspace18
 #bindsym F9 workspace $workspace19
 bindsym $mod+mod1+1 workspace $workspace11
 bindsym $mod+mod1+2 workspace $workspace12
@@ -333,7 +333,7 @@ for_window [class="Xfce4-notes"] floating enable
 
 ### Application to be put on specific workspace
 assign [class="Firefox"]      $workspace11
-assign [class="Chrome"]       $workspace12
+assign [class="chrome"]       $workspace12
 assign [class="vlc"]          $workspace13
 assign [class="pulseaudio"]   $workspace13
 assign [class="retro"]        $workspace14
