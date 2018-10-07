@@ -126,7 +126,7 @@ set $workspace05 5
 set $workspace06 6
 set $workspace07 7
 set $workspace08 8
-set $workspace09 9
+set $workspace09 
 set $workspace10 
 set $workspace11 
 set $workspace12 
@@ -324,7 +324,7 @@ for_window [title="^File Operation Progress$"] floating enable
 for_window [title="^Current Media Information$"] floating enable
 for_window [class="^cameraclient$"] floating enable
 for_window [class="^blueman-manager$"] floating enable
-for_window [class="^galculator$"] floating enable
+for_window [class="gnome-calculator"] floating enable
 for_window [class="^Yad"] floating enable
 for_window [class="^gnuplot"] floating enable
 for_window [class="^Pulseaudio-equalizer"] floating enable
@@ -332,6 +332,9 @@ for_window [title="^TerminalHtop$"] floating enable
 for_window [class="Xfce4-notes"] floating enable
 
 ### Application to be put on specific workspace
+assign [class="Gimp"]         $workspace09
+assign [class="Darktable"]    $workspace09
+###
 assign [class="Firefox"]      $workspace11
 assign [class="chrome"]       $workspace12
 assign [class="vlc"]          $workspace13
