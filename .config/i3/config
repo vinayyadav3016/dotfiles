@@ -241,7 +241,7 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 bar {
 		#output eDP-1
 		#tray_output none
-		#mode hide
+		mode hide
 		position top
 		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
 		#status_command $HELPER/conky-i3bar
@@ -307,11 +307,14 @@ exec --no-startup-id caffeine
 ## multi monitor settings
 #exec --no-startup-id sh $HOME/.screenlayout/horizontal.sh
 
+## Start Vimserver
+#exec --no-startup-id i3-msg 'workspace $workspace08; exec /usr/bin/gnome-terminal -e "vim --servername tmp"'
+
 # bar toggle, hide or show 
-#bindsym $mod+m bar mode toggle
+bindsym $mod+m bar mode toggle
 ## Move workspace to other monitor
-bindsym $mod+m move workspace to output left
-bindsym $mod+Shift+m move workspace to output right
+#bindsym $mod+m move workspace to output left
+#bindsym $mod+Shift+m move workspace to output right
 
 ## Application if need floating
 #for_window [class="^Thunar$"] floating enable
@@ -338,6 +341,7 @@ assign [class="Darktable"]    $workspace09
 assign [class="Firefox"]      $workspace11
 assign [class="chrome"]       $workspace12
 assign [class="vlc"]          $workspace13
+assign [class="clementine"]   $workspace13
 assign [class="pulseaudio"]   $workspace13
 assign [class="retro"]        $workspace14
 ###

@@ -113,6 +113,9 @@ Plug 'ledger/vim-ledger'
 " [21]
 Plug 'jceb/vim-orgmode'
 
+" [22]
+Plug 'JamshedVesuna/vim-markdown-preview'
+
 """ TODO / Plugins to evaluate
 " Figure out how to create / version control my own snippets
 " Figure out how to change matchit to ALSO use <tab>
@@ -208,6 +211,9 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " [16]
 set sessionoptions-=options
 let g:session_autosave = 'no'
+
+" [22]
+let vim_markdown_preview_browser='midori'
 
 " Not sure what the below code does...look into Tern docs etc and figure it out?
 " Found this snippet on a forum post that says it gets everything working
