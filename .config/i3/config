@@ -337,6 +337,7 @@ for_window [class="Xfce4-notes"] floating enable
 ### Application to be put on specific workspace
 assign [class="Gimp"]         $workspace09
 assign [class="Darktable"]    $workspace09
+assign [class="gpicview"]     $workspace09
 ###
 assign [class="Firefox"]      $workspace11
 assign [class="chrome"]       $workspace12
