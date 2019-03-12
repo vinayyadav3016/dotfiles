@@ -241,8 +241,9 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 bar {
 		#output eDP-1
 		#tray_output none
-		mode hide
+		#mode hide
 		position top
+		#position bottom
 		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
 		#status_command $HELPER/conky-i3bar
 		#status_command bumblebee-status -m weather load cpu memory nvidiagpu date time cmus pasink pasource -p interval=2.5 memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%a, %b %d %Y" -t solarized-powerline
@@ -315,6 +316,8 @@ bindsym $mod+m bar mode toggle
 ## Move workspace to other monitor
 #bindsym $mod+m move workspace to output left
 #bindsym $mod+Shift+m move workspace to output right
+for_window [class="^.*"] border pixel 1
+new_window 1pixel
 
 ## Application if need floating
 #for_window [class="^Thunar$"] floating enable
