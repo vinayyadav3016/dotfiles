@@ -318,6 +318,8 @@ bindsym $mod+m bar mode toggle
 #bindsym $mod+Shift+m move workspace to output right
 for_window [class="^.*"] border pixel 1
 new_window 1pixel
+gaps inner 2
+gaps outer 0
 
 ## Application if need floating
 #for_window [class="^Thunar$"] floating enable
