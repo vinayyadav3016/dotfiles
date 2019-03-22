@@ -64,6 +64,7 @@ set autoindent
 
 " Set foldmethod
 set foldmethod=syntax
+set nofoldenable
 
 " Display extra whitespace
 set list

@@ -350,6 +350,7 @@ assign [class="vlc"]          $workspace13
 assign [class="clementine"]   $workspace13
 assign [class="pulseaudio"]   $workspace13
 assign [class="retro"]        $workspace14
+assign [class="^Steam"]        $workspace14
 ###
 assign [class="Texmaker"]     $workspace15
 assign [class="okular"]       $workspace16
