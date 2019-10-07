@@ -345,6 +345,7 @@ assign [class="Darktable"]    $workspace09
 assign [class="gpicview"]     $workspace09
 ###
 assign [class="Firefox"]      $workspace11
+assign [class="firefox"]      $workspace11
 assign [class="chrome"]       $workspace12
 assign [class="vlc"]          $workspace13
 assign [class="clementine"]   $workspace13
