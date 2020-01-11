@@ -303,7 +303,7 @@ exec --no-startup-id redshift
 exec --no-startup-id nitrogen --restore
 
 ## caffiene
-exec --no-startup-id caffeine
+exec --no-startup-id caffeine-indicator
 
 ## multi monitor settings
 #exec --no-startup-id sh $HOME/.screenlayout/horizontal.sh

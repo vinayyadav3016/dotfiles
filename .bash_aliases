@@ -26,6 +26,8 @@ alias fsize='du -h -d 1'
 alias pacnor='pacman -Qt'
 alias upaur='yay -Sau'
 alias aurpackages='pacman -Qm'
+alias orppac='pacman -Qdtq'
+#alias make='colormake'
 alias vimservd='vim --servername tmp'
 alias vimserve='vim --servername tmp --remote'
 # Add an "alert" alias for long running commands.  Use like so:
