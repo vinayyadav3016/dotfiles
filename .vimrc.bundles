@@ -78,6 +78,8 @@ Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/
 Plug 'ervandew/supertab'
 "Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
+Plug 'joereynolds/gtags-scope'
+Plug 'jsfaint/gen_tags.vim'
 
 " [11]
 Plug 'editorconfig/editorconfig-vim'
@@ -214,6 +216,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+set cscopetag "search both cscopes db and the tags file
 
 " [16]
 set sessionoptions-=options
