@@ -8,21 +8,15 @@ if &compatible
 end
 
 call plug#begin('~/.vim/bundle/')
-
-""" Theme / Pretty stuff
-"""
-
 " [0] let vundle manage
 Plug 'VundleVim/Vundle.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [1] Themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim'
-Plug 'octol/vim-cpp-enhanced-highlight'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] File tree viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Fugitive will help with git related stuff, and show branch on status
 Plug 'tpope/vim-fugitive' | Plug 'bling/vim-airline'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [3] Tmux
@@ -32,7 +26,7 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'christoomey/vim-run-interactive'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [4] search filesystem with ctrl+p
-"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [5] highlighting for Javascript
 "Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
@@ -54,7 +48,7 @@ Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 " [8] Diary, notes, whatever. It's amazing
 Plug 'vimwiki/vimwiki'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [9]
+" [9] Snippets
 Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/vim-snippets'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [10] Autocomplete tags
@@ -70,6 +64,7 @@ Plug 'editorconfig/editorconfig-vim'
 " [12] C Specific
 Plug 'vim-scripts/c.vim'
 Plug 'majutsushi/tagbar'
+Plug 'octol/vim-cpp-enhanced-highlight'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [13]
 "Plug 'joonty/vdebug'
@@ -97,42 +92,29 @@ Plug 'ledger/vim-ledger'
 " [20]
 "Plug 'JamshedVesuna/vim-markdown-preview'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""" TODO / Plugins to evaluate
-" Figure out how to create / version control my own snippets
-" Figure out how to change matchit to ALSO use <tab>
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'junegunn/vim-easy-align'
-
-
 call plug#end()
-
-"""" PLUGIN RELATED TWEAKS
-""
-"
-
-" [1]
-" Color scheme
-syntax enable
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [1] Color scheme
 let g:solarized_termcolors=16
 set background=dark
 colorscheme solarized
-" colorscheme dracula
-" colorscheme octol
+"colorscheme desert
+"colorscheme dracula
+"colorscheme octol
 " Allow powerline symbols to show up
 let g:airline_powerline_fonts = 1
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 map <silent> <C-n> :NERDTreeToggle<cr>
-" nnoremap <C-t> :call ToggleRelativeOn()<cr>
-map <silent> <leader>k :NERDTreeToggle<cr>
-map <silent> <leader>t :call ToggleRelativeOn()<cr>
-" Close vim if only NERDTree is open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"nnoremap <C-t> :call ToggleRelativeOn()<cr>
+map <silent> <leader>ntt :NERDTreeToggle<cr>
+let g:fzf_layout = { 'down': '~25%'  }
+"map <silent> <leader>t :call ToggleRelativeOn()<cr>
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
-let g:fzf_layout = { 'down': '~25%'  }
-
+" Close vim if only NERDTree is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [3]
 " Allow moving around between Tmux windows
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
@@ -141,24 +123,28 @@ nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 1
-"
 "Open a tmux pane with Node
 nnoremap <leader>node :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'node'}<cr>
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [4]
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_working_path_mode = 'r'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
+"if executable('ag')
+"  " Use Ag over Grep
+"  set grepprg=ag\ --nogroup\ --nocolor
+"
+"  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+"  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"  let g:ctrlp_working_path_mode = 'r'
+"
+"  " ag is fast enough that CtrlP doesn't need to cache
+"let g:ctrlp_use_caching = 0
+"endif
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|o|a|out|so*)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [5] configure syntastic syntax checking to check on open as well as save
 nnoremap <leader>sc :SyntasticCheck<cr>
 let g:syntastic_always_populate_loc_list = 1
@@ -176,53 +162,50 @@ let g:pymode_lint_on_write = 0
 " Allow highlighting of HTML within Javascript (for React)
 let g:javascript_enable_domhtmlcss = 1
 let g:jsx_ext_required = 0
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Key mapping for Cosco.vim - space + ; to add semicolon or comma in Javascript or CSS
 autocmd FileType javascript,css nnoremap <silent> <Leader>; :call cosco#commaOrSemiColon()<CR>
 autocmd FileType javascript,css inoremap <silent> <Leader>; <c-o>:call cosco#commaOrSemiColon()<CR>
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Gist setup
 let g:gist_clip_command = 'pbcopy' "Using Gist will copy URL to clipboard automatically
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [8] Set Vim Wiki to my Dropbox directory
 let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [9]
 " Set ultisnips triggers
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [10] make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 set cscopetag "search both cscopes db and the tags file
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [12]
-nnoremap <Leader>tbo :TagbarOpen j<CR>
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+"let g:cpp_experimental_simple_template_highlight = 1 " slower
+let g:cpp_experimental_template_highlight = 1 " faster
+let g:cpp_concepts_highlight = 1
+"let g:cpp_no_function_highlight = 1
+nnoremap <silent><Leader>tbo :TagbarOpen j<CR>
 "inoremap <F2> <Esc>:TagbarOpen j<CR>a
-
-nnoremap <Leader>tbt :TagbarToggle<CR>
+nnoremap <silent><Leader>tbt :TagbarToggle<CR>
 "inoremap <S-F2> <Esc>:TagbarToggle<CR>a
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [16]
 set sessionoptions-=options
 let g:session_autosave = 'no'
-
-" [22]
-let vim_markdown_preview_browser='midori'
-
-" Not sure what the below code does...look into Tern docs etc and figure it out?
-" Found this snippet on a forum post that says it gets everything working
-" https://github.com/Valloric/YouCompleteMe/issues/570
-" autocmd FileType javascript setlocal omnifunc=tern#Complete
-
-" " Run commands that require an interactive shell
-" nnoremap <Leader>r :RunInInteractiveShell<space>
-"
-
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [20]
+"let vim_markdown_preview_browser='midori'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

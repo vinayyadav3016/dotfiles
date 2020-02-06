@@ -122,7 +122,7 @@ autocmd InsertEnter * call ToggleRelativeOn()
 autocmd InsertLeave * call ToggleRelativeOn()
 
 "Use enter to create new lines w/o entering insert mode
-nnoremap <CR> o<Esc>
+"nnoremap <CR> o<Esc>
 "Below is to fix issues with the ABOVE mappings in quickfix window
 autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
@@ -153,11 +153,6 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Always use vertical diffs
 set diffopt+=vertical
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
 
 " Disable session plugin
 " let g:loaded_session = 1
@@ -165,6 +160,13 @@ endif
 " Load up all of our plugins
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
+endif
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax enable
+  syntax on
 endif
 
 filetype plugin indent on
