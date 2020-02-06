@@ -35,11 +35,11 @@ Plug 'christoomey/vim-run-interactive'
 "Plug 'ctrlpvim/ctrlp.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [5] highlighting for Javascript
-"Plug 'scrooloose/syntastic' "Syntax Highlighting
 "Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 "Plug 'jimmyhchan/dustjs.vim' "Highlighting for dust
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Utilities
+Plug 'scrooloose/syntastic' "Syntax Highlighting
 "Plug 'jiangmiao/auto-pairs' "MANY features, but mostly closes ([{' etc
 Plug 'tpope/vim-surround'
 "Plug 'vim-scripts/HTML-AutoCloseTag' "close tags after >
@@ -160,15 +160,19 @@ if executable('ag')
 endif
 
 " [5] configure syntastic syntax checking to check on open as well as save
-nnoremap <leader>c :SyntasticCheck<cr>
+nnoremap <leader>sc :SyntasticCheck<cr>
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0 " Don't auto open/close location list
 let g:syntastic_check_on_open=0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_mode="passive"
+let g:syntastic_enable_signs=0
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 " pymode setting
 let g:pymode_lint_on_write = 0
 "let g:pymode_python = 'python3'
 "let g:pymode_rope=0
 "let g:pymode_run = 0
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 " Allow highlighting of HTML within Javascript (for React)
 let g:javascript_enable_domhtmlcss = 1
 let g:jsx_ext_required = 0
@@ -197,6 +201,13 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 set cscopetag "search both cscopes db and the tags file
+
+" [12]
+nnoremap <Leader>tbo :TagbarOpen j<CR>
+"inoremap <F2> <Esc>:TagbarOpen j<CR>a
+
+nnoremap <Leader>tbt :TagbarToggle<CR>
+"inoremap <S-F2> <Esc>:TagbarToggle<CR>a
 
 " [16]
 set sessionoptions-=options

@@ -7,7 +7,7 @@ set encoding=utf-8
 set nocompatible
 set ts=4
 set sw=4
-let mapleader=","
+let mapleader=" "
 "autocmd BufEnter * set mouse=
 set mouse-=a
 set colorcolumn=80
