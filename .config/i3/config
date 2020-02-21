@@ -126,7 +126,7 @@ set $workspace05 5
 set $workspace06 6
 set $workspace07 7
 set $workspace08 8
-set $workspace09 
+set $workspace09 
 set $workspace10 
 set $workspace11 
 set $workspace12 
@@ -136,6 +136,7 @@ set $workspace15 
 set $workspace16 
 set $workspace17 
 set $workspace18 
+set $workspace19 
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace01
@@ -158,7 +159,7 @@ bindsym $mod+F5 workspace $workspace15
 bindsym $mod+F6 workspace $workspace16
 bindsym $mod+F7 workspace $workspace17
 bindsym $mod+F8 workspace $workspace18
-#bindsym F9 workspace $workspace19
+bindsym $mod+F9 workspace $workspace19
 bindsym $mod+mod1+1 workspace $workspace11
 bindsym $mod+mod1+2 workspace $workspace12
 bindsym $mod+mod1+3 workspace $workspace13
@@ -167,7 +168,7 @@ bindsym $mod+mod1+5 workspace $workspace15
 bindsym $mod+mod1+6 workspace $workspace16
 bindsym $mod+mod1+7 workspace $workspace17
 bindsym $mod+mod1+8 workspace $workspace18
-#bindsym $mod+mod1+9 workspace $workspace19
+bindsym $mod+mod1+9 workspace $workspace19
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace01
@@ -188,7 +189,7 @@ bindsym $mod+Shift+F5 move container to workspace $workspace15
 bindsym $mod+Shift+F6 move container to workspace $workspace16
 bindsym $mod+Shift+F7 move container to workspace $workspace17
 bindsym $mod+Shift+F8 move container to workspace $workspace18
-#bindsym $mod+Shift+F9 move container to workspace $workspace19
+bindsym $mod+Shift+F9 move container to workspace $workspace19
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

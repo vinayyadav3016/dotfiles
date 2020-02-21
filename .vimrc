@@ -7,7 +7,7 @@ set encoding=utf-8
 set nocompatible
 set ts=4
 set sw=4
-let mapleader=" "
+let mapleader=","
 "autocmd BufEnter * set mouse=
 set mouse-=a
 set colorcolumn=80
@@ -126,26 +126,6 @@ autocmd InsertLeave * call ToggleRelativeOn()
 "Below is to fix issues with the ABOVE mappings in quickfix window
 autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
-
-" Quicker window movement
-let g:C_Ctrl_j = 'off'
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-" <c-h> is interpreted as <bs> in neovim
-" This is a bandaid fix until the team decides how
-" they want to handle fixing it...(https://github.com/neovim/neovim/issues/2048)
-nnoremap <silent> <bs> :TmuxNavigateLeft<cr>
-
-" Navigate properly when lines are wrapped
-nnoremap j gj
-nnoremap k gk
-
-" Use tab to jump between blocks, because it's easier
-nnoremap <tab> %
-vnoremap <tab> %
-
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
@@ -165,17 +145,30 @@ endif
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax enable
   syntax on
 endif
 
 filetype plugin indent on
-vnoremap > >gv
-vnoremap < <gv
 autocmd Filetype python setlocal expandtab
 
-"autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
-
+" Quicker window movement
+let g:C_Ctrl_j = 'off'
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+" <c-h> is interpreted as <bs> in neovim
+" This is a bandaid fix until the team decides how
+" they want to handle fixing it...(https://github.com/neovim/neovim/issues/2048)
+nnoremap <silent> <bs> :TmuxNavigateLeft<cr>
+" Navigate properly when lines are wrapped
+nnoremap j gj
+nnoremap k gk
+" Use tab to jump between blocks, because it's easier
+nnoremap <tab> %
+vnoremap <tab> %
+vnoremap > >gv
+vnoremap < <gv
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
 " set pastetoggle=<F2> "F2 before pasting to preserve indentation
 set pastetoggle=<leader>v
@@ -184,64 +177,46 @@ set pastetoggle=<leader>v
 vnoremap <C-c> "*y
 map <silent><Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
 map <silent><Leader><S-p> :set paste<CR>O<esc>"*]p:set nopaste<cr>"
-
-""" MORE AWESOME HOTKEYS
-"
-"
 " Run the q macro
 nnoremap <leader>q @q
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
 " bind \ (backward slash) to grep shortcut
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
-
 "Map Ctrl + S to save in any mode
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
-" Also map leader + s
-map <leader>s <C-S>
-
+noremap  <silent>  <C-S>          :update<CR>
+vnoremap <silent>  <C-S>         <C-C>:update<CR>
+inoremap <silent>  <C-S>         <C-O>:update<CR>
+map      <leader>s <C-S>
 " Quickly close windows
 nnoremap <leader>x :x<cr>
 nnoremap <leader>X :q!<cr>
-
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
-
 " resize panes
 nnoremap <silent> <Right> :vertical resize +5<cr>
 nnoremap <silent> <Left> :vertical resize -5<cr>
 nnoremap <silent> <Up> :resize +5<cr>
 nnoremap <silent> <Down> :resize -5<cr>
-
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
-
 " Switch between the last two files
-" nnoremap <leader><leader> <c-^>
+nnoremap <leader><leader> <c-^>
 hi TabLineFill ctermfg=DarkGreen ctermbg=DarkGreen
 " hi TabLine ctermfg=Blue ctermbg=Yellow
 hi TabLineSel ctermfg=LightGreen ctermbg=Yellow
-
 " AUTOCOMMANDS - Do stuff
-
 " Save whenever switching windows or leaving vim. This is useful when running
 " the tests inside vim without having to save all files first.
 au FocusLost,WinLeave * :silent! wa
-
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
-
 "update dir to current file
 "autocmd BufEnter * silent! cd %:p:h
-
 augroup vimrcEx
   autocmd!
-
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
   " inside an event handler (happens when dropping a file on gvim).
@@ -271,7 +246,6 @@ augroup vimrcEx
   autocmd FileType css,scss,sass,less setlocal iskeyword+=-
 augroup END
 
-
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
@@ -283,6 +257,8 @@ function! InsertTabWrapper()
         return "\<c-p>"
     endif
 endfunction
+"highlight ColorColumn ctermbg=lightgrey
+highlight CursorLine ctermbg=black
 " For per project configuration
 set exrc
 set secure
