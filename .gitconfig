@@ -7,4 +7,4 @@
 [credential]
 	helper = /usr/lib/git-core/git-credential-gnome-keyring
 [pack]
-	threads = 0
+	threads = 2
