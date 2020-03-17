@@ -34,7 +34,7 @@ set autoread      " Reload files changed outside vim
 au FocusGained,BufEnter * :silent! !
 
 "Set default font in mac vim and gvim
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+"set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set cursorline    " highlight the current line
 set visualbell    " stop that ANNOYING beeping
 set wildmenu
@@ -63,7 +63,7 @@ set noexpandtab
 set autoindent
 
 " Set foldmethod
-set foldmethod=syntax
+set foldmethod=indent
 set nofoldenable
 
 " Display extra whitespace
