@@ -335,11 +335,13 @@ for_window [title="^Current Media Information$"] floating enable
 for_window [class="^cameraclient$"]              floating enable
 for_window [class="^blueman-manager$"]           floating enable
 for_window [class="gnome-calculator"]            floating enable
+for_window [class="Gnome-calculator"]            floating enable
 for_window [class="^Yad"]                        floating enable
 for_window [class="^gnuplot"]                    floating enable
 for_window [class="^Pulseaudio-equalizer"]       floating enable
 for_window [title="^TerminalHtop$"]              floating enable
 for_window [class="Xfce4-notes"]                 floating enable
+for_window [class="rdesktop"]                    floating enable
 
 ### Application to be put on specific workspace
 assign [class="code-oss"]     $workspace09
