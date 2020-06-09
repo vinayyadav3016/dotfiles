@@ -101,3 +101,7 @@ set -o vi
 if [ -f ~/.bashrc.local ]; then
     . ~/.bashrc.local
 fi
+
+if [ -f ~/.config/broot/launcher/bash/br ]; then
+    . ~/.config/broot/launcher/bash/br
+fi
