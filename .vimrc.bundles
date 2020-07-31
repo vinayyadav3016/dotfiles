@@ -23,9 +23,9 @@ Plug 'tpope/vim-fugitive' | Plug 'bling/vim-airline'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [3] Tmux
 " Several plugins to help work with Tmux
-"Plug 'christoomey/vim-tmux-navigator'
-"Plug 'christoomey/vim-tmux-runner'
-"Plug 'christoomey/vim-run-interactive'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'christoomey/vim-run-interactive'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [4] search filesystem with ctrl+p
 Plug 'ctrlpvim/ctrlp.vim'

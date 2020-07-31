@@ -100,6 +100,13 @@ set matchpairs+=<:>
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
+" Quicker window movement
+let g:C_Ctrl_j = 'off'
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -151,12 +158,7 @@ endif
 filetype plugin indent on
 autocmd Filetype python setlocal expandtab
 
-" Quicker window movement
-let g:C_Ctrl_j = 'off'
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+
 " <c-h> is interpreted as <bs> in neovim
 " This is a bandaid fix until the team decides how
 " they want to handle fixing it...(https://github.com/neovim/neovim/issues/2048)
