@@ -126,19 +126,35 @@ set $workspace04 4
 set $workspace05 5
 set $workspace06 6
 set $workspace07 7
-set $workspace08 8
+set $workspace08 
 set $workspace09 
 set $workspace10 
 set $workspace11 
 set $workspace12 
 set $workspace13 
-set $workspace14 
+#set $workspace14 
+set $workspace14 
 set $workspace15 
 set $workspace16 
 set $workspace17 
 set $workspace18 
 set $workspace19 
 set $workspace20 ♪
+
+#
+workspace $workspace01 output HDMI-0
+workspace $workspace08 output HDMI-0
+workspace $workspace10 output HDMI-0
+workspace $workspace11 output HDMI-0
+workspace $workspace18 output HDMI-0
+workspace $workspace20 output HDMI-0
+#
+workspace $workspace12 output VGA-0
+workspace $workspace13 output VGA-0
+workspace $workspace14 output VGA-0
+workspace $workspace15 output VGA-0
+workspace $workspace17 output VGA-0
+workspace $workspace19 output VGA-0
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace01
@@ -205,26 +221,26 @@ bindsym $mod+Shift+e exec $HELPER/logout.py
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+		# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize  shrink width  10 px or 10 ppt
-        bindsym j resize  grow   height 10 px or 10 ppt
-        bindsym k resize  shrink height 10 px or 10 ppt
-        bindsym l resize  grow   width  10 px or 10 ppt
+		# Pressing left will shrink the window’s width.
+		# Pressing right will grow the window’s width.
+		# Pressing up will shrink the window’s height.
+		# Pressing down will grow the window’s height.
+		bindsym h resize  shrink width  10 px or 10 ppt
+		bindsym j resize  grow   height 10 px or 10 ppt
+		bindsym k resize  shrink height 10 px or 10 ppt
+		bindsym l resize  grow   width  10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left  resize shrink width  10 px or 10 ppt
-        bindsym Down  resize grow   height 10 px or 10 ppt
-        bindsym Up    resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow   width  10 px or 10 ppt
+		# same bindings, but for the arrow keys
+		bindsym Left  resize shrink width  10 px or 10 ppt
+		bindsym Down  resize grow   height 10 px or 10 ppt
+		bindsym Up    resize shrink height 10 px or 10 ppt
+		bindsym Right resize grow   width  10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+		# back to normal: Enter or Escape
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode  "resize"
@@ -269,7 +285,7 @@ bar {
 		#mode hide
 		position top
 		#position bottom
-		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
+		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 		#status_command $HELPER/conky-i3bar
 		#status_command bumblebee-status -m weather load cpu memory nvidiagpu date time cmus pasink pasource -p interval=2.5 memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%a, %b %d %Y" -t solarized-powerline
 		#status_command i3status-rs ~/.config/i3/helpers/config.toml
@@ -294,6 +310,8 @@ bindsym $mod+m bar mode toggle
 ## Move workspace to other monitor
 bindsym $mod+Shift+less move workspace to output left
 bindsym $mod+Shift+greater move workspace to output right
+
+#
 for_window [class="^.*"] border pixel 1
 new_window 1pixel
 gaps inner 1
