@@ -1,0 +1,32 @@
+theme = "slick"
+#theme = "solarized-dark"
+icons = "awesome"
+
+[[block]]
+block     = "temperature"
+collapsed = false
+interval  = 1
+
+[[block]]
+block    = "load"
+interval = 2
+format   = "{1m} {5m} {15m}"
+
+[[block]]
+block    = "cpu"
+interval = 2
+
+[[block]]
+block       = "memory"
+interval    = 2
+info_type   = "memory"
+format_mem  = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "uptime"
+
+[[block]]
+block    = "time"
+interval = 60
+format   = "%a %Y/%m/%d %R"

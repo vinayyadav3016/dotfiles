@@ -118,6 +118,8 @@ bindsym $mod+Shift+a focus child
 #et $workspace08 08_
 #et $workspace09 09_
 #et $workspace10 10_
+#et $workspace14 
+#et $workspace14 
 ####
 set $workspace01 1
 set $workspace02 2
@@ -132,8 +134,7 @@ set $workspace10 
 set $workspace11 
 set $workspace12 
 set $workspace13 
-#set $workspace14 
-set $workspace14 
+set $workspace14 
 set $workspace15 
 set $workspace16 
 set $workspace17 
@@ -285,10 +286,10 @@ bar {
 		#mode hide
 		position top
 		#position bottom
-		status_command i3blocks -c ~/.config/i3/i3blocks.conf
+		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
 		#status_command $HELPER/conky-i3bar
 		#status_command bumblebee-status -m weather load cpu memory nvidiagpu date time cmus pasink pasource -p interval=2.5 memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%a, %b %d %Y" -t solarized-powerline
-		#status_command i3status-rs ~/.config/i3/helpers/config.toml
+		status_command i3status-rs ~/.config/i3/helpers/config.toml.2
 		colors {
 			background $bg-color
 			separator #757575
