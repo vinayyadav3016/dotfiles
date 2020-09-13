@@ -181,8 +181,8 @@ let g:javascript_enable_domhtmlcss = 1
 let g:jsx_ext_required = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Key mapping for Cosco.vim - space + ; to add semicolon or comma in Javascript or CSS
-autocmd FileType javascript,css nnoremap <silent> <Leader>; :call cosco#commaOrSemiColon()<CR>
-autocmd FileType javascript,css inoremap <silent> <Leader>; <c-o>:call cosco#commaOrSemiColon()<CR>
+autocmd FileType javascript,css nnoremap <silent> <leader>; :call cosco#commaOrSemiColon()<CR>
+autocmd FileType javascript,css inoremap <silent> <leader>; <c-o>:call cosco#commaOrSemiColon()<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Gist setup
 let g:gist_clip_command = 'pbcopy' "Using Gist will copy URL to clipboard automatically
@@ -229,9 +229,9 @@ let c_no_curly_error=1
 "
 let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
-nnoremap <silent><Leader>tbo :TagbarOpen j<CR>
+nnoremap <silent><leader>tbo :TagbarOpen j<CR>
 "inoremap <F2> <Esc>:TagbarOpen j<CR>a
-nnoremap <silent><Leader>tbt :TagbarToggle<CR>
+nnoremap <silent><leader>tbt :TagbarToggle<CR>
 "inoremap <S-F2> <Esc>:TagbarToggle<CR>a
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [16]
