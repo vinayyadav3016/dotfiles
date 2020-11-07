@@ -3,6 +3,21 @@ theme = "slick"
 icons = "awesome"
 
 [[block]]
+block = "net"
+device = "wlp0s20f3"
+format = "{ssid} {signal_strength}"
+interval = 5
+use_bits = false
+
+[[block]]
+block = "battery"
+driver = "upower"
+format = "{percentage}% {time}"
+
+[[block]]
+block = "backlight"
+
+[[block]]
 block     = "temperature"
 collapsed = false
 interval  = 1
@@ -22,6 +37,9 @@ interval    = 2
 info_type   = "memory"
 format_mem  = "{Mup}%"
 format_swap = "{SUp}%"
+
+[[block]]
+block = "sound"
 
 [[block]]
 block = "uptime"

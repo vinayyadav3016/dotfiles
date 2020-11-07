@@ -71,7 +71,7 @@ set list
 " set listchars=tab:»·,trail:·,nbsp:·
 set listchars=tab:»·,trail:⋅,extends:❯,precedes:❮,nbsp:·
 " set listchars=tab:→·,eol:¬,trail:⋅,extends:❯,precedes:❮,nbsp:·
-set showbreak=↪
+let &showbreak="\u21aa "
 
 " Make it obvious where 80 characters is
 set textwidth=80

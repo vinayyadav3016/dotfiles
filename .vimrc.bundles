@@ -81,7 +81,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 "Plug 'godlygeek/tabular'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [15]
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [16] Vim Session
 Plug 'xolox/vim-session'
@@ -120,6 +120,7 @@ call togglebg#map("<F5>")
 "colorscheme monokai
 " Allow powerline symbols to show up
 let g:airline_powerline_fonts = 1
+let g:powerline_pycmd = 'py3'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 map <silent> <C-n> :NERDTreeToggle<cr>
@@ -233,6 +234,9 @@ nnoremap <silent><leader>tbo :TagbarOpen j<CR>
 "inoremap <F2> <Esc>:TagbarOpen j<CR>a
 nnoremap <silent><leader>tbt :TagbarToggle<CR>
 "inoremap <S-F2> <Esc>:TagbarToggle<CR>a
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [15]
+"let g:tex_flavor=latex
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [16]
 set sessionoptions-=options
