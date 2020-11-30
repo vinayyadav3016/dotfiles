@@ -59,7 +59,7 @@ set tabstop=4
 set shiftwidth=4
 "set shiftround
 set softtabstop=0
-set noexpandtab
+set expandtab
 set autoindent
 
 " Set foldmethod

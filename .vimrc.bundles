@@ -47,6 +47,7 @@ Plug 'godlygeek/tabular'
 Plug 'Chiel92/vim-autoformat'
 Plug 'rhysd/vim-clang-format'
 Plug 'sbdchd/neoformat'
+Plug 'liuchengxu/vim-which-key'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Make gists of current buffer
 "Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
