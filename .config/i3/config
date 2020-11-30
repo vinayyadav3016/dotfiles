@@ -338,6 +338,7 @@ for_window [class="^Pulseaudio-equalizer"]       floating enable
 for_window [title="^TerminalHtop$"]              floating enable
 for_window [class="Xfce4-notes"]                 floating enable
 for_window [class="rdesktop"]                    floating enable
+for_window [class="xfreerdp"]                    floating enable
 
 ### Application to be put on specific workspace
 assign [class="code-oss"]     $workspace09
@@ -404,6 +405,7 @@ exec --no-startup-id xfce4-notes
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id redshift
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id pcmanfm --desktop
 #exec --no-startup-id xautolock -time 5 -locker 'i3lock --color "$bg-color"'
 
