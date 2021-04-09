@@ -43,10 +43,13 @@ Plug 'vim-scripts/tComment' "Comment easily with gcc
 Plug 'tpope/vim-repeat' "allow plugins to utilize . command
 Plug 'vim-scripts/matchit.zip' " % also matches HTML tags / words / etc
 Plug 'tmhedberg/matchit'
-Plug 'godlygeek/tabular'
 Plug 'Chiel92/vim-autoformat'
 Plug 'rhysd/vim-clang-format'
 Plug 'sbdchd/neoformat'
+Plug 'liuchengxu/vim-which-key'
+Plug 'preservim/nerdcommenter'
+Plug 'sheerun/vim-polyglot'
+Plug 'matze/vim-move'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Make gists of current buffer
 "Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
@@ -59,6 +62,7 @@ Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [10] Autocomplete tags
 Plug 'ervandew/supertab'
+" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 "Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 "Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'joereynolds/gtags-scope'
@@ -81,7 +85,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 "Plug 'godlygeek/tabular'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [15]
-"Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [16] Vim Session
 Plug 'xolox/vim-session'
@@ -99,6 +103,9 @@ Plug 'jceb/vim-orgmode'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [20]
 "Plug 'JamshedVesuna/vim-markdown-preview'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [21]
+"Plug 'Yggdroot/indentLine'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -120,7 +127,6 @@ call togglebg#map("<F5>")
 "colorscheme monokai
 " Allow powerline symbols to show up
 let g:airline_powerline_fonts = 1
-let g:powerline_pycmd = 'py3'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 map <silent> <C-n> :NERDTreeToggle<cr>
@@ -235,13 +241,15 @@ nnoremap <silent><leader>tbo :TagbarOpen j<CR>
 nnoremap <silent><leader>tbt :TagbarToggle<CR>
 "inoremap <S-F2> <Esc>:TagbarToggle<CR>a
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [15]
-"let g:tex_flavor=latex
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [16]
 set sessionoptions-=options
 let g:session_autosave = 'no'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [20]
 "let vim_markdown_preview_browser='midori'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [21]
+let g:indentLine_setColors = 0
+" let g:indentLine_char_list = ['▏', '┊', '┆', '|', '¦']
+let g:indentLine_char_list = ['▏']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
