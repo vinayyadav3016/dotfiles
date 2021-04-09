@@ -242,7 +242,7 @@ nnoremap <silent><leader>tbt :TagbarToggle<CR>
 "inoremap <S-F2> <Esc>:TagbarToggle<CR>a
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [15]
-let g:tex_flavor=latex
+let g:tex_flavor='latex'
 " [16]
 set sessionoptions-=options
 let g:session_autosave = 'no'
