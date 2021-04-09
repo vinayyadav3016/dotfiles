@@ -262,6 +262,7 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+		id 0
 		output HDMI-0
 		#tray_output none
 		#mode hide
@@ -282,6 +283,7 @@ bar {
 }
 
 bar {
+		id 1
 		output VGA-0
 		tray_output none
 		#mode hide
@@ -410,7 +412,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id xautolock -time 5 -locker 'i3lock --color "$bg-color"'
 
 ## caffiene
-exec --no-startup-id caffeine-indicator
+exec --no-startup-id caffeine
 
 ## multi monitor settings
 #exec --no-startup-id sh $HOME/.screenlayout/horizontal.sh
