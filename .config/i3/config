@@ -53,12 +53,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-# bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -148,6 +142,7 @@ set $workspace12 
 set $workspace13 
 set $workspace14 
 set $workspace15 
+set $workspace15 
 set $workspace16 
 set $workspace17 
 set $workspace18 
@@ -222,7 +217,7 @@ bindsym $mod+Shift+F6  move container to workspace $workspace16
 bindsym $mod+Shift+F7  move container to workspace $workspace17
 bindsym $mod+Shift+F8  move container to workspace $workspace18
 bindsym $mod+Shift+F9  move container to workspace $workspace19
-bindsym $mod+Shift+F10 move container to workspace $workspace19
+bindsym $mod+Shift+F10 move container to workspace $workspace20
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -275,13 +270,7 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 bar {
 		id 0
 		output HDMI-0
-		#tray_output none
-		#mode hide
 		position top
-		#position bottom
-		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
-		#status_command $HELPER/conky-i3bar
-		#status_command bumblebee-status -m weather load cpu memory nvidiagpu date time cmus pasink pasource -p interval=2.5 memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%a, %b %d %Y" -t solarized-powerline
 		status_command i3status-rs ~/.config/i3/helpers/config.toml
 		colors {
 			background $bg-color
@@ -297,12 +286,7 @@ bar {
 		id 1
 		output VGA-0
 		tray_output none
-		#mode hide
 		position top
-		#position bottom
-		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
-		#status_command $HELPER/conky-i3bar
-		#status_command bumblebee-status -m weather load cpu memory nvidiagpu date time cmus pasink pasource -p interval=2.5 memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%a, %b %d %Y" -t solarized-powerline
 		status_command i3status-rs ~/.config/i3/helpers/config.toml.2
 		colors {
 			background $bg-color
@@ -354,36 +338,48 @@ for_window [class="rdesktop"]                    floating enable
 for_window [class="xfreerdp"]                    floating enable
 
 ### Application to be put on specific workspace
-assign [class="code-oss"]     $workspace09
-assign [class="qtcreator"]    $workspace09
 ###
-assign [class="Gimp"]         $workspace19
-assign [class="Darktable"]    $workspace19
-assign [class="gpicview"]     $workspace19
+assign [class="^Thunar$"]     $workspace10
+assign [class="^Pcmanfm$"]    $workspace10
+assign [class="^ranger$"]     $workspace10
 ###
 assign [class="Firefox"]      $workspace11
 assign [class="firefox"]      $workspace11
+###
 assign [class="chrome"]       $workspace12
 assign [class="chromium"]     $workspace12
+###
 assign [class="vlc"]          $workspace13
 assign [class="smplayer"]     $workspace13
-assign [class="clementine"]   $workspace20
-assign [class="Clementine"]   $workspace20
-assign [class="pulseaudio"]   $workspace13
+###
 assign [class="retro"]        $workspace14
 assign [class="^Steam"]       $workspace14
 ###
 assign [class="Texmaker"]     $workspace15
+assign [class="code-oss"]     $workspace15
+assign [class="qtcreator"]    $workspace15
+assign [class="^atom$"]       $workspace15
+assign [class="^Atom$"]       $workspace15
+###
 assign [class="okular"]       $workspace16
 assign [class="QuiteRss"]     $workspace16
+assign [class="springseed"]   $workspace16
+###
 assign [class="Wine"]         $workspace17
 assign [class="Virtual"]      $workspace17
+###
+assign [class="Anydesk.bin"]  $workspace18
 assign [class="Tor"]          $workspace18
 assign [class="Transmission"] $workspace18
 ###
-assign [class="^Thunar$"]     $workspace10
-assign [class="^Pcmanfm$"]    $workspace10
-assign [class="springseed"]   $workspace10
+assign [class="Gimp"]         $workspace19
+assign [class="Darktable"]    $workspace19
+#assign [class="gpicview"]     $workspace19
+#assign [class="Gpicview"]     $workspace19
+###
+assign [class="clementine"]   $workspace20
+assign [class="Clementine"]   $workspace20
+assign [class="pulseaudio"]   $workspace20
 
 ### Add lock keys
 bindsym $mod+x exec i3lock -i ~/.config/i3/lock_screen/lock.png
@@ -419,14 +415,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id redshift
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id pcmanfm --desktop
 #exec --no-startup-id xautolock -time 5 -locker 'i3lock --color "$bg-color"'
 
 ## caffiene
 exec --no-startup-id caffeine
-
-## multi monitor settings
-#exec --no-startup-id sh $HOME/.screenlayout/horizontal.sh
 
 ## Start Vimserver
 #exec --no-startup-id i3-msg 'workspace $workspace08; exec /usr/bin/gnome-terminal -e "vim --servername tmp"'
