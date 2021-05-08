@@ -7,7 +7,7 @@ block = "net"
 device = "wlp0s20f3"
 format = "{ssid} {signal_strength}"
 interval = 5
-use_bits = false
+#use_bits = false
 
 [[block]]
 block = "battery"
@@ -34,9 +34,9 @@ interval = 2
 [[block]]
 block       = "memory"
 interval    = 2
-info_type   = "memory"
-format_mem  = "{Mup}%"
-format_swap = "{SUp}%"
+display_type= "memory"
+format_mem  = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
 
 [[block]]
 block = "sound"
