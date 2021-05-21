@@ -53,7 +53,14 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
+
+# Change focus monitor
+bindsym $mod+bracketleft focus output left
+bindsym $mod+bracketright focus output right
+
 # change focus
+#bindsym $mod+braceleft focus prev
+#bindsym $mod+braceright focus next
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -336,6 +343,7 @@ for_window [title="^TerminalHtop$"]              floating enable
 for_window [class="Xfce4-notes"]                 floating enable
 for_window [class="rdesktop"]                    floating enable
 for_window [class="xfreerdp"]                    floating enable
+for_window [class="workrave"]                    floating enable
 
 ### Application to be put on specific workspace
 ###
@@ -414,6 +422,7 @@ exec --no-startup-id xfce4-notes
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id redshift
+exec --no-startup-id workrave
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id xautolock -time 5 -locker 'i3lock --color "$bg-color"'
 
