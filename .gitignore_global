@@ -56,7 +56,7 @@ Thumbs.db
 *.cmake
 *Cache.txt
 *CMakeFiles/*
-build*
+build/*
 
 # QT Files #
 ############
