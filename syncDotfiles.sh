@@ -2,7 +2,7 @@
 
 DEVICE=JOKER
 ############################## Settings  #######################################
-BACKUPFOLDER=/home/vinay/SharedData/Backup/Devices/${DEVICE}
+BACKUPFOLDER=/home/vinay/backup/Devices/SystemsBackUp/${DEVICE}
 BACKUPFILE=${BACKUPFOLDER}/${DEVICE}_home_dotfile_`date +%Y-%m-%d`.tar.gz
 BACKUPFILELIST=${BACKUPFOLDER}/listoffiles.txt
 EXCLUDEFILE=${BACKUPFOLDER}/excludefolders.txt
