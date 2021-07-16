@@ -157,6 +157,8 @@ endif
 
 filetype plugin indent on
 autocmd Filetype python setlocal expandtab
+autocmd Filetype cpp setlocal expandtab
+autocmd Filetype c setlocal expandtab
 
 
 " <c-h> is interpreted as <bs> in neovim
