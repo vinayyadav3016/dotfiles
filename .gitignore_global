@@ -49,7 +49,7 @@ Thumbs.db
 *devel*
 *gtest*
 *test_*
-*data/*
+#*data/*
 
 # CMake Files#
 ##############
