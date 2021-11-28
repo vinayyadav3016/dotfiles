@@ -232,6 +232,7 @@ augroup vimrcEx
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile *.tex set conceallevel=0
 
   " autocmd BufRead *.jsx set ft=jsx.html
   " autocmd BufNewFile *.jsx set ft=jsx.html
