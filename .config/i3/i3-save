@@ -1,0 +1,7 @@
+# i3-resurrect save
+mode "save" {
+	bindsym s exec i3-resurrect save -d ~/.i3/i3-resurrect/
+	bindsym l exec i3-resurrect restore -d ~/.i3/i3-resurrect/
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}

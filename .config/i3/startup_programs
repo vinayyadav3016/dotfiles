@@ -1,0 +1,20 @@
+# start up programs
+### Comton
+exec_always --no-startup-id compton -f
+## xfce4 panels
+exec --no-startup-id xfsettingsd --sm-client-disable
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xfce4-notes
+## others
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id redshift
+exec --no-startup-id workrave
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id xautolock -time 5 -locker 'i3lock --color "$bg-color"'
+## caffiene
+exec --no-startup-id caffeine
+## Start Vimserver
+#exec --no-startup-id i3-msg 'workspace $workspace08; exec /usr/bin/gnome-terminal -e "vim --servername tmp"'
+## Wallpaper
+exec --no-startup-id "sh -c 'sleep 1; exec nitrogen --restore'"

@@ -1,0 +1,9 @@
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# move/swap among scratchpads while focused
+bindsym $mod+n       exec ~/.local/bin/i3-scratchpad-swap.py left
+bindsym $mod+Shift+n exec ~/.local/bin/i3-scratchpad-swap.py right
