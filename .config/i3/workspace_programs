@@ -29,6 +29,7 @@ assign [class="Wine"]         $workspace17
 assign [class="Virtual"]      $workspace17
 ###
 assign [class="Anydesk.bin"]  $workspace18
+assign [class="Anydesk"]  $workspace18
 assign [class="Tor"]          $workspace18
 assign [class="Transmission"] $workspace18
 ###
