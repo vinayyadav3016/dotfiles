@@ -65,11 +65,11 @@ Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [10] Autocomplete tags
 Plug 'ervandew/supertab'
-" Plug 'neoclide/coc.nvim', {'for':['zig','cmake','rust',
-"     \'java','json', 'haskell', 'ts','sh', 'cs',
-"     \'yaml', 'c', 'cpp', 'd', 'go',
-"     \'python', 'dart', 'javascript', 'vim'], 'branch': 'release'}
-"Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+Plug 'neoclide/coc.nvim', {'for':['zig','cmake','rust',
+    \'java','json', 'haskell', 'ts','sh', 'cs',
+    \'yaml', 'c', 'cpp', 'd', 'go',
+    \'python', 'dart', 'javascript', 'vim'], 'branch': 'release'}
+"Plug 'Valloric/YouCompleteMe', {'do': './install.py --all'}
 "Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'joereynolds/gtags-scope'
 Plug 'jsfaint/gen_tags.vim'
@@ -231,6 +231,9 @@ let g:gen_tags#ctags_opts  = '--c++-kinds=+p --c-kinds=+p --fields=+iaS
 "let g:gen_tags#ctags_opts += ['--exclude=*.json* --exclude=*.out*']
 "let g:gen_tags#gtags_opts = ['-c', '-c++', '--verbose']
 set cscopetag "search both cscopes db and the tags file
+" Use `[c` and `]c` to navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [12]
 let g:cpp_class_scope_highlight = 1
