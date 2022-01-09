@@ -62,6 +62,8 @@ augroup vimrc_leave
     autocmd!
     au FocusLost,WinLeave * :silent! wa
     au FocusGained,BufEnter * :silent! !
+    " Close vim if only NERDTree is open
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " automatically rebalance windows on vim resize

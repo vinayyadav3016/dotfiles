@@ -136,15 +136,9 @@ call togglebg#map("<F5>")
 let g:airline_powerline_fonts = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
-map <silent> <C-n> :NERDTreeToggle<cr>
-"nnoremap <C-t> :call ToggleRelativeOn()<cr>
-map <silent> <leader>ntt :NERDTreeToggle<cr>
 let g:fzf_layout = { 'down': '~25%'  }
-"map <silent> <leader>t :call ToggleRelativeOn()<cr>
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
-" Close vim if only NERDTree is open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [3]
 " Allow moving around between Tmux windows
@@ -155,7 +149,7 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 1
 "Open a tmux pane with Node
-nnoremap <leader>node :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'node'}<cr>
+" nnoremap <leader>node :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'node'}<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [4]
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
@@ -197,8 +191,8 @@ let g:syntastic_c_checkers = ['check']
 let g:syntastic_cpp_checkers = ['check']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Key mapping for Cosco.vim - space + ; to add semicolon or comma in Javascript or CSS
-autocmd FileType javascript,css nnoremap <silent> <leader>; :call cosco#commaOrSemiColon()<CR>
-autocmd FileType javascript,css inoremap <silent> <leader>; <c-o>:call cosco#commaOrSemiColon()<CR>
+" autocmd FileType javascript,css nnoremap <silent> <leader>; :call cosco#commaOrSemiColon()<CR>
+" autocmd FileType javascript,css inoremap <silent> <leader>; <c-o>:call cosco#commaOrSemiColon()<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Gist setup
 let g:gist_clip_command = 'pbcopy' "Using Gist will copy URL to clipboard automatically
@@ -231,9 +225,6 @@ let g:gen_tags#ctags_opts  = '--c++-kinds=+p --c-kinds=+p --fields=+iaS
 "let g:gen_tags#ctags_opts += ['--exclude=*.json* --exclude=*.out*']
 "let g:gen_tags#gtags_opts = ['-c', '-c++', '--verbose']
 set cscopetag "search both cscopes db and the tags file
-" Use `[c` and `]c` to navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [12]
 let g:cpp_class_scope_highlight = 1
@@ -248,10 +239,6 @@ let c_no_curly_error=1
 "
 let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
-nnoremap <silent><leader>tbo :TagbarOpen j<CR>
-"inoremap <F2> <Esc>:TagbarOpen j<CR>a
-nnoremap <silent><leader>tbt :TagbarToggle<CR>
-"inoremap <S-F2> <Esc>:TagbarToggle<CR>a
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [15]
 let g:tex_flavor='latex'
