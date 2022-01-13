@@ -36,6 +36,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Utilities
 Plug 'scrooloose/syntastic' "Syntax Highlighting
+Plug 'myint/syntastic-extras'
 "Plug 'jiangmiao/auto-pairs' "MANY features, but mostly closes ([{' etc
 Plug 'tpope/vim-surround'
 "Plug 'vim-scripts/HTML-AutoCloseTag' "close tags after >
@@ -56,14 +57,19 @@ Plug 'matze/vim-move'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [8] Diary, notes, whatever. It's amazing
 Plug 'vimwiki/vimwiki'
+Plug 'tbabej/taskwiki'
+Plug 'plasticboy/vima-markdown'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [9] Snippets
 Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/vim-snippets'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [10] Autocomplete tags
 Plug 'ervandew/supertab'
-" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-"Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+Plug 'neoclide/coc.nvim', {'for':['zig','cmake','rust',
+    \'java','json', 'haskell', 'ts','sh', 'cs',
+    \'yaml', 'c', 'cpp', 'd', 'go',
+    \'python', 'dart', 'javascript', 'vim'], 'branch': 'release'}
+"Plug 'Valloric/YouCompleteMe', {'do': './install.py --all'}
 "Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'joereynolds/gtags-scope'
 Plug 'jsfaint/gen_tags.vim'
@@ -105,7 +111,8 @@ Plug 'jceb/vim-orgmode'
 "Plug 'JamshedVesuna/vim-markdown-preview'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [21]
-"Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
+" Plug 'nathanaelkane/vim-indent-guides'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -129,15 +136,9 @@ call togglebg#map("<F5>")
 let g:airline_powerline_fonts = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
-map <silent> <C-n> :NERDTreeToggle<cr>
-"nnoremap <C-t> :call ToggleRelativeOn()<cr>
-map <silent> <leader>ntt :NERDTreeToggle<cr>
 let g:fzf_layout = { 'down': '~25%'  }
-"map <silent> <leader>t :call ToggleRelativeOn()<cr>
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
-" Close vim if only NERDTree is open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [3]
 " Allow moving around between Tmux windows
@@ -148,7 +149,7 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 1
 "Open a tmux pane with Node
-nnoremap <leader>node :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'node'}<cr>
+" nnoremap <leader>node :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'node'}<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [4]
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
@@ -186,10 +187,12 @@ let g:pymode_lint_on_write = 0
 " Allow highlighting of HTML within Javascript (for React)
 let g:javascript_enable_domhtmlcss = 1
 let g:jsx_ext_required = 0
+let g:syntastic_c_checkers = ['check']
+let g:syntastic_cpp_checkers = ['check']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Key mapping for Cosco.vim - space + ; to add semicolon or comma in Javascript or CSS
-autocmd FileType javascript,css nnoremap <silent> <leader>; :call cosco#commaOrSemiColon()<CR>
-autocmd FileType javascript,css inoremap <silent> <leader>; <c-o>:call cosco#commaOrSemiColon()<CR>
+" autocmd FileType javascript,css nnoremap <silent> <leader>; :call cosco#commaOrSemiColon()<CR>
+" autocmd FileType javascript,css inoremap <silent> <leader>; <c-o>:call cosco#commaOrSemiColon()<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Gist setup
 let g:gist_clip_command = 'pbcopy' "Using Gist will copy URL to clipboard automatically
@@ -236,13 +239,10 @@ let c_no_curly_error=1
 "
 let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
-nnoremap <silent><leader>tbo :TagbarOpen j<CR>
-"inoremap <F2> <Esc>:TagbarOpen j<CR>a
-nnoremap <silent><leader>tbt :TagbarToggle<CR>
-"inoremap <S-F2> <Esc>:TagbarToggle<CR>a
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [15]
 let g:tex_flavor='latex'
+let g:tex_conceal=''
 " [16]
 set sessionoptions-=options
 let g:session_autosave = 'no'
@@ -251,7 +251,10 @@ let g:session_autosave = 'no'
 "let vim_markdown_preview_browser='midori'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [21]
-let g:indentLine_setColors = 0
+" let g:indentLine_setColors = 0
 " let g:indentLine_char_list = ['▏', '┊', '┆', '|', '¦']
-let g:indentLine_char_list = ['▏']
+let g:indentLine_char_list = ['┊']
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
