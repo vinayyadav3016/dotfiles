@@ -102,8 +102,6 @@ include ~/.config/i3/i3-save
 include ~/.config/i3/colors
 #hide_edge_borders both
 
-### Bar
-include ~/.config/i3/bars
 
 # spacing
 for_window [class="^.*"] border pixel 1
@@ -277,3 +275,6 @@ include ~/.config/i3/media_controls
 
 ### Startup programs
 include ~/.config/i3/startup_programs
+
+### Bar
+include ~/.config/i3/bars
