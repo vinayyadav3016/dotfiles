@@ -7,6 +7,11 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <bs> :TmuxNavigateLeft<cr>
+" Allow moving around between Tmux windows
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Navigate properly when lines are wrapped
 nnoremap j gj
