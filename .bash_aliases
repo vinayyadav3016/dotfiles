@@ -31,6 +31,7 @@ alias orppac='pacman -Qdtq'
 #alias make='colormake'
 alias vimservd='vim --servername tmp'
 alias vimserve='vim --servername tmp --remote'
+alias unhide='echo -en "\e[?25h"'
 alias reboot="sudo systemctl reboot"
 alias poweroff="sudo systemctl poweroff"
 alias i3-resurrect-save="i3-resurrect save -d ~/.i3/i3-resurrect/"

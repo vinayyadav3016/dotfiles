@@ -9,7 +9,6 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #  ¶   
-set $AudioSink 1
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
