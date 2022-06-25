@@ -1,6 +1,7 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
+set pumblend=20
 
 " external config files (in lua)
 luafile ~/.config/nvim/telescope.lua

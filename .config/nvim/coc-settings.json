@@ -30,6 +30,7 @@
     }
   },
   "coc.preferences.hoverTarget": "echo",
+  "coc.preferences.jumpCommand": "vsplit",
   "diagnostic.messageTarget": "echo",
   "signature.target": "echo"
 }
