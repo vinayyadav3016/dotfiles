@@ -2,6 +2,13 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use Vim settings, rather then Vi settings. This setting must be as early as
 " possible, as it has side effects.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set exrc
+set secure
+set guicursor=
+set hidden
+set noerrorbells
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 scriptencoding utf-8
 set encoding=utf-8
 set nocompatible
@@ -121,7 +128,5 @@ if filereadable(expand("~/.vimrc.mappings"))
   source ~/.vimrc.mappings
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set exrc
-set secure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For per project configuration
