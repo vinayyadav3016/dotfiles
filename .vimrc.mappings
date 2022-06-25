@@ -1,0 +1,90 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quicker window movement
+let g:C_Ctrl_j = 'off'
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Allow moving around between Tmux windows
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Navigate properly when lines are wrapped
+nnoremap j gj
+nnoremap k gk
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use tab to jump between blocks, because it's easier
+nnoremap <tab> %
+vnoremap <tab> %
+vnoremap > >gv
+vnoremap < <gv
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" SYSTEM CLIPBOARD COPY & PASTE SUPPORT
+set pastetoggle=<leader>v
+"Copy paste to/from clipboard
+vnoremap <C-c> "*y
+noremap <silent><leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
+noremap <silent><leader><S-p> :set paste<CR>O<esc>"*]p:set nopaste<cr>"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <C-w>+ :wincmd _<cr>:wincmd \|<cr>
+" nnoremap <leader>= :wincmd =<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" resize panes
+nnoremap <silent> <Right> :vertical resize +5<cr>
+nnoremap <silent> <Left>  :vertical resize -5<cr>
+nnoremap <silent> <Up>    :resize +5<cr>
+nnoremap <silent> <Down>  :resize -5<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <leader>, :noh<cr> " Stop highlight after searching
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" NerdTree
+noremap <silent> <C-n> :NERDTreeToggle<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Coc mapping
+nnoremap <silent> [w <Plug>(coc-diagnostic-prev)
+nnoremap <silent> ]w <Plug>(coc-diagnostic-next)
+nnoremap <silent> [d <Plug>(coc-definition)
+nnoremap <silent> ]t <Plug>(coc-type-definition)
+nnoremap <silent> [q <Plug>(coc-implementation)
+nnoremap <silent> [r <Plug>(coc-references)
+nnoremap <silent> ]r <Plug>(coc-rename)
+nnoremap <silent> ]d :call <SID>show_documentation()<CR>
+nnoremap <silent> [a <Plug>(coc-codeaction)
+nnoremap <silent> [f <Plug>(coc-fix-current)
+nnoremap <silent> ]f :<C-u>CocList diagnostics<cr>
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! s:show_documentation()
+    if &filetype == 'vim'
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
+endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("nvim")
+    nnoremap <silent> ;f :Telescope find_files<CR>
+    nnoremap <silent> ;g :Telescope live_grep<CR>
+    nnoremap <silent> ;b :Telescope buffers<CR>
+    nnoremap <silent> ;h :Telescope help_tags<CR>
+    nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+    inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+    inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+    vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+    "inoremap <expr> <ESC> pumvisible() ? "\<C-o>coc#_hide()" : "<ESC>"
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

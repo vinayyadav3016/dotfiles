@@ -31,8 +31,11 @@ alias orppac='pacman -Qdtq'
 #alias make='colormake'
 alias vimservd='vim --servername tmp'
 alias vimserve='vim --servername tmp --remote'
+alias unhide='echo -en "\e[?25h"'
 alias reboot="sudo systemctl reboot"
 alias poweroff="sudo systemctl poweroff"
+alias i3-resurrect-save="i3-resurrect save -d ~/.i3/i3-resurrect/"
+alias i3-resurrect-restore="i3-resurrect restore -d ~/.i3/i3-resurrect/"
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

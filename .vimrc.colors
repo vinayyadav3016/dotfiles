@@ -1,0 +1,9 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+highlight ColorColumn ctermbg=red
+"highlight ColorColumn ctermbg=lightgrey
+highlight CursorLine ctermbg=black
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi TabLineFill ctermfg=DarkGreen ctermbg=DarkGreen
+" hi TabLine ctermfg=Blue ctermbg=Yellow
+hi TabLineSel ctermfg=LightGreen ctermbg=Yellow
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

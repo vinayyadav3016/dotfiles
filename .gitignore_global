@@ -49,14 +49,14 @@ Thumbs.db
 *devel*
 *gtest*
 *test_*
-*data/*
+#*data/*
 
 # CMake Files#
 ##############
 *.cmake
 *Cache.txt
 *CMakeFiles/*
-build*
+build/*
 
 # QT Files #
 ############

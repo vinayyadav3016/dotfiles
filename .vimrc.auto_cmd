@@ -1,0 +1,83 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rnu
+function! ToggleNumbersOn()
+    set nu!
+    set rnu
+endfunction
+function! ToggleRelativeOn()
+    set rnu!
+    set nu
+endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup vimrcEx
+    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    autocmd!
+    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it for commit messages, when the position is invalid, or when
+    " inside an event handler (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+      \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif
+    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Set syntax highlighting for specific file types
+    autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
+    autocmd BufRead,BufNewFile *.tex set filetype=tex
+    " autocmd BufRead *.jsx set ft=jsx.html
+    " autocmd BufNewFile *.jsx set ft=jsx.html
+    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Enable spellchecking for Markdown
+    autocmd FileType markdown setlocal spell
+    autocmd FileType markdown setlocal textwidth=80
+    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Automatically wrap at 72 characters and spell check git commit messages
+    autocmd FileType gitcommit setlocal textwidth=72
+    autocmd FileType gitcommit setlocal spell
+    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    autocmd Filetype python setlocal expandtab
+    autocmd Filetype cpp setlocal expandtab
+    autocmd Filetype c setlocal expandtab
+    autocmd Filetype tex setlocal conceallevel=0
+    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Allow stylesheets to autocomplete hyphenated words
+    autocmd FileType css,scss,sass,less setlocal iskeyword+=-
+    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup END
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup vimrc_number_toggle
+    autocmd!
+    " Toggle relative numbering, and set to absolute on
+    " loss of focus or insert mode
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+    "autocmd FocusLost * call ToggleRelativeOn()
+    "autocmd FocusGained * call ToggleRelativeOn()
+    "autocmd InsertEnter * call ToggleRelativeOn()
+    "autocmd InsertLeave * call ToggleRelativeOn()
+augroup END
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" AUTOCOMMANDS - Do stuff
+" Save whenever switching windows or leaving vim. This is useful when running
+" the tests inside vim without having to save all files first.
+augroup vimrc_leave
+    autocmd!
+    au FocusLost,WinLeave * :silent! wa
+    au FocusGained,BufEnter * :silent! !
+    " Close vim if only NERDTree is open
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+augroup END
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" update dir to current file
+"autocmd BufEnter * silent! cd %:p:h
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Use enter to create new lines w/o entering insert mode
+"nnoremap <CR> o<Esc>
+"Below is to fix issues with the ABOVE mappings in quickfix window
+autocmd CmdwinEnter * nnoremap <CR> <CR>
+autocmd BufReadPost quickfix nnoremap <CR> <CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
