@@ -66,7 +66,7 @@ set pastetoggle=<leader>v
 nnoremap <silent> <leader>, :noh<cr> " Stop highlight after searching
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Tagbar
-nnoremap <silent> <space>t :TagbarToggle<CR>
+" nnoremap <silent> <space>t :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" NerdTree
 "nnoremap <C-t> :call ToggleRelativeOn()<cr>
@@ -77,10 +77,20 @@ map <silent> <C-n> :NERDTreeToggle<cr>
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 " Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gdf <Plug>(coc-definition)
+nmap <silent> gtd <Plug>(coc-type-definition)
+nmap <silent> gim <Plug>(coc-implementation)
+nmap <silent> grf <Plug>(coc-references)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <silent> <leader>sd  :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+    if &filetype == 'vim'
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
+endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 " Remap for do codeAction of current line
@@ -89,4 +99,11 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("nvim")
+    nnoremap <silent> ;f :Telescope find_files<CR>
+    nnoremap <silent> ;r :Telescope live_grep<CR>
+    nnoremap <silent> \\ :Telescope buffers<CR>
+    nnoremap <silent> ;; :Telescope help_tags<CR>
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

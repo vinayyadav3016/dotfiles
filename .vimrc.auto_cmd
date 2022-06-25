@@ -24,7 +24,7 @@ augroup vimrcEx
     " Set syntax highlighting for specific file types
     autocmd BufRead,BufNewFile Appraisals set filetype=ruby
     autocmd BufRead,BufNewFile *.md set filetype=markdown
-    autocmd BufRead,BufNewFile *.tex set conceallevel=0
+    autocmd BufRead,BufNewFile *.tex set filetype=tex
     " autocmd BufRead *.jsx set ft=jsx.html
     " autocmd BufNewFile *.jsx set ft=jsx.html
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -39,6 +39,7 @@ augroup vimrcEx
     autocmd Filetype python setlocal expandtab
     autocmd Filetype cpp setlocal expandtab
     autocmd Filetype c setlocal expandtab
+    autocmd Filetype tex setlocal conceallevel=0
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Allow stylesheets to autocomplete hyphenated words
     autocmd FileType css,scss,sass,less setlocal iskeyword+=-
@@ -49,10 +50,12 @@ augroup vimrc_number_toggle
     autocmd!
     " Toggle relative numbering, and set to absolute on
     " loss of focus or insert mode
-    autocmd FocusLost * call ToggleRelativeOn()
-    autocmd FocusGained * call ToggleRelativeOn()
-    autocmd InsertEnter * call ToggleRelativeOn()
-    autocmd InsertLeave * call ToggleRelativeOn()
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+    "autocmd FocusLost * call ToggleRelativeOn()
+    "autocmd FocusGained * call ToggleRelativeOn()
+    "autocmd InsertEnter * call ToggleRelativeOn()
+    "autocmd InsertLeave * call ToggleRelativeOn()
 augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS - Do stuff
