@@ -44,10 +44,12 @@ set smartcase
 set hlsearch
 set incsearch
 set showmatch
+set regexpengine=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set softtabstop=0
 set expandtab
 set autoindent
+set noshowmode
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set foldmethod
 set foldmethod=indent
@@ -126,6 +128,11 @@ endif
 " Load up all of our mappings
 if filereadable(expand("~/.vimrc.mappings"))
   source ~/.vimrc.mappings
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Load up statusline
+if filereadable(expand("~/.vimrc.statusline"))
+  source ~/.vimrc.statusline
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
