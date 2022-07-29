@@ -16,10 +16,12 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
 "Plug 'lifepillar/vim-solarized8'
 "Plug 'dracula/vim'
+"Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] File tree viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fugitive' | Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [3] Tmux
 " Several plugins to help work with Tmux
@@ -61,10 +63,10 @@ Plug 'tbabej/taskwiki'
 Plug 'plasticboy/vima-markdown'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [9] Snippets
-Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/vim-snippets'
+"Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/vim-snippets'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [10] Autocomplete tags
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 " if has("nvim")
 " else
 Plug 'neoclide/coc.nvim', {'for':['zig','cmake','rust',
@@ -74,8 +76,8 @@ Plug 'neoclide/coc.nvim', {'for':['zig','cmake','rust',
 " endif
 "Plug 'Valloric/YouCompleteMe', {'do': './install.py --all'}
 "Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
-Plug 'joereynolds/gtags-scope'
-Plug 'jsfaint/gen_tags.vim'
+"Plug 'joereynolds/gtags-scope'
+"Plug 'jsfaint/gen_tags.vim'
 if has("nvim")
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-lua/popup.nvim'
@@ -100,11 +102,11 @@ endif
 Plug 'editorconfig/editorconfig-vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [12] C Specific
-"Plug 'vim-scripts/c.vim'
-Plug 'majutsushi/tagbar'
+" Plug 'vim-scripts/c.vim'
+" Plug 'majutsushi/tagbar'
 Plug 'octol/vim-cpp-enhanced-highlight'
-"Plug 'bfrg/vim-cpp-modern'
-"Plug 'lyuts/vim-rtags'
+Plug 'bfrg/vim-cpp-modern'
+" Plug 'lyuts/vim-rtags'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [13]
 "Plug 'joonty/vdebug'
@@ -120,7 +122,7 @@ Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [17]
-Plug 'vim-scripts/ZoomWin'
+" Plug 'vim-scripts/ZoomWin'
 Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [18]
@@ -156,6 +158,8 @@ call togglebg#map("<F5>")
 "colorscheme monokai
 " Allow powerline symbols to show up
 let g:airline_powerline_fonts = 1
+let g:airline_extensions = []
+le g:airline_highlighting_cache = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 let g:fzf_layout = { 'down': '~25%'  }
