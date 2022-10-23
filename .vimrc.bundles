@@ -18,6 +18,7 @@ Plug 'sickill/vim-monokai'
 "Plug 'dracula/vim'
 "Plug 'bling/vim-airline'
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] File tree viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -159,7 +160,16 @@ call togglebg#map("<F5>")
 " Allow powerline symbols to show up
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = []
-le g:airline_highlighting_cache = 1
+let g:airline_highlighting_cache = 1
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ },
+      \ }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 let g:fzf_layout = { 'down': '~25%'  }
