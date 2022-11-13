@@ -44,6 +44,10 @@ nnoremap <silent> <leader>, :noh<cr> " Stop highlight after searching
 "" NerdTree
 noremap <silent> <C-n> :NERDTreeToggle<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fugitive mapping
+noremap <silent> \g :Git<cr>
+noremap <silent> \d :Gdiffsplit<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Coc mapping
 nnoremap <silent> [w <Plug>(coc-diagnostic-prev)
 nnoremap <silent> ]w <Plug>(coc-diagnostic-next)
