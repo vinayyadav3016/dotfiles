@@ -16,7 +16,7 @@ set ts=4
 set sw=4
 set tabstop=4
 set shiftwidth=4
-set mouse-=a
+set mouse=
 set colorcolumn=80
 set backspace=2
 set laststatus=2
@@ -36,6 +36,8 @@ set autoread      " Reload files changed outside vim
 set visualbell    " stop that ANNOYING beeping
 set wildmenu
 set wildmode=list:longest,full
+set ssop-=options
+set ssop-=folds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make searching better
 set gdefault      " Never have to type /g at the end of search / replace again

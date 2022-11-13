@@ -14,12 +14,12 @@ Plug 'VundleVim/Vundle.vim'
 " [1] Themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
-"Plug 'lifepillar/vim-solarized8'
-"Plug 'dracula/vim'
-"Plug 'bling/vim-airline'
+" Plug 'lifepillar/vim-solarized8'
+" Plug 'dracula/vim'
+" Plug 'bling/vim-airline'
 Plug 'itchyny/lightline.vim'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [2] File tree viewer
+Plug 'itchyny/vim-gitbranch'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" " [2] File tree viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -33,16 +33,14 @@ Plug 'christoomey/vim-run-interactive'
 Plug 'ctrlpvim/ctrlp.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [5] highlighting for Javascript
-"Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
-"Plug 'jimmyhchan/dustjs.vim' "Highlighting for dust
+" Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
+" Plug 'jimmyhchan/dustjs.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Utilities
 Plug 'scrooloose/syntastic' "Syntax Highlighting
 Plug 'myint/syntastic-extras'
-"Plug 'jiangmiao/auto-pairs' "MANY features, but mostly closes ([{' etc
 Plug 'tpope/vim-surround'
-"Plug 'vim-scripts/HTML-AutoCloseTag' "close tags after >
-Plug 'vim-scripts/tComment' "Comment easily with gcc
+" Plug 'vim-scripts/tComment' 'Comment easily with gcc
 Plug 'tpope/vim-repeat' "allow plugins to utilize . command
 Plug 'vim-scripts/matchit.zip' " % also matches HTML tags / words / etc
 Plug 'tmhedberg/matchit'
@@ -53,6 +51,8 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'matze/vim-move'
+Plug 'tpope/vim-commentary'
+"Plug 'jiangmiao/auto-pairs'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Make gists of current buffer
 "Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
@@ -83,8 +83,10 @@ if has("nvim")
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-tree/nvim-tree.lua'
   Plug 'neovim/nvim-lspconfig'
   Plug 'williamboman/nvim-lsp-installer'
+  Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
   " nvim-cmp has a lot of dependencies
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
@@ -157,6 +159,7 @@ call togglebg#map("<F5>")
 "let g:rehash256 = 1
 "colorscheme monokai
 " Allow powerline symbols to show up
+let g:powerline_loaded = 1
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = []
 le g:airline_highlighting_cache = 1

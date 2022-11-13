@@ -21,7 +21,7 @@ vim.api.nvim_set_keymap('n', '<C-c>t', ':ToggleTerm<CR>', { noremap = true, sile
 -- }}
 
 -- for autopairs
-require('nvim-autopairs').setup{}
+-- require('nvim-autopairs').setup{}
 
 -- for bufferline
 require("bufferline").setup{
@@ -35,7 +35,7 @@ require'nvim-tree'.setup {
 }
 
 -- session manager
-require('session_manager').setup({
-    autoload_mode = require('session_manager.config').AutoloadMode.Disabled,
-    autosave_last_session = false,
-})
+-- require('session_manager').setup({
+--     autoload_mode = require('session_manager.config').AutoloadMode.Disabled,
+--     autosave_last_session = false,
+-- })

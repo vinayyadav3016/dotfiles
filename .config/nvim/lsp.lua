@@ -5,10 +5,10 @@ require'lspconfig'.gdscript.setup{}
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<space>ef', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+vim.api.nvim_set_keymap('n', '[f', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+vim.api.nvim_set_keymap('n', ']f', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -46,3 +46,40 @@ for _, lsp in pairs(servers) do
     }
   }
 end
+local function setup_lsp_diags()
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+      virtual_text = false,
+      signs = true,
+      update_in_insert = false,
+      underline = true,
+    }
+  )
+end
+
+local function enable_inline_diags()
+  vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = false,
+  })
+end
+
+local function disable_inline_diags()
+  vim.diagnostic.config({
+    virtual_text = false,
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = false,
+  })
+end
+
+vim.api.nvim_set_keymap('n', '[l', '<cmd>lua vim.diagnostic.config({virtual_text = true})<CR>', opts)
+vim.api.nvim_set_keymap('n', ']l', '<cmd>lua vim.diagnostic.config({virtual_text = false})<CR>', opts)
+--vim.api.nvim_set_keymap('n', ']l', '<cmd>lua vim.lsp.disable_inline_diags()<CR>', opts)
+--setup_lsp_diags()
+disable_inline_diags()
