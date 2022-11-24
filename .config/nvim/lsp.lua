@@ -1,12 +1,12 @@
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.clangd.setup{}
+--require'lspconfig'.pyright.setup{}
+--require'lspconfig'.clangd.setup{}
 require'lspconfig'.gdscript.setup{}
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '[f', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-vim.api.nvim_set_keymap('n', ']f', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+vim.api.nvim_set_keymap('n', '[o', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+vim.api.nvim_set_keymap('n', ']l', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[w', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']w', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 
@@ -36,7 +36,8 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'clangd', 'gdscript' }
+-- local servers = { 'pyright', 'rust_analyzer', 'clangd', 'gdscript' }
+local servers = { 'gdscript' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
