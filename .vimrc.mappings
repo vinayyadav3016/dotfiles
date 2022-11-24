@@ -69,6 +69,7 @@ xnoremap ic <Plug>(coc-classobj-i)
 onoremap ic <Plug>(coc-classobj-i)
 xnoremap ac <Plug>(coc-classobj-a)
 onoremap ac <Plug>(coc-classobj-a)
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:show_documentation()
     if &filetype == 'vim'
@@ -91,5 +92,7 @@ if has("nvim")
     vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
     vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
     "inoremap <expr> <ESC> pumvisible() ? "\<C-o>coc#_hide()" : "<ESC>"
+    nnoremap <silent> <A-t> :split term://bash<CR>
+    nnoremap <silent> <A-v> :vsplit term://bash<CR>
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
