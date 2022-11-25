@@ -68,13 +68,14 @@ Plug 'plasticboy/vima-markdown'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [10] Autocomplete tags
 " Plug 'ervandew/supertab'
-" if has("nvim")
-" else
-Plug 'neoclide/coc.nvim', {'for':['zig','cmake','rust',
-    \'java','json', 'haskell', 'ts','sh', 'cs',
-    \'yaml', 'c', 'cpp', 'd', 'go',
-    \'python', 'dart', 'javascript', 'vim'], 'branch': 'release'}
-" endif
+"if has("nvim")
+"else
+" Plug 'neoclide/coc.nvim', {'for':['zig','cmake','rust',
+"   \'java','json', 'haskell', 'ts','sh', 'cs',
+"   \'yaml', 'c', 'cpp', 'd', 'go',
+"   \'python', 'dart', 'javascript', 'vim'], 'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"endif
 "Plug 'Valloric/YouCompleteMe', {'do': './install.py --all'}
 "Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 "Plug 'joereynolds/gtags-scope'

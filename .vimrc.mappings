@@ -49,18 +49,22 @@ noremap <silent> \g :Git<cr>
 noremap <silent> \d :Gdiffsplit<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Coc mapping
+"if has("nvim")
+"else
 nnoremap <silent> [w <Plug>(coc-diagnostic-prev)
 nnoremap <silent> ]w <Plug>(coc-diagnostic-next)
 nnoremap <silent> [d <Plug>(coc-definition)
+nnoremap <silent> ]d <Plug>(coc-declaration)
+nnoremap <silent> [i <Plug>(coc-implementation)
 nnoremap <silent> ]t <Plug>(coc-type-definition)
-nnoremap <silent> [q <Plug>(coc-implementation)
+nnoremap <silent> [u <Plug>(coc-references-used)
 nnoremap <silent> [r <Plug>(coc-references)
 nnoremap <silent> ]r <Plug>(coc-rename)
-nnoremap <silent> ]d :call <SID>show_documentation()<CR>
 nnoremap <silent> [a <Plug>(coc-codeaction)
 nnoremap <silent> [f <Plug>(coc-fix-current)
 nnoremap <silent> ]f :<C-u>CocList diagnostics<cr>
 nnoremap <silent> [q :<C-u>CocRestart<cr>
+nnoremap <silent> ]s :call <SID>show_documentation()<CR>
 xnoremap if <Plug>(coc-funcobj-i)
 onoremap if <Plug>(coc-funcobj-i)
 xnoremap af <Plug>(coc-funcobj-a)
@@ -69,7 +73,17 @@ xnoremap ic <Plug>(coc-classobj-i)
 onoremap ic <Plug>(coc-classobj-i)
 xnoremap ac <Plug>(coc-classobj-a)
 onoremap ac <Plug>(coc-classobj-a)
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+" inoremap <expr> <ESC> coc#pum#visible() ? "\<C-o>coc#_hide()" : "<ESC>"
+"endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! s:insert_show()
+    if &filetype == 'vim'
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
+endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:show_documentation()
     if &filetype == 'vim'
@@ -91,7 +105,6 @@ if has("nvim")
     inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
     vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
     vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-    "inoremap <expr> <ESC> pumvisible() ? "\<C-o>coc#_hide()" : "<ESC>"
     nnoremap <silent> <A-t> :split term://bash<CR>
     nnoremap <silent> <A-v> :vsplit term://bash<CR>
 endif
