@@ -8,6 +8,7 @@ hi TabLineFill ctermfg=DarkGreen ctermbg=DarkGreen
 hi TabLineSel ctermfg=LightGreen ctermbg=Yellow
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi User1 ctermfg=Cyan  ctermbg=LightCyan
+hi CocFloating ctermbg=0
 "hi User2 ctermfg=#000000  ctermbg=#F4905C
 "hi User3 ctermfg=#292b00  ctermbg=#f4f597
 "hi User4 ctermfg=#112605  ctermbg=#aefe7B

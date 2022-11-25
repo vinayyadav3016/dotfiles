@@ -19,7 +19,8 @@ Plug 'sickill/vim-monokai'
 " Plug 'bling/vim-airline'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" " [2] File tree viewer
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [2] File tree viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -37,12 +38,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'jimmyhchan/dustjs.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Utilities
-Plug 'scrooloose/syntastic' "Syntax Highlighting
+Plug 'scrooloose/syntastic'
 Plug 'myint/syntastic-extras'
 Plug 'tpope/vim-surround'
-" Plug 'vim-scripts/tComment' 'Comment easily with gcc
-Plug 'tpope/vim-repeat' "allow plugins to utilize . command
-Plug 'vim-scripts/matchit.zip' " % also matches HTML tags / words / etc
+" Plug 'vim-scripts/tComment'
+Plug 'tpope/vim-repeat'
+Plug 'vim-scripts/matchit.zip'
 Plug 'tmhedberg/matchit'
 Plug 'Chiel92/vim-autoformat'
 Plug 'rhysd/vim-clang-format'
@@ -67,13 +68,14 @@ Plug 'plasticboy/vima-markdown'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [10] Autocomplete tags
 " Plug 'ervandew/supertab'
-" if has("nvim")
-" else
-Plug 'neoclide/coc.nvim', {'for':['zig','cmake','rust',
-    \'java','json', 'haskell', 'ts','sh', 'cs',
-    \'yaml', 'c', 'cpp', 'd', 'go',
-    \'python', 'dart', 'javascript', 'vim'], 'branch': 'release'}
-" endif
+"if has("nvim")
+"else
+" Plug 'neoclide/coc.nvim', {'for':['zig','cmake','rust',
+"   \'java','json', 'haskell', 'ts','sh', 'cs',
+"   \'yaml', 'c', 'cpp', 'd', 'go',
+"   \'python', 'dart', 'javascript', 'vim'], 'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"endif
 "Plug 'Valloric/YouCompleteMe', {'do': './install.py --all'}
 "Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 "Plug 'joereynolds/gtags-scope'
@@ -108,6 +110,7 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug 'majutsushi/tagbar'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'bfrg/vim-cpp-modern'
+Plug 'rust-lang/rust.vim'
 " Plug 'lyuts/vim-rtags'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [13]
@@ -162,7 +165,16 @@ call togglebg#map("<F5>")
 let g:powerline_loaded = 1
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = []
-le g:airline_highlighting_cache = 1
+let g:airline_highlighting_cache = 1
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ },
+      \ }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 let g:fzf_layout = { 'down': '~25%'  }
