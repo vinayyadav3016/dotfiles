@@ -73,7 +73,7 @@ xnoremap ic <Plug>(coc-classobj-i)
 onoremap ic <Plug>(coc-classobj-i)
 xnoremap ac <Plug>(coc-classobj-a)
 onoremap ac <Plug>(coc-classobj-a)
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+" inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
 " inoremap <expr> <ESC> coc#pum#visible() ? "\<C-o>coc#_hide()" : "<ESC>"
 "endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
