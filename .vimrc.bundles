@@ -14,9 +14,6 @@ Plug 'VundleVim/Vundle.vim'
 " [1] Themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
-" Plug 'lifepillar/vim-solarized8'
-" Plug 'dracula/vim'
-" Plug 'bling/vim-airline'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -32,63 +29,59 @@ Plug 'christoomey/vim-run-interactive'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [4] search filesystem with ctrl+p
 Plug 'ctrlpvim/ctrlp.vim'
+if has("nvim")
+  Plug 'nvim-telescope/telescope.nvim'
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [5] highlighting for Javascript
-" Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
-" Plug 'jimmyhchan/dustjs.vim'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [6] Utilities
-Plug 'scrooloose/syntastic'
-Plug 'myint/syntastic-extras'
+" [5] Utilities
 Plug 'tpope/vim-surround'
-" Plug 'vim-scripts/tComment'
 Plug 'tpope/vim-repeat'
-Plug 'vim-scripts/matchit.zip'
-Plug 'tmhedberg/matchit'
-Plug 'Chiel92/vim-autoformat'
-Plug 'rhysd/vim-clang-format'
+Plug 'tpope/vim-commentary'
 Plug 'sbdchd/neoformat'
 Plug 'liuchengxu/vim-which-key'
 Plug 'preservim/nerdcommenter'
-Plug 'sheerun/vim-polyglot'
 Plug 'matze/vim-move'
-Plug 'tpope/vim-commentary'
-"Plug 'jiangmiao/auto-pairs'
+Plug 'vim-scripts/matchit.zip'
+" Use for highlighting
+" Plug 'sheerun/vim-polyglot' " may use it
+Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
+Plug 'Yggdroot/indentLine'
+" Plug 'nathanaelkane/vim-indent-guides'
+if has("nvim")
+  Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [7] Make gists of current buffer
-"Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [8] Diary, notes, whatever. It's amazing
+" [6] Diary, notes, whatever. It's amazing
 Plug 'vimwiki/vimwiki'
-Plug 'tbabej/taskwiki'
-Plug 'plasticboy/vima-markdown'
+Plug 'jceb/vim-orgmode'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [9] Snippets
+" [7] Snippets
 "Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/vim-snippets'
+if has("nvim")
+  Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/vim-vsnip'
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [10] Autocomplete tags
-" Plug 'ervandew/supertab'
-"if has("nvim")
-"else
-" Plug 'neoclide/coc.nvim', {'for':['zig','cmake','rust',
-"   \'java','json', 'haskell', 'ts','sh', 'cs',
-"   \'yaml', 'c', 'cpp', 'd', 'go',
-"   \'python', 'dart', 'javascript', 'vim'], 'branch': 'release'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"endif
-"Plug 'Valloric/YouCompleteMe', {'do': './install.py --all'}
-"Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
-"Plug 'joereynolds/gtags-scope'
-"Plug 'jsfaint/gen_tags.vim'
+" [8] Autocomplete
+if has("nvim")
+" Plug 'neoclide/coc.nvim', {'for':['cmake','rust',
+"   \'java','json', 'ts','sh',
+"   \'yaml', 'c', 'cpp',
+"   \'python', 'javascript', 'vim'], 'branch': 'release'}
+" else
+" Plug 'neoclide/coc.nvim', {'for':['cmake','rust',
+"   \'java','json', 'ts','sh',
+"   \'yaml', 'c', 'cpp',
+"   \'python', 'javascript', 'vim'], 'branch': 'my_own'}
+endif
+Plug 'neoclide/coc.nvim', {'branch': 'my_own'}
 if has("nvim")
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-tree/nvim-tree.lua'
   Plug 'neovim/nvim-lspconfig'
   Plug 'williamboman/nvim-lsp-installer'
-  Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
   " nvim-cmp has a lot of dependencies
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
@@ -96,52 +89,24 @@ if has("nvim")
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-
-  " plugins for snippets
-  Plug 'hrsh7th/cmp-vsnip'
-  Plug 'hrsh7th/vim-vsnip'
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [11]
+" [9] Editor
 Plug 'editorconfig/editorconfig-vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [12] C Specific
-" Plug 'vim-scripts/c.vim'
-" Plug 'majutsushi/tagbar'
+" [10] Language
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'rust-lang/rust.vim'
-" Plug 'lyuts/vim-rtags'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [13]
-"Plug 'joonty/vdebug'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [14]
-"Plug 'godlygeek/tabular'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [15]
+" [11] Latex
 Plug 'lervag/vimtex'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [16] Vim Session
+" [12] Vim Session
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [17]
-" Plug 'vim-scripts/ZoomWin'
-Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [18]
-Plug 'ledger/vim-ledger'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [19]
-Plug 'jceb/vim-orgmode'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [20]
-"Plug 'JamshedVesuna/vim-markdown-preview'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [21]
-Plug 'Yggdroot/indentLine'
-" Plug 'nathanaelkane/vim-indent-guides'
+" [13]
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -153,16 +118,7 @@ let g:solarized_contrast  = "high"
 let g:solarized_visibility= "normal"
 colorscheme solarized
 let g:solarized_use16=1
-"colorscheme solarized8_flat
 call togglebg#map("<F5>")
-"colorscheme desert
-"colorscheme dracula
-"colorscheme octol
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-"colorscheme monokai
-" Allow powerline symbols to show up
-let g:powerline_loaded = 1
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = []
 let g:airline_highlighting_cache = 1
@@ -181,102 +137,57 @@ let g:fzf_layout = { 'down': '~25%'  }
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [3]
+" [3] Tmux
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [4]
+" [4] File
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]((\.(git|hg|svn))|(build|bin|lib))$',
   \ 'file': '\v\.(exe|so|dll|o|a|out|so*|vs*)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [5] configure syntastic syntax checking to check on open as well as save
-nnoremap <leader>sc :SyntasticCheck<cr>
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0 " Don't auto open/close location list
-let g:syntastic_check_on_open=0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode="passive"
-let g:syntastic_enable_signs=0
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-" pymode setting
-let g:pymode_lint_on_write = 0
-"let g:pymode_python = 'python3'
-"let g:pymode_rope=0
-"let g:pymode_run = 0
-" Allow highlighting of HTML within Javascript (for React)
-let g:javascript_enable_domhtmlcss = 1
-let g:jsx_ext_required = 0
-let g:syntastic_c_checkers = ['check']
-let g:syntastic_cpp_checkers = ['check']
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [6] Key mapping for Cosco.vim - space + ; to add semicolon or comma in Javascript or CSS
-" autocmd FileType javascript,css nnoremap <silent> <leader>; :call cosco#commaOrSemiColon()<CR>
-" autocmd FileType javascript,css inoremap <silent> <leader>; <c-o>:call cosco#commaOrSemiColon()<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [7] Gist setup
-let g:gist_clip_command = 'pbcopy' "Using Gist will copy URL to clipboard automatically
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [8] Set Vim Wiki to my Dropbox directory
-let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [9]
-" Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [10] make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:ycm_extra_conf_globlist = ["~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py"]
-let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:gen_tags#ctags_opts  = '--c++-kinds=+p --c-kinds=+p --fields=+iaS
-			\--extra=+q --exclude=*.json* --exclude=*Makefile* --exclude=*.git*
-			\--exclude=*build/ --exclude=*.cmake* --exclude=*.txt*
-			\--exclude=*.out* --exclude=*.o* --exclude=*.a* --exclude=*.so*'
-"let g:gen_tags#ctags_prune = 0
-"let g:gen_tags#ctags_opts += ' --exclude=*.cmake'
-"let g:gen_tags#ctags_opts += ['--exclude=*Makefile* --exclude=*.o* --exclude=*.a']
-"let g:gen_tags#ctags_opts += ['--exclude=*.a* --exclude=*.cmake* --exclude=*.so*']
-"let g:gen_tags#ctags_opts += ['--exclude=*.json* --exclude=*.out*']
-"let g:gen_tags#gtags_opts = ['-c', '-c++', '--verbose']
-set cscopetag "search both cscopes db and the tags file
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [12]
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_posix_standard = 1
-"let g:cpp_experimental_simple_template_highlight = 1 " slower
-let g:cpp_experimental_template_highlight = 1 " faster
-let g:cpp_concepts_highlight = 1
-"let g:cpp_no_function_highlight = 1
-let c_no_curly_error=1
-"
-let g:cpp_simple_highlight = 1
-let g:cpp_named_requirements_highlight = 1
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [15]
-let g:tex_flavor='latex'
-let g:tex_conceal=''
-" [16]
-set sessionoptions-=options
-let g:session_autosave = 'no'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [20]
-"let vim_markdown_preview_browser='midori'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" [21]
+" [5]  Utils
+let g:NERDCreateDefaultMappings = 1
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
 " let g:indentLine_setColors = 0
 " let g:indentLine_char_list = ['▏', '┊', '┆', '|', '¦']
 let g:indentLine_char_list = ['┊']
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [6] Set Vim Wiki to my Dropbox directory
+let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [7] Snippets
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [8] Autocomplete
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [9]  Editor
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [10] Language
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+" let g:cpp_experimental_simple_template_highlight = 1 " slower
+let g:cpp_experimental_template_highlight = 1 " faster
+let g:cpp_concepts_highlight = 1
+" let g:cpp_no_function_highlight = 1
+let c_no_curly_error=1
+let g:cpp_simple_highlight = 1
+let g:cpp_named_requirements_highlight = 1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [11] Latex
+let g:tex_flavor='latex'
+let g:tex_conceal=''
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [12] session
+set sessionoptions-=options
+let g:session_autosave = 'no'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [13]
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

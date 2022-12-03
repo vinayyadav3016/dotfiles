@@ -1,4 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Escape insert mode
+imap <C-\> <Esc>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quicker window movement
 let g:C_Ctrl_j = 'off'
 nnoremap <C-j> <C-w>j
@@ -73,7 +76,7 @@ xnoremap ic <Plug>(coc-classobj-i)
 onoremap ic <Plug>(coc-classobj-i)
 xnoremap ac <Plug>(coc-classobj-a)
 onoremap ac <Plug>(coc-classobj-a)
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
 " inoremap <expr> <ESC> coc#pum#visible() ? "\<C-o>coc#_hide()" : "<ESC>"
 "endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,6 +96,20 @@ function! s:show_documentation()
     endif
 endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Zoom / Restore window.
+function! s:ZoomToggle() abort
+    if exists('t:zoomed') && t:zoomed
+        execute t:zoom_winrestcmd
+        let t:zoomed = 0
+    else
+        let t:zoom_winrestcmd = winrestcmd()
+        resize
+        vertical resize
+        let t:zoomed = 1
+    endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <silent> <C-\> :ZoomToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("nvim")
     nnoremap <silent> ;f :Telescope find_files<CR>

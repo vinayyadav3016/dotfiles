@@ -35,5 +35,6 @@
   "codeLens.enable": true,
   "diagnostic.messageTarget": "echo",
   "inlayHints.enable": true,
-  "signature.target": "echo"
+  "signature.target": "echo",
+  "suggest.floatConfig.shadow": true
 }
