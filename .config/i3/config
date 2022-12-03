@@ -16,11 +16,14 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 set $HELPER /home/vinay/.config/i3/helpers
 
+set $MONITOR01 HDMI-0
+set $MONITOR02 VGA-0
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System Francisco Display, FontAwesome 9
+font pango:System Francisco Display, FontAwesome 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -75,19 +78,19 @@ set $workspace18 4:
 set $workspace19 29:
 set $workspace20 30:♪
 #
-workspace $workspace01 output HDMI-0
-workspace $workspace08 output HDMI-0
-workspace $workspace10 output HDMI-0
-workspace $workspace11 output HDMI-0
-workspace $workspace18 output HDMI-0
-workspace $workspace20 output HDMI-0
+workspace $workspace01 output $MONITOR01
+workspace $workspace08 output $MONITOR01
+workspace $workspace10 output $MONITOR01
+workspace $workspace11 output $MONITOR01
+workspace $workspace18 output $MONITOR01
+workspace $workspace20 output $MONITOR01
 #
-workspace $workspace12 output VGA-0
-workspace $workspace13 output VGA-0
-workspace $workspace14 output VGA-0
-workspace $workspace15 output VGA-0
-workspace $workspace17 output VGA-0
-workspace $workspace19 output VGA-0
+workspace $workspace12 output $MONITOR02
+workspace $workspace13 output $MONITOR02
+workspace $workspace14 output $MONITOR02
+workspace $workspace15 output $MONITOR02
+workspace $workspace17 output $MONITOR02
+workspace $workspace19 output $MONITOR02
 
 
 ### Resize

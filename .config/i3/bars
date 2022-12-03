@@ -20,7 +20,7 @@ bar {
 	output VGA-0
 	tray_output none
 	position top
-	status_command i3status-rs ~/.config/i3/helpers/config.toml.2
+	status_command i3status-rs ~/.config/i3/helpers/config2.toml
 	colors {
 		background $bg-color
 		separator #757575

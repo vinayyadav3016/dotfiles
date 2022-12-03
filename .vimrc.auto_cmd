@@ -81,3 +81,19 @@ autocmd VimResized * :wincmd =
 autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup coc_group
+    autocmd!
+    autocmd FileType cmake inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType rust inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType java inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType json inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType ts inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType sh inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType yaml inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType c inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType cpp inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType python inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType javascript inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+    autocmd FileType vim inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+augroup END
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -31,6 +31,10 @@
   },
   "coc.preferences.hoverTarget": "echo",
   "coc.preferences.jumpCommand": "vsplit",
+  "diagnostic.virtualText": true,
+  "codeLens.enable": true,
   "diagnostic.messageTarget": "echo",
-  "signature.target": "echo"
+  "inlayHints.enable": true,
+  "signature.target": "echo",
+  "suggest.floatConfig.shadow": true
 }

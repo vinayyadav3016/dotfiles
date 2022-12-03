@@ -1,56 +1,47 @@
+[theme]
 theme = "slick"
 #theme = "solarized-dark"
+
+[icons]
 icons = "awesome"
 
 [[block]]
-block            = "nvidia_gpu"
-gpu_id           = 1
-label            = "RTX2060"
-interval         = 2
-show_memory      = true
-show_clocks      = true
-show_utilization = true
-show_fan_speed   = true
+block    = "nvidia_gpu"
+gpu_id   = 1
+interval = 2
+format   = "$icon RTX2060 $utilization $temperature $clocks"
 
 [[block]]
 block     = "temperature"
-collapsed = false
 interval  = 1
 
 [[block]]
 block    = "load"
 interval = 2
-format   = "{1m} {5m} {15m}"
+format   = "$icon $1m $5m $15m"
 
 [[block]]
 block    = "cpu"
 interval = 2
 
 [[block]]
-block       = "memory"
-interval    = 2
-display_type= "memory"
-format_mem  = "{mem_used_percents}"
-format_swap = "{swap_used_percents}"
+block    = "memory"
+format   = "$icon $mem_used $mem_used_percents"
+interval = 2
 
 [[block]]
 block = "sound"
 
-[[block]]
-block            = "nvidia_gpu"
-gpu_id           = 0
-label            = "GT710"
-interval         = 2
-show_memory      = true
-show_clocks      = false
-show_utilization = false
-show_fan_speed   = false
-show_clocks      = false
+#[[block]]
+#block     = "nvidia_gpu"
+#gpu_id    = 0
+#interval  = 2
+#format    = "$icon GT710"
 
 [[block]]
 block = "uptime"
 
 [[block]]
 block    = "time"
-interval = 60
-format   = "%a %Y/%m/%d %R"
+interval = 15
+format   = "$icon %a %Y/%m/%d %R"

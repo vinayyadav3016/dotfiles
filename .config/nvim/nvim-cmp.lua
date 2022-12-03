@@ -23,14 +23,14 @@ mapping = {
   ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 },
 sources = cmp.config.sources({
-  { name = 'nvim_lsp' },
-  { name = 'vsnip' }, -- For vsnip users.
+  -- { name = 'nvim_lsp' },
+  -- { name = 'vsnip' }, -- For vsnip users.
   -- { name = 'luasnip' }, -- For luasnip users.
   -- { name = 'ultisnips' }, -- For ultisnips users.
   -- { name = 'snippy' }, -- For snippy users.
 }, {
-  { name = 'buffer' },
-  { name = 'nvim_lsp_signature_help' }, -- for signature help
+  -- { name = 'buffer' },
+  -- { name = 'nvim_lsp_signature_help' }, -- for signature help
 })
 })
 
@@ -51,8 +51,11 @@ sources = cmp.config.sources({
 })
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['pyright'].setup {
-capabilities = capabilities
-}
+-- require('lspconfig')['pyright'].setup {
+-- capabilities = capabilities
+-- }
+-- require('lspconfig')['clangd'].setup {
+-- capabilities = capabilities
+-- }
