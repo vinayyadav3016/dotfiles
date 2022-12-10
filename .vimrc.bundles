@@ -73,8 +73,9 @@ if has("nvim")
 "   \'java','json', 'ts','sh',
 "   \'yaml', 'c', 'cpp',
 "   \'python', 'javascript', 'vim'], 'branch': 'my_own'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+else
 endif
-Plug 'neoclide/coc.nvim', {'branch': 'my_own'}
 if has("nvim")
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-lua/popup.nvim'
