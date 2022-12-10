@@ -73,7 +73,7 @@ if has("nvim")
 "   \'java','json', 'ts','sh',
 "   \'yaml', 'c', 'cpp',
 "   \'python', 'javascript', 'vim'], 'branch': 'my_own'}
-Plug 'neoclide/coc.nvim', {'branch': 'relase'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 else
 endif
 if has("nvim")
