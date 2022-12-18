@@ -1,31 +1,31 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-highlight ColorColumn ctermbg=red
-"highlight ColorColumn ctermbg=lightgrey
+" highlight ColorColumn ctermbg=red
+" highlight ColorColumn ctermbg=lightgrey
 highlight CursorLine ctermbg=black
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi TabLineFill ctermfg=DarkGreen ctermbg=DarkGreen
 " hi TabLine ctermfg=Blue ctermbg=Yellow
 hi TabLineSel ctermfg=LightGreen ctermbg=Yellow
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi User1 ctermfg=Cyan  ctermbg=LightCyan
+" hi User1 ctermfg=Cyan  ctermbg=LightCyan
 hi CocFloating ctermbg=0
-"hi User2 ctermfg=#000000  ctermbg=#F4905C
-"hi User3 ctermfg=#292b00  ctermbg=#f4f597
-"hi User4 ctermfg=#112605  ctermbg=#aefe7B
-"hi User5 ctermfg=#051d00  ctermbg=#7dcc7d
-"hi User7 ctermfg=#ffffff  ctermbg=#880c0e gui=bold
-"hi User8 ctermfg=#ffffff  ctermbg=#5b7fbb
-"hi User9 ctermfg=Blue  ctermbg=LightBlue
-"hi User0 ctermfg=Yellow  ctermbg=LightYellow
+" hi User2 ctermfg=#000000  ctermbg=#F4905C
+" hi User3 ctermfg=#292b00  ctermbg=#f4f597
+" hi User4 ctermfg=#112605  ctermbg=#aefe7B
+" hi User5 ctermfg=#051d00  ctermbg=#7dcc7d
+" hi User7 ctermfg=#ffffff  ctermbg=#880c0e gui=bold
+" hi User8 ctermfg=#ffffff  ctermbg=#5b7fbb
+" hi User9 ctermfg=Blue  ctermbg=LightBlue
+" hi User0 ctermfg=Yellow  ctermbg=LightYellow
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"hi User1 guifg=#ffdad8  guibg=#880c0e
-"hi User2 guifg=#000000  guibg=#F4905C
-"hi User3 guifg=#292b00  guibg=#f4f597
-"hi User4 guifg=#112605  guibg=#aefe7B
-"hi User5 guifg=#051d00  guibg=#7dcc7d
-"hi User7 guifg=#ffffff  guibg=#880c0e gui=bold
-"hi User8 guifg=#ffffff  guibg=#5b7fbb
-"hi User9 guifg=#ffffff  guibg=#810085
-"hi User0 guifg=#ffffff  guibg=#094afe
+" hi User1 guifg=#ffdad8  guibg=#880c0e
+" hi User2 guifg=#000000  guibg=#F4905C
+" hi User3 guifg=#292b00  guibg=#f4f597
+" hi User4 guifg=#112605  guibg=#aefe7B
+" hi User5 guifg=#051d00  guibg=#7dcc7d
+" hi User7 guifg=#ffffff  guibg=#880c0e gui=bold
+" hi User8 guifg=#ffffff  guibg=#5b7fbb
+" hi User9 guifg=#ffffff  guibg=#810085
+" hi User0 guifg=#ffffff  guibg=#094afe
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

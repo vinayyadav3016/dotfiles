@@ -31,10 +31,10 @@
   },
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.jumpCommand": "vsplit",
-  "diagnostic.virtualText": true,
+  "diagnostic.virtualText": false,
   "codeLens.enable": true,
   "diagnostic.messageTarget": "float",
-  "inlayHints.enable": "true",
+  "inlayHints.enable": true,
   "signature.target": "float",
   "signature.preferShownAbove": false,
   "suggest.floatConfig.shadow": "true"
