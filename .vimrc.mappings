@@ -53,6 +53,9 @@ noremap <silent> <C-n> :NERDTreeToggle<cr>
 noremap <silent> \g :Git<cr>
 noremap <silent> \d :Gdiffsplit<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Format mapping
+noremap <silent> \f :Neoformat<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Coc mapping
 "if has("nvim")
 "else
