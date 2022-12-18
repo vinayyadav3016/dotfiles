@@ -37,6 +37,7 @@ Plug 'christoomey/vim-run-interactive'
 Plug 'ctrlpvim/ctrlp.vim'
 if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
+  " Plug 'nvim-treesitter/telescope-fzf-native.nvim', {'run': 'make'}
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [5] Utilities
@@ -84,6 +85,7 @@ else
 endif
 if has("nvim")
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'after': 'nvim-treesitter'}
   Plug 'nvim-treesitter/playground'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'

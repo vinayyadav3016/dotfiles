@@ -57,8 +57,7 @@ noremap <silent> \d :Gdiffsplit<cr>
 noremap <silent> \f :Neoformat<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Coc mapping
-"if has("nvim")
-"else
+if has("nvim")
 nnoremap <silent> [w <Plug>(coc-diagnostic-prev)
 nnoremap <silent> ]w <Plug>(coc-diagnostic-next)
 nnoremap <silent> [d <Plug>(coc-definition)
@@ -81,8 +80,7 @@ xnoremap ic <Plug>(coc-classobj-i)
 onoremap ic <Plug>(coc-classobj-i)
 xnoremap ac <Plug>(coc-classobj-a)
 onoremap ac <Plug>(coc-classobj-a)
-" inoremap <expr> <ESC> coc#pum#visible() ? "\<C-o>coc#_hide()" : "<ESC>"
-"endif
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:insert_show()
     if &filetype == 'vim'
@@ -116,10 +114,6 @@ command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <C-\> :ZoomToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("nvim")
-    nnoremap <silent> ;f :Telescope find_files<CR>
-    nnoremap <silent> ;g :Telescope live_grep<CR>
-    nnoremap <silent> ;b :Telescope buffers<CR>
-    nnoremap <silent> ;h :Telescope help_tags<CR>
     nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
     nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
     inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
@@ -128,6 +122,5 @@ if has("nvim")
     vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
     nnoremap <silent> <A-t> :split term://bash<CR>
     nnoremap <silent> <A-v> :vsplit term://bash<CR>
-    " inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
