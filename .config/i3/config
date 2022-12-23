@@ -179,7 +179,7 @@ bindsym $mod+mod1+s mode "save"
 # finds out, if available)
 bar {
 	position top
-	status_command i3status-rs ~/.config/i3/helpers/config.toml.2
+	status_command i3status-rs ~/.config/i3/helpers/config2.toml
 	colors {
 		background $bg-color
 		separator #757575
