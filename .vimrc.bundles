@@ -130,10 +130,15 @@ call plug#end()
 " [1] Color scheme
 syntax enable
 set background=dark
-let g:solarized_termcolors= 16
-let g:solarized_contrast  = "high"
-let g:solarized_visibility= "normal"
-let g:solarized_use16=1
+let g:solarized_termcolors = 16
+let g:solarized_contrast   = "high"
+let g:solarized_visibility = "normal"
+let g:solarized_use16      = 1
+let g:solarized_termtrans  = 0
+" leg g:solarized_italic     = 1
+" leg g:solarized_underlying = 1
+" leg g:solarized_bold       = 1
+" leg g:solarized_degrade    = 0
 colorscheme solarized
 call togglebg#map("<F5>")
 let g:airline_powerline_fonts = 1
