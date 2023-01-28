@@ -51,7 +51,7 @@ class EventHandler (object):
     def hibernate_clicked(self, button):
       proxy = self._bus.get_object("org.freedesktop.login1","/org/freedesktop/login1")
       lm = dbus.Interface(proxy,"org.freedesktop.login1.Manager")
-      lm.Hibernate(True)
+      #  lm.Hibernate(True)
     def cancel_clicked(self, button):
       Gtk.main_quit()
     def lock_clicked(self, button):
