@@ -29,13 +29,12 @@
       ]
     }
   },
-  "coc.preferences.hoverTarget": "float",
+  "coc.preferences.floatActions": true,
   "coc.preferences.jumpCommand": "vsplit",
   "diagnostic.virtualText": false,
-  "codeLens.enable": true,
+  "codeLens.enable": false,
   "diagnostic.messageTarget": "float",
-  "inlayHints.enable": true,
+  "inlayHint.display": false,
   "signature.target": "float",
   "signature.preferShownAbove": false,
-  "suggest.floatConfig.shadow": "true"
 }
