@@ -3,7 +3,7 @@ theme = "slick"
 #theme = "solarized-dark"
 
 [icons]
-icons = "awesome"
+icons = "awesome6"
 
 [[block]]
 block    = "battery"
@@ -40,4 +40,6 @@ block = "uptime"
 [[block]]
 block    = "time"
 interval = 15
-format   = "$icon %a %Y/%m/%d %R"
+[block.format]
+full = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %R') "
+short = " $icon $timestamp.datetime(f:%R) "
