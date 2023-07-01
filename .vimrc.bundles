@@ -16,7 +16,7 @@ Plug 'altercation/vim-colors-solarized'
 " Plug 'sickill/vim-monokai'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 " Plug 'romainl/flattened'
 " Plug 'EdenEast/nightfox.nvim'
 " Plug 'ishan9299/nvim-solarized-lua'
@@ -25,6 +25,7 @@ Plug 'ryanoasis/vim-devicons'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] File tree viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [3] Tmux
@@ -156,6 +157,8 @@ let g:lightline = {
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 let g:fzf_layout = { 'down': '~25%'  }
+let g:webdevicons_enable_nerdtree = 1
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol='x'
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
