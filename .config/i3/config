@@ -65,11 +65,11 @@ set $workspace20 30:♪
 ############################## Workspaces Monitors #############################
 workspace $workspace03 output $MONITOR01
 workspace $workspace04 output $MONITOR01
+workspace $workspace05 output $MONITOR01
 workspace $workspace17 output $MONITOR01
 workspace $workspace26 output $MONITOR01
 ##
 workspace $workspace02 output $MONITOR02
-workspace $workspace05 output $MONITOR02
 workspace $workspace09 output $MONITOR02
 workspace $workspace12 output $MONITOR02
 workspace $workspace13 output $MONITOR02
