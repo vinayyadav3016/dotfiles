@@ -13,6 +13,15 @@ Plug 'VundleVim/Vundle.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [1] Themes
 Plug 'altercation/vim-colors-solarized'
+if has("nvim")
+  Plug 'Tsuzat/NeoSolarized.nvim', { 'branch': 'master' }
+  Plug 'shaunsingh/solarized.nvim'
+  Plug 'EdenEast/nightfox.nvim'
+  Plug 'shaunsingh/solarized.nvim'
+  Plug 'folke/tokyonight.nvim'
+  Plug 'lifepillar/vim-solarized8'
+else
+endif
 " Plug 'sickill/vim-monokai'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
@@ -81,7 +90,7 @@ if has("nvim")
 "   \'java','json', 'ts','sh',
 "   \'yaml', 'c', 'cpp',
 "   \'python', 'javascript', 'vim'], 'branch': 'my_own'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 else
 endif
 if has("nvim")
@@ -111,6 +120,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'rust-lang/rust.vim'
+Plug 'ziglang/zig.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [11] Latex
 Plug 'lervag/vimtex'
@@ -133,15 +143,22 @@ syntax enable
 set background=dark
 let g:solarized_termcolors = 16
 let g:solarized_contrast   = "high"
-let g:solarized_visibility = "normal"
+let g:solarized_visibility = "high"
 let g:solarized_use16      = 1
-let g:solarized_termtrans  = 0
+let g:solarized_termtrans  = 1
 " leg g:solarized_italic     = 1
 " leg g:solarized_underlying = 1
 " leg g:solarized_bold       = 1
 " leg g:solarized_degrade    = 0
-colorscheme solarized
-call togglebg#map("<F5>")
+if has("nvim")
+let g:solarized_termcolors = 256
+  " colorscheme NeoSolarized
+  colorscheme solarized8
+else
+  colorscheme solarized
+  call togglebg#map("<F5>")
+endif
+
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = []
 let g:airline_highlighting_cache = 1

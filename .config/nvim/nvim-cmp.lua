@@ -26,8 +26,8 @@ cmp.setup(
             ['<C-y>'] = cmp.config.disable,
             ['<C-e>'] = cmp.mapping(
                 {
-                  i = cmp.mapping.abort(),
-                  c = cmp.mapping.close(),
+                    i = cmp.mapping.abort(),
+                    c = cmp.mapping.close(),
                 }
             ),
             -- Accept currently selected item. Set `select` to `false` to only
@@ -36,14 +36,14 @@ cmp.setup(
         },
         sources = cmp.config.sources(
             {
-              -- { name = 'nvim_lsp' },
-              -- { name = 'vsnip' }, -- For vsnip users.
-              -- { name = 'luasnip' }, -- For luasnip users.
-              -- { name = 'ultisnips' }, -- For ultisnips users.
-              -- { name = 'snippy' }, -- For snippy users.
+                -- { name = 'nvim_lsp' },
+                -- { name = 'vsnip' }, -- For vsnip users.
+                -- { name = 'luasnip' }, -- For luasnip users.
+                -- { name = 'ultisnips' }, -- For ultisnips users.
+                -- { name = 'snippy' }, -- For snippy users.
             }, {
-              -- { name = 'buffer' },
-              -- { name = 'nvim_lsp_signature_help' }, -- for signature help
+                -- { name = 'buffer' },
+                -- { name = 'nvim_lsp_signature_help' }, -- for signature help
             }
         )
     }
@@ -58,8 +58,8 @@ cmp.setup.cmdline('/', { sources = { { name = 'buffer' } } })
 cmp.setup.cmdline(':',
     {
         sources = cmp.config.sources(
-          { { name = 'path' } },
-          { { name = 'cmdline' } }
+            { { name = 'path' } },
+            { { name = 'cmdline' } }
         )
     }
 )

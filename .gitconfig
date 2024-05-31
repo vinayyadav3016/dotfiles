@@ -14,5 +14,7 @@
 	lg3  = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all --simplify-by-decoration
 	smdf = diff --submodule=diff
 	mncf = merge --no-commit --no-ff
+	dfwd = diff --word-diff
+	dffl = diff --name-only
 [protocol "file"]
 	allow = always

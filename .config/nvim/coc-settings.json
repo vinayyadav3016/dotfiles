@@ -29,6 +29,10 @@
       ]
     }
   },
+  "zig.enabled": true,
+  "zig.startUpMessage": true,
+  "zig.path": "zls",
+  "zig.debugLog": false,
   "coc.preferences.floatActions": true,
   "coc.preferences.jumpCommand": "vsplit",
   "diagnostic.virtualText": false,

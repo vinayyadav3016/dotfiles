@@ -12,4 +12,5 @@ luafile ~/.config/nvim/nvim-cmp.lua
 " luafile ~/.config/nvim/nvim-ide.lua
 " luafile ~/.config/nvim/lsp.lua
 luafile ~/.config/nvim/keymaps.lua
+" luafile ~/.config/nvim/solarized.lua
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
