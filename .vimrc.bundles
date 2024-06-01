@@ -91,6 +91,7 @@ if has("nvim")
 "   \'yaml', 'c', 'cpp',
 "   \'python', 'javascript', 'vim'], 'branch': 'my_own'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'nvimdev/lspsaga.nvim'
 else
 endif
 if has("nvim")
