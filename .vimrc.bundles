@@ -16,21 +16,11 @@ Plug 'altercation/vim-colors-solarized'
 if has("nvim")
   Plug 'Tsuzat/NeoSolarized.nvim', { 'branch': 'master' }
   Plug 'shaunsingh/solarized.nvim'
-  Plug 'EdenEast/nightfox.nvim'
-  Plug 'shaunsingh/solarized.nvim'
-  Plug 'folke/tokyonight.nvim'
   Plug 'lifepillar/vim-solarized8'
 else
 endif
-" Plug 'sickill/vim-monokai'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
-" Plug 'ryanoasis/vim-devicons'
-" Plug 'romainl/flattened'
-" Plug 'EdenEast/nightfox.nvim'
-" Plug 'ishan9299/nvim-solarized-lua'
-" Plug 'projekt0n/github-nvim-theme'
-" Plug 'rose-pine/neovim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] File tree viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -59,8 +49,6 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'preservim/nerdcommenter'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/matchit.zip'
-" Use for highlighting
-" Plug 'sheerun/vim-polyglot' " may use it
 Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
 Plug 'Yggdroot/indentLine'
 " Plug 'nathanaelkane/vim-indent-guides'
@@ -73,7 +61,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'jceb/vim-orgmode'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Snippets
-"Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/vim-snippets'
 if has("nvim")
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
@@ -81,17 +68,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [8] Autocomplete
 if has("nvim")
-" Plug 'neoclide/coc.nvim', {'for':['cmake','rust',
-"   \'java','json', 'ts','sh',
-"   \'yaml', 'c', 'cpp',
-"   \'python', 'javascript', 'vim'], 'branch': 'release'}
-" else
-" Plug 'neoclide/coc.nvim', {'for':['cmake','rust',
-"   \'java','json', 'ts','sh',
-"   \'yaml', 'c', 'cpp',
-"   \'python', 'javascript', 'vim'], 'branch': 'my_own'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'nvimdev/lspsaga.nvim'
 else
 endif
 if has("nvim")
