@@ -25,17 +25,21 @@
         "--header-insertion=never",
         "--limit-results=0",
         "-j=2",
-        "--pch-storage=memory",
+        "--pch-storage=memory"
       ]
     }
   },
-  "coc.preferences.hoverTarget": "float",
+  "hover.target": "float",
+  "zig.enabled": true,
+  "zig.startUpMessage": true,
+  "zig.path": "zls",
+  "zig.debugLog": false,
+  "coc.preferences.floatActions": true,
   "coc.preferences.jumpCommand": "vsplit",
   "diagnostic.virtualText": false,
-  "codeLens.enable": true,
+  "codeLens.enable": false,
   "diagnostic.messageTarget": "float",
-  "inlayHints.enable": true,
+  "inlayHint.display": false,
   "signature.target": "float",
-  "signature.preferShownAbove": false,
-  "suggest.floatConfig.shadow": "true"
+  "signature.preferShownAbove": false
 }

@@ -13,18 +13,20 @@ Plug 'VundleVim/Vundle.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [1] Themes
 Plug 'altercation/vim-colors-solarized'
-" Plug 'sickill/vim-monokai'
+if has("nvim")
+  Plug 'Tsuzat/NeoSolarized.nvim', { 'branch': 'master' }
+  Plug 'shaunsingh/solarized.nvim'
+  Plug 'lifepillar/vim-solarized8'
+else
+endif
+Plug 'lifepillar/vim-solarized8'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'romainl/flattened'
-" Plug 'EdenEast/nightfox.nvim'
-" Plug 'ishan9299/nvim-solarized-lua'
-" Plug 'projekt0n/github-nvim-theme'
-" Plug 'rose-pine/neovim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] File tree viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [3] Tmux
@@ -49,8 +51,6 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'preservim/nerdcommenter'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/matchit.zip'
-" Use for highlighting
-" Plug 'sheerun/vim-polyglot' " may use it
 Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
 Plug 'Yggdroot/indentLine'
 " Plug 'nathanaelkane/vim-indent-guides'
@@ -60,10 +60,12 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Diary, notes, whatever. It's amazing
 Plug 'vimwiki/vimwiki'
-Plug 'jceb/vim-orgmode'
+Plug 'tbabej/taskwiki'
+" Plug 'jceb/vim-orgmode'
+" Plug 'nvim-orgmode/orgmode'
+" Plug 'zk-org/zk-nvim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Snippets
-"Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/vim-snippets'
 if has("nvim")
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
@@ -71,16 +73,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [8] Autocomplete
 if has("nvim")
-" Plug 'neoclide/coc.nvim', {'for':['cmake','rust',
-"   \'java','json', 'ts','sh',
-"   \'yaml', 'c', 'cpp',
-"   \'python', 'javascript', 'vim'], 'branch': 'release'}
-" else
-" Plug 'neoclide/coc.nvim', {'for':['cmake','rust',
-"   \'java','json', 'ts','sh',
-"   \'yaml', 'c', 'cpp',
-"   \'python', 'javascript', 'vim'], 'branch': 'my_own'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 else
 endif
 if has("nvim")
@@ -110,6 +103,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'rust-lang/rust.vim'
+Plug 'ziglang/zig.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [11] Latex
 Plug 'lervag/vimtex'
@@ -130,11 +124,17 @@ call plug#end()
 " [1] Color scheme
 syntax enable
 set background=dark
-let g:solarized_termcolors= 16
-let g:solarized_contrast  = "high"
-let g:solarized_visibility= "normal"
-let g:solarized_use16=1
-colorscheme solarized
+let g:solarized_termcolors = 16
+let g:solarized_contrast   = "high"
+let g:solarized_visibility = "high"
+let g:solarized_use16      = 1
+let g:solarized_termtrans  = 1
+" leg g:solarized_italic     = 1
+" leg g:solarized_underlying = 1
+" leg g:solarized_bold       = 1
+" leg g:solarized_degrade    = 0
+let g:solarized_termcolors = 256
+colorscheme solarized8
 call togglebg#map("<F5>")
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = []
@@ -151,6 +151,8 @@ let g:lightline = {
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 let g:fzf_layout = { 'down': '~25%'  }
+let g:webdevicons_enable_nerdtree = 1
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol='x'
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -177,7 +179,15 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Set Vim Wiki to my Dropbox directory
-let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
+" let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
+" let g:vimwiki_list = [{'path':'/home/vinay/work/documents/vimwiki'}]
+let g:vimwiki_list = [{'path':'/home/vinay/work/dotfiles/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
+let g:vimwiki_ext2syntax = {'.md' : 'markdown', '.markdown' : 'markdown', '.mdown' : 'markdown'}
+let g:vimwiki_markdown_link_ext = 1
+let g:taskwiki_markup_syntax = 'markdown'
+let g:markdown_folding = 1
+let g:concealcursor="nc"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Snippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
