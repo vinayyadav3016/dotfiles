@@ -92,8 +92,27 @@ if ! shopt -oq posix; then
   fi
 fi
 
+TaskIndicator() {
+    URGENT=⚠
+    DUETOMORROW=⊠
+    DUETODAY=⚡
+    OVERDUE=⏻
+    TASK=task
+    if [[ `$TASK +READY +OVERDUE count` -gt "0" ]]; then
+        echo "$OVERDUE"
+    elif [[ `$TASK +READY +DUETODAY count` -gt "0" ]]; then
+        echo "$DUETODAY"
+    elif [[ `$TASK +READY +TOMORROW count` -gt "0" ]]; then
+        echo "$DUETOMORROW"
+    elif [[ `$TASK +READY 'urgency > 10' count` -gt "0" ]]; then
+        echo "$URGENT"
+    else
+        echo '$'
+    fi
+}
+
 ### change prompt '${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-PS1="\[\e[0;31m\]=====================================\[\e[m\]\n\[\e[0;32m\]\u@\H\[\e[m\]:[\l]:[\j]:\[\e[0;31m\]\w/\[\e[m\]\n[\[\e[1;34m\]\t\[\e[m\]-\[\e[1;31m\]\#\[\e[m\]]\$ "
+PS1="\[\e[0;31m\]=====================================\[\e[m\]\n\[\e[0;32m\]\u@\H\[\e[m\]:[\l]:[\j]:\[\e[0;31m\]\w/\[\e[m\]\n[\[\e[1;34m\]\t\[\e[m\]-\[\e[1;31m\]\#\[\e[m\]]:[\$(TaskIndicator)]:\[\e[1;31m\]\$\[\e[m\] "
 
 export EDITOR=vim
 set -o vi

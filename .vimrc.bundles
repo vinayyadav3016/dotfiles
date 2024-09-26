@@ -19,6 +19,7 @@ if has("nvim")
   Plug 'lifepillar/vim-solarized8'
 else
 endif
+Plug 'lifepillar/vim-solarized8'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -58,7 +59,10 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Diary, notes, whatever. It's amazing
 Plug 'vimwiki/vimwiki'
-Plug 'jceb/vim-orgmode'
+Plug 'tbabej/taskwiki'
+" Plug 'jceb/vim-orgmode'
+" Plug 'nvim-orgmode/orgmode'
+" Plug 'zk-org/zk-nvim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Snippets
 if has("nvim")
@@ -128,15 +132,9 @@ let g:solarized_termtrans  = 1
 " leg g:solarized_underlying = 1
 " leg g:solarized_bold       = 1
 " leg g:solarized_degrade    = 0
-if has("nvim")
 let g:solarized_termcolors = 256
-  " colorscheme NeoSolarized
-  colorscheme solarized8
-else
-  colorscheme solarized
-  call togglebg#map("<F5>")
-endif
-
+colorscheme solarized8
+call togglebg#map("<F5>")
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = []
 let g:airline_highlighting_cache = 1
@@ -180,7 +178,15 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Set Vim Wiki to my Dropbox directory
-let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
+" let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
+" let g:vimwiki_list = [{'path':'/home/vinay/work/documents/vimwiki'}]
+let g:vimwiki_list = [{'path':'/home/vinay/work/dotfiles/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
+let g:vimwiki_ext2syntax = {'.md' : 'markdown', '.markdown' : 'markdown', '.mdown' : 'markdown'}
+let g:vimwiki_markdown_link_ext = 1
+let g:taskwiki_markup_syntax = 'markdown'
+let g:markdown_folding = 1
+let g:concealcursor="nc"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Snippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

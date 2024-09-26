@@ -55,7 +55,9 @@ augroup vimrc_number_toggle
     "autocmd FocusLost * call ToggleRelativeOn()
     "autocmd FocusGained * call ToggleRelativeOn()
     autocmd InsertEnter * set cul
+    autocmd InsertEnter * set conceallevel=0
     autocmd InsertLeave * set nocul
+    autocmd InsertLeave * set conceallevel=2
 augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS - Do stuff

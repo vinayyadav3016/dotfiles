@@ -14,6 +14,8 @@ assign [class="smplayer"]     $workspace13
 ###
 assign [class="retro"]        $workspace14
 assign [class="^Steam"]       $workspace14
+assign [class="^steam"]       $workspace14
+assign [class="steam"]        $workspace14
 ###
 assign [class="Texmaker"]     $workspace15
 assign [class="code-oss"]     $workspace15

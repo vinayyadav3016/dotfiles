@@ -51,10 +51,13 @@ noremap <silent> <C-n> :NERDTreeToggle<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fugitive mapping
 noremap <silent> \g :Git<cr>
-noremap <silent> \d :Gdiffsplit<cr>
+noremap <silent> \d :vertical rightbelow Gdiffsplit<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Format mapping
 noremap <silent> \f :Neoformat<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <silent> \w :bp<cr>
+noremap <silent> \e :bn<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:insert_show()
     if &filetype == 'vim'

@@ -25,7 +25,7 @@
         "--header-insertion=never",
         "--limit-results=0",
         "-j=2",
-        "--pch-storage=memory",
+        "--pch-storage=memory"
       ]
     }
   },
@@ -40,5 +40,5 @@
   "diagnostic.messageTarget": "float",
   "inlayHint.display": false,
   "signature.target": "float",
-  "signature.preferShownAbove": false,
+  "signature.preferShownAbove": false
 }

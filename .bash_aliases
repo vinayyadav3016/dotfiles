@@ -40,6 +40,9 @@ alias poweroff="sudo systemctl poweroff"
 alias i3-resurrect-save="i3-resurrect save -d ~/.i3/i3-resurrect/"
 alias i3-resurrect-restore="i3-resurrect restore -d ~/.i3/i3-resurrect/"
 ################################################################################
+##################################  TaskWarr  ##################################
+alias tprd="${MY_SHELL_UTILS}/task_populate_recurrance_dependency.sh"
+################################################################################
 ################################  Use slert  ###################################
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
