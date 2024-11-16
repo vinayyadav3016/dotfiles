@@ -52,6 +52,7 @@ Plug 'matze/vim-move'
 Plug 'vim-scripts/matchit.zip'
 Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
 Plug 'Yggdroot/indentLine'
+Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 " Plug 'nathanaelkane/vim-indent-guides'
 if has("nvim")
   Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
@@ -59,7 +60,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Diary, notes, whatever. It's amazing
 Plug 'vimwiki/vimwiki'
-Plug 'tbabej/taskwiki'
+" Plug 'tbabej/taskwiki'
 " Plug 'jceb/vim-orgmode'
 " Plug 'nvim-orgmode/orgmode'
 " Plug 'zk-org/zk-nvim'
@@ -86,6 +87,7 @@ if has("nvim")
   " Plug 'williamboman/nvim-lsp-installer'
   Plug 'williamboman/mason-lspconfig.nvim'
   Plug 'williamboman/mason.nvim'
+  Plug 'nvimdev/lspsaga.nvim'
   " nvim-cmp has a lot of dependencies
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'

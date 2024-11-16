@@ -1,7 +1,7 @@
 # bars
 bar {
 	id 0
-	output DVI-D-0
+	output DVI-D-1
 	position top
 	status_command i3status-rs ~/.config/i3/helpers/config.toml
 	colors {
@@ -17,7 +17,7 @@ bar {
 
 bar {
 	id 1
-	output VGA-0
+	output DP-1
 	tray_output none
 	position top
 	status_command i3status-rs ~/.config/i3/helpers/config2.toml
@@ -34,7 +34,7 @@ bar {
 
 bar {
 	id 3
-	output HDMI-0
+	output HDMI-1
 	tray_output none
 	position top
 	status_command i3status-rs ~/.config/i3/helpers/config2.toml

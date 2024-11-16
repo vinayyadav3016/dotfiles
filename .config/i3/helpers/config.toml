@@ -7,9 +7,15 @@ icons = "awesome4"
 
 [[block]]
 block    = "nvidia_gpu"
-gpu_id   = 1
+gpu_id   = 0
 interval = 2
 format   = "$icon RTX2060 $utilization $temperature $clocks"
+
+[[block]]
+block      = "amd_gpu"
+format     = " $icon RX550 $utilization $vram_used_percents"
+format_alt = " $icon MEM: $vram_used_percents ($vram_used/$vram_total) "
+interval = 2
 
 [[block]]
 block     = "temperature"

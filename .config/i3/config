@@ -25,9 +25,9 @@ floating_modifier $mod
 focus_follows_mouse no
 ################################################################################
 #################### Define Monitors in horizonatal sequence ###################
-set $MONITOR01 VGA-0
-set $MONITOR02 HDMI-0
-set $MONITOR03 DVI-D-0
+set $MONITOR01 DP-1
+set $MONITOR02 HDMI-1
+set $MONITOR03 DVI-D-1
 ################################################################################
 #################################### Fonts #####################################
 # Font for window titles. Will also be used by the bar unless a different font
@@ -66,6 +66,7 @@ set $workspace20 30:♪
 workspace $workspace03 output $MONITOR01
 workspace $workspace04 output $MONITOR01
 workspace $workspace05 output $MONITOR01
+workspace $workspace16 output $MONITOR01
 workspace $workspace17 output $MONITOR01
 workspace $workspace26 output $MONITOR01
 ##
