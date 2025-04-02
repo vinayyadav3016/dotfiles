@@ -22,7 +22,6 @@ endif
 Plug 'lifepillar/vim-solarized8'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
-Plug 'ryanoasis/vim-devicons'
 Plug 'navarasu/onedark.nvim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] File tree viewer
@@ -117,6 +116,7 @@ Plug 'lervag/vimtex'
 " [12] Vim Session
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
+Plug 'ryanoasis/vim-devicons'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [13]
 if has("nvim")
@@ -157,7 +157,7 @@ let g:lightline = {
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 let g:fzf_layout = { 'down': '~25%'  }
-let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_nerdtree = 0
 let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol='x'
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
