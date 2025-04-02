@@ -31,7 +31,7 @@ vnoremap > >gv
 vnoremap < <gv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
-set pastetoggle=<leader>v
+" set pastetoggle=<leader>v
 "Copy paste to/from clipboard
 vnoremap <C-c> "*y
 noremap <silent><leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
@@ -61,6 +61,7 @@ noremap <silent> \f :Neoformat<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <silent> \w :bp<cr>
 noremap <silent> \e :bn<cr>
+noremap <silent> \q :bd<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:insert_show()
     if &filetype == 'vim'
