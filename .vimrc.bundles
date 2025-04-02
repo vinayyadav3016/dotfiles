@@ -22,6 +22,8 @@ endif
 Plug 'lifepillar/vim-solarized8'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
+Plug 'ryanoasis/vim-devicons'
+Plug 'navarasu/onedark.nvim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] File tree viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
