@@ -36,7 +36,7 @@ font pango:System Francisco Display, FontAwesome 9
 #font JetBrainsMonoNL-Regular 9
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono Book 10
+#font pango:DejaVu Sans Mono Book 9
 ################################################################################
 #      ♪                                
 ################################################################################

@@ -95,11 +95,11 @@ TaskIndicator() {
     #    echo "$DUETODAY"
     #elif [[ `$TASK +READY +TOMORROW count` -gt "0" ]]; then
     #    echo "$DUETOMORROW"
-    if [[ `$TASK +READY 'urgency > 10' count` -gt "0" ]]; then
-        echo "$URGENT"
-    else
-        echo '$'
-    fi
+    #if [[ `$TASK +READY 'urgency > 10' count` -gt "0" ]]; then
+        #echo "$URGENT"
+    #else
+        #echo '$'
+    #fi
 }
 
 ### change prompt '${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
