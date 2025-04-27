@@ -58,7 +58,8 @@ class EventHandler (object):
       self.lock()
     def lock(self):
       #subprocess.Popen(['/usr/bin/slock'])
-      subprocess.Popen(['xflock4'])
+      #  subprocess.Popen(['xflock4'])
+      subprocess.Popen(['i3lock -i ~/.config/i3/lock_screen/lock.png'])
       Gtk.main_quit()
     def key_pressed(self, widget, event):
       #print("key: ", event.keyval, "; state: ", int(event.state))
