@@ -126,10 +126,13 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+AGENT=`pgrep -u $USER ssh-agent`
+if [[ ! -n "$AGENT" ]]; then
+    ssh-agent -s> "$XDG_RUNTIME_DIR/ssh-agent.env"
+    cat $XDG_RUNTIME_DIR/ssh-agent.env
+    ssh-add
 fi
 if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
-    # source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-    eval "ssh-agent -s" > /dev/null
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+    #eval "ssh-agent -s" > /dev/null
 fi
