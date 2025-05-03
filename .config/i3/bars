@@ -4,6 +4,7 @@ bar {
 	output DVI-D-1
 	position top
 	status_command i3status-rs ~/.config/i3/helpers/config.toml
+	font pango:System Francisco Display 9, FontAwesome 9
 	colors {
 		background $bg-color
 		separator #757575
@@ -21,6 +22,7 @@ bar {
 	tray_output none
 	position top
 	status_command i3status-rs ~/.config/i3/helpers/config2.toml
+	font pango:System Francisco Display 9, FontAwesome 9
 	colors {
 		background $bg-color
 		separator #757575
@@ -38,6 +40,7 @@ bar {
 	tray_output none
 	position top
 	status_command i3status-rs ~/.config/i3/helpers/config2.toml
+	font pango:System Francisco Display 9, FontAwesome 9
 	colors {
 		background $bg-color
 		separator #757575
