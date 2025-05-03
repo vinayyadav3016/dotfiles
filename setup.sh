@@ -35,9 +35,17 @@ SetupBash() {
     SetupWithDelete ~/.config/bash/bashrc ~/.bashrc
 }
 ################################################################################
+## Assuming in dotfiles folder
+SetupGit() {
+    SetupWithDelete ${PWD}/git                     ~/.config/git
+    SetupWithDelete ~/.config/git/gitconfig        ~/.gitconfig
+    SetupWithDelete ~/.config/git/gitignore_global ~/.gitignore_global
+}
+################################################################################
 SetupVim
 SetupNeoVim
 SetupTmux
 SetupI3
 SetupBash
+SetupGit
 ################################################################################
