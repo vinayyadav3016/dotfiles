@@ -105,8 +105,8 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 set diffopt+=vertical
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up all of our plugins
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("~/.config/vim/vimrc.bundles"))
+  source ~/.config/vim/vimrc.bundles
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Switch syntax highlighting on, when the terminal has colors
@@ -118,23 +118,23 @@ endif
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up all of our auto cmd
-if filereadable(expand("~/.vimrc.auto_cmd"))
-  source ~/.vimrc.auto_cmd
+if filereadable(expand("~/.config/vim/vimrc.auto_cmd"))
+  source ~/.config/vim/vimrc.auto_cmd
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up all of our colors
-if filereadable(expand("~/.vimrc.colors"))
-  source ~/.vimrc.colors
+if filereadable(expand("~/.config/vim/vimrc.colors"))
+  source ~/.config/vim/vimrc.colors
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up all of our mappings
-if filereadable(expand("~/.vimrc.mappings"))
-  source ~/.vimrc.mappings
+if filereadable(expand("~/.config/vim/vimrc.mappings"))
+  source ~/.config/vim/vimrc.mappings
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up statusline
-if filereadable(expand("~/.vimrc.statusline"))
-  source ~/.vimrc.statusline
+if filereadable(expand("~/.config/vim/vimrc.statusline"))
+  source ~/.config/vim/vimrc.statusline
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
