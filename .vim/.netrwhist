@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/vinay/company/opera/Kmeans'
-let g:netrw_dirhist_2='/home/vinay/company/opera'
-let g:netrw_dirhist_3='/home/vinay/company/opera/Kmeans'
-let g:netrw_dirhist_4='/home/vinay'
-let g:netrw_dirhist_5='/home/vinay/.vim'
-let g:netrw_dirhist_6='/home/vinay/.vim/bundle'
-let g:netrw_dirhist_7='/home/vinay'
