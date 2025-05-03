@@ -2,3 +2,5 @@ ranger/*
 vim/bundle/
 tmux/plugins/
 vim/.netrwhist
+bash/bash_aliases.local
+bash/bashrc.local
