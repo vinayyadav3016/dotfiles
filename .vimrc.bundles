@@ -62,6 +62,9 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Diary, notes, whatever. It's amazing
 Plug 'vimwiki/vimwiki'
+if has("nvim")
+  Plug 'forest-nvim/maple.nvim'
+endif
 " Plug 'tbabej/taskwiki'
 " Plug 'jceb/vim-orgmode'
 " Plug 'nvim-orgmode/orgmode'
@@ -122,6 +125,7 @@ Plug 'ryanoasis/vim-devicons'
 " [13]
 if has("nvim")
   Plug 'ldelossa/nvim-ide'
+  Plug 'FluxxField/smart-motion.nvim'
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [14]
