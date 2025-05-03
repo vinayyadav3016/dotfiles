@@ -1,6 +1,7 @@
 ranger/*
 vim/bundle/
 tmux/plugins/
+tmux/resurrect/
 vim/.netrwhist
 bash/bash_aliases.local
 bash/bashrc.local
