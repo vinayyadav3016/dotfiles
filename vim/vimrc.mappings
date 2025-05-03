@@ -10,6 +10,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+if has("nvim")
+    nnoremap <silent> <leader>q :lua require('nvim-window').pick()<CR>
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Allow moving around between Tmux windows
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
@@ -28,7 +31,7 @@ vnoremap > >gv
 vnoremap < <gv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ SYSTEM CLIPBOARD COPY & PASTE SUPPORT
-set pastetoggle=<leader>v
+" set pastetoggle=<leader>v
 "Copy paste to/from clipboard
 vnoremap <C-c> "*y
 noremap <silent><leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
@@ -58,6 +61,7 @@ noremap <silent> \f :Neoformat<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <silent> \w :bp<cr>
 noremap <silent> \e :bn<cr>
+noremap <silent> \q :bd<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:insert_show()
     if &filetype == 'vim'
@@ -91,34 +95,34 @@ command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <C-\> :ZoomToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("nvim")
-    nnoremap <silent> <A-t> :split term://bash<CR>
-    nnoremap <silent> <A-v> :vsplit term://bash<CR>
+    " nnoremap <silent> <A-t> :split term://bash<CR>
+    " nnoremap <silent> <A-v> :vsplit term://bash<CR>
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Coc mapping
 if has("nvim")
-    nnoremap <silent> [w <Plug>(coc-diagnostic-prev)
-    nnoremap <silent> ]w <Plug>(coc-diagnostic-next)
-    nnoremap <silent> [d <Plug>(coc-definition)
-    nnoremap <silent> ]d <Plug>(coc-declaration)
-    nnoremap <silent> [i <Plug>(coc-implementation)
-    nnoremap <silent> ]t <Plug>(coc-type-definition)
-    nnoremap <silent> [u <Plug>(coc-references-used)
-    nnoremap <silent> [r <Plug>(coc-references)
-    nnoremap <silent> ]r <Plug>(coc-rename)
-    nnoremap <silent> [a <Plug>(coc-codeaction)
-    nnoremap <silent> [f <Plug>(coc-fix-current)
-    nnoremap <silent> ]f :<C-u>CocList diagnostics<cr>
-    nnoremap <silent> [q :<C-u>CocRestart<cr>
-    nnoremap <silent> ]s :call <SID>show_documentation()<CR>
-    xnoremap if <Plug>(coc-funcobj-i)
-    onoremap if <Plug>(coc-funcobj-i)
-    xnoremap af <Plug>(coc-funcobj-a)
-    onoremap af <Plug>(coc-funcobj-a)
-    xnoremap ic <Plug>(coc-classobj-i)
-    onoremap ic <Plug>(coc-classobj-i)
-    xnoremap ac <Plug>(coc-classobj-a)
-    onoremap ac <Plug>(coc-classobj-a)
+    " nnoremap <silent> [w <Plug>(coc-diagnostic-prev)
+    " nnoremap <silent> ]w <Plug>(coc-diagnostic-next)
+    " nnoremap <silent> [d <Plug>(coc-definition)
+    " nnoremap <silent> ]d <Plug>(coc-declaration)
+    " nnoremap <silent> [i <Plug>(coc-implementation)
+    " nnoremap <silent> ]t <Plug>(coc-type-definition)
+    " nnoremap <silent> [u <Plug>(coc-references-used)
+    " nnoremap <silent> [r <Plug>(coc-references)
+    " nnoremap <silent> ]r <Plug>(coc-rename)
+    " nnoremap <silent> [a <Plug>(coc-codeaction)
+    " nnoremap <silent> [f <Plug>(coc-fix-current)
+    " nnoremap <silent> ]f :<C-u>CocList diagnostics<cr>
+    " nnoremap <silent> [q :<C-u>CocRestart<cr>
+    " nnoremap <silent> ]s :call <SID>show_documentation()<CR>
+    " xnoremap if <Plug>(coc-funcobj-i)
+    " onoremap if <Plug>(coc-funcobj-i)
+    " xnoremap af <Plug>(coc-funcobj-a)
+    " onoremap af <Plug>(coc-funcobj-a)
+    " xnoremap ic <Plug>(coc-classobj-i)
+    " onoremap ic <Plug>(coc-classobj-i)
+    " xnoremap ac <Plug>(coc-classobj-a)
+    " onoremap ac <Plug>(coc-classobj-a)
     nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
     nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
     inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"

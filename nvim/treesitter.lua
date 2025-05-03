@@ -2,8 +2,8 @@
 require'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all"
     ensure_installed = {
-        "arduino", "bash", "c", "cpp", "help", "json", "latex", "lua", "python",
-        "rust",
+        "arduino", "bash", "c", "cpp", "json", "latex", "lua", "python",
+        "rust", "zig",
     },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -25,8 +25,8 @@ require'nvim-treesitter.configs'.setup {
         -- disable highlighting for the `tex` filetype, you need to include
         -- `latex` in this list as this is the name of the parser)
         -- list of language that will be disabled
-        disable = { "c", "cpp"},
-        -- disable = {},
+        -- disable = { "c", "cpp"},
+        disable = {},
         -- Or use a function for more flexibility, e.g. to disable slow
         -- treesitter highlight for large files
         -- disable = function(lang, buf)
