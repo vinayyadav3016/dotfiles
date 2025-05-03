@@ -1,0 +1,235 @@
+"
+" Type :so % to refresh .vimrc after making changes
+" Type :PluginInstall to update
+"
+
+if &compatible
+  set nocompatible
+end
+
+call plug#begin('~/.vim/bundle/')
+" [0] let vundle manage
+Plug 'VundleVim/Vundle.vim'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [1] Themes
+Plug 'altercation/vim-colors-solarized'
+if has("nvim")
+  Plug 'Tsuzat/NeoSolarized.nvim', { 'branch': 'master' }
+  Plug 'shaunsingh/solarized.nvim'
+  Plug 'lifepillar/vim-solarized8'
+else
+endif
+Plug 'lifepillar/vim-solarized8'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'ryanoasis/vim-devicons'
+Plug 'navarasu/onedark.nvim'
+Plug 'ap/vim-css-color'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [2] File tree viewer
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [3] Tmux
+" Several plugins to help work with Tmux
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'christoomey/vim-run-interactive'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [4] search filesystem with ctrl+p
+Plug 'ctrlpvim/ctrlp.vim'
+if has("nvim")
+  Plug 'nvim-telescope/telescope.nvim'
+  " Plug 'nvim-treesitter/telescope-fzf-native.nvim', {'run': 'make'}
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [5] Utilities
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'sbdchd/neoformat'
+Plug 'liuchengxu/vim-which-key'
+Plug 'preservim/nerdcommenter'
+Plug 'matze/vim-move'
+Plug 'vim-scripts/matchit.zip'
+Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
+Plug 'Yggdroot/indentLine'
+Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
+" Plug 'nathanaelkane/vim-indent-guides'
+if has("nvim")
+  Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [6] Diary, notes, whatever. It's amazing
+Plug 'vimwiki/vimwiki'
+if has("nvim")
+  Plug 'forest-nvim/maple.nvim'
+endif
+" Plug 'tbabej/taskwiki'
+" Plug 'jceb/vim-orgmode'
+" Plug 'nvim-orgmode/orgmode'
+" Plug 'zk-org/zk-nvim'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [7] Snippets
+if has("nvim")
+  Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/vim-vsnip'
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [8] Autocomplete
+if has("nvim")
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+else
+endif
+if has("nvim")
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'after': 'nvim-treesitter'}
+  Plug 'nvim-treesitter/playground'
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-tree/nvim-tree.lua'
+  Plug 'neovim/nvim-lspconfig'
+  " Plug 'williamboman/nvim-lsp-installer'
+  Plug 'williamboman/mason-lspconfig.nvim'
+  Plug 'williamboman/mason.nvim'
+  Plug 'nvimdev/lspsaga.nvim'
+  " nvim-cmp has a lot of dependencies
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+  Plug 'MunifTanjim/nui.nvim'
+endif
+Plug  'SirVer/ultisnips'
+Plug  'honza/vim-snippets'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [9] Editor
+Plug 'editorconfig/editorconfig-vim'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [10] Language
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'rust-lang/rust.vim'
+Plug 'ziglang/zig.vim'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [11] Latex
+Plug 'lervag/vimtex'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [12] Vim Session
+Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+Plug 'ryanoasis/vim-devicons'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [13]
+if has("nvim")
+  Plug 'ldelossa/nvim-ide'
+  Plug 'FluxxField/smart-motion.nvim'
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [14]
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#end()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [1] Color scheme
+syntax enable
+set background=dark
+let g:solarized_termcolors = 16
+let g:solarized_contrast   = "high"
+let g:solarized_visibility = "high"
+let g:solarized_use16      = 1
+let g:solarized_termtrans  = 1
+" leg g:solarized_italic     = 1
+" leg g:solarized_underlying = 1
+" leg g:solarized_bold       = 1
+" leg g:solarized_degrade    = 0
+let g:solarized_termcolors = 256
+colorscheme solarized8
+if has("nvim")
+    colorscheme NeoSolarized
+endif
+call togglebg#map("<F5>")
+let g:airline_powerline_fonts = 1
+let g:airline_extensions = []
+let g:airline_highlighting_cache = 1
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ },
+      \ }
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [2] NerdTree
+let g:fzf_layout = { 'down': '~25%'  }
+let g:webdevicons_enable_nerdtree = 0
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol='x'
+let NERDTreeDirArrowExpandable = '▷'
+let NERDTreeDirArrowCollapsible = '▼'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [3] Tmux
+let g:tmux_navigator_no_mappings = 1
+let g:tmux_navigator_save_on_switch = 1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [4] File
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]((\.(git|hg|svn))|(build|bin|lib))$',
+  \ 'file': '\v\.(exe|so|dll|o|a|out|so*|vs*)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [5]  Utils
+let g:NERDCreateDefaultMappings = 1
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+" let g:indentLine_setColors = 0
+" let g:indentLine_char_list = ['▏', '┊', '┆', '|', '¦']
+let g:indentLine_char_list = ['┊']
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [6] Set Vim Wiki to my Dropbox directory
+" let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
+" let g:vimwiki_list = [{'path':'/home/vinay/work/documents/vimwiki'}]
+let g:vimwiki_list = [{'path':'/home/vinay/work/dotfiles/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
+let g:vimwiki_ext2syntax = {'.md' : 'markdown', '.markdown' : 'markdown', '.mdown' : 'markdown'}
+let g:vimwiki_markdown_link_ext = 1
+let g:taskwiki_markup_syntax = 'markdown'
+let g:markdown_folding = 1
+let g:concealcursor="nc"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [7] Snippets
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [8] Autocomplete
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [9]  Editor
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [10] Language
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+" let g:cpp_experimental_simple_template_highlight = 1 " slower
+let g:cpp_experimental_template_highlight = 1 " faster
+let g:cpp_concepts_highlight = 1
+" let g:cpp_no_function_highlight = 1
+let c_no_curly_error=1
+let g:cpp_simple_highlight = 1
+let g:cpp_named_requirements_highlight = 1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [11] Latex
+let g:tex_flavor='latex'
+let g:tex_conceal=''
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [12] session
+set sessionoptions-=options
+let g:session_autosave = 'no'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [13]
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

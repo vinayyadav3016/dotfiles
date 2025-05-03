@@ -1,0 +1,52 @@
+Attach drive
+timedatectl set-ntp true
+Create paritions
+   1. 1G for EFI
+   2. 1G for boot
+   3. RG for swap
+   4. RG for /root
+   5. RG for /home
+make filesystem
+   1. mkfs.fat32 -F32 /dev/sda1
+   2. mkfs.ext4 /dev/sda2
+   3. mkswap /dev/sda3
+   4. swapon /dev/sda3
+   5. mkfs.ext4 /dev/sda4
+   6. mkfs.ext4 /dev/sda5
+Set correct timezone
+mount disks
+   1. mount /dev/sda4 /mnt
+   2  mkdir /mnt/boot -p
+   3. mount /dev/sda2 /mnt/boot/
+   4  mkdir /mnt/boot/efi -p
+   5. mount /dev/sda3 /mnt/boot/efi/
+   5. mount /dev/sda5 /mnt/home/
+
+Install all the programs
+passwd
+grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
+grub-mkconfig -o /boot/grub/grub.cfg
+useradd -m vinay
+passwd vinay
+usermod -aG wheel,audio,video,storage team
+
+symlink dotfile
+
+add .gtkrc from home for small scroll
+
+add tpm
+
+disbale nvidia
+usermod -aG docker $USER
+install docker-compose
+install i3lock
+add hook for lock after sleep wakelock.service and make is executable
+install i3-resurrect
+add systemctl --user enable gcr-ssh-agent
+add systemctl --user enable gnome-keyring-daemon
+
+install ttf-dejavu-sans for better ui
+install smartd to monitor disk
+install chronyd to correct cloks
+install lohit-font for hini
+install blueman-applet

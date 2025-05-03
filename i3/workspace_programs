@@ -1,0 +1,45 @@
+# Application in workspace
+assign [class="^Thunar$"]     $workspace10
+assign [class="^Pcmanfm$"]    $workspace10
+assign [class="^ranger$"]     $workspace10
+###
+assign [class="Firefox"]      $workspace11
+assign [class="firefox"]      $workspace11
+###
+assign [class="chrome"]       $workspace12
+assign [class="chromium"]     $workspace12
+###
+assign [class="vlc"]          $workspace13
+assign [class="smplayer"]     $workspace13
+###
+assign [class="retro"]        $workspace14
+assign [class="^Steam"]       $workspace14
+assign [class="^steam"]       $workspace14
+assign [class="steam"]        $workspace14
+###
+assign [class="Texmaker"]     $workspace15
+assign [class="code-oss"]     $workspace15
+assign [class="qtcreator"]    $workspace15
+assign [class="^atom$"]       $workspace15
+assign [class="^Atom$"]       $workspace15
+###
+assign [class="okular"]       $workspace16
+assign [class="QuiteRss"]     $workspace16
+assign [class="springseed"]   $workspace16
+###
+assign [class="Wine"]         $workspace17
+assign [class="Virtual"]      $workspace17
+###
+assign [class="Anydesk.bin"]  $workspace18
+assign [class="Anydesk"]  $workspace18
+assign [class="Tor"]          $workspace18
+assign [class="Transmission"] $workspace18
+###
+assign [class="Gimp"]         $workspace19
+assign [class="Darktable"]    $workspace19
+#assign [class="gpicview"]     $workspace19
+#assign [class="Gpicview"]     $workspace19
+###
+assign [class="clementine"]   $workspace20
+assign [class="Clementine"]   $workspace20
+assign [class="pulseaudio"]   $workspace20

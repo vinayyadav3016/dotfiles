@@ -1,0 +1,53 @@
+# bars
+bar {
+	id 0
+	output DVI-D-1
+	position top
+	status_command i3status-rs ~/.config/i3/helpers/config.toml
+	font pango:System Francisco Display 9, FontAwesome 9
+	colors {
+		background $bg-color
+		separator #757575
+		#                  border              background          text
+		focused_workspace  $bg-color           $bg-color           $text-color
+		inactive_workspace $inactive-bg-color  $inactive-bg-color $inactive-text-color
+		urgent_workspace   $urgent-bg-color    $urgent-bg-color    $text-color
+	}
+	strip_workspace_numbers yes
+}
+
+bar {
+	id 1
+	output DP-1
+	tray_output none
+	position top
+	status_command i3status-rs ~/.config/i3/helpers/config2.toml
+	font pango:System Francisco Display 9, FontAwesome 9
+	colors {
+		background $bg-color
+		separator #757575
+		#                  border              background          text
+		focused_workspace  $bg-color           $bg-color           $text-color
+		inactive_workspace $inactive-bg-color  $inactive-bg-color  $inactive-text-color
+		urgent_workspace   $urgent-bg-color    $urgent-bg-color    $text-color
+	}
+	strip_workspace_numbers yes
+}
+
+bar {
+	id 3
+	output HDMI-1
+	tray_output none
+	position top
+	status_command i3status-rs ~/.config/i3/helpers/config2.toml
+	font pango:System Francisco Display 9, FontAwesome 9
+	colors {
+		background $bg-color
+		separator #757575
+		#                  border              background          text
+		focused_workspace  $bg-color           $bg-color           $text-color
+		inactive_workspace $inactive-bg-color  $inactive-bg-color  $inactive-text-color
+		urgent_workspace   $urgent-bg-color    $urgent-bg-color    $text-color
+	}
+	strip_workspace_numbers yes
+}

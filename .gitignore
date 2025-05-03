@@ -1,3 +1,4 @@
-.vim/*
-.tmux/*
 ranger/*
+vim/bundle/
+tmux/plugins/
+vim/.netrwhist
