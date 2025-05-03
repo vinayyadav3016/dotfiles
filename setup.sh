@@ -29,8 +29,15 @@ SetupI3() {
     SetupWithDelete ${PWD}/i3 ~/.config/i3
 }
 ################################################################################
+## Assuming in dotfiles folder
+SetupBash() {
+    SetupWithDelete ${PWD}/bash           ~/.config/bash
+    SetupWithDelete ~/.config/bash/bashrc ~/.bashrc
+}
+################################################################################
 SetupVim
 SetupNeoVim
 SetupTmux
 SetupI3
+SetupBash
 ################################################################################
