@@ -30,9 +30,6 @@ require("bufferline").setup{
     }
 }
 
--- neovim tree
--- require'nvim-tree'.setup {
--- }
 
 -- session manager
 -- require('session_manager').setup({

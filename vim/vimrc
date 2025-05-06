@@ -21,6 +21,7 @@ set colorcolumn=80
 set backspace=2
 set laststatus=2
 set path+=**
+set synmaxcol=512
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup

@@ -6,7 +6,8 @@ source ~/.vimrc
 " external config files (in lua)
 luafile ~/.config/nvim/telescope.lua
 luafile ~/.config/nvim/plugins.lua
-luafile ~/.config/nvim/nvim-cmp.lua
+" luafile ~/.config/nvim/nvim-tree.lua
+" luafile ~/.config/nvim/nvim-cmp.lua
 luafile ~/.config/nvim/treesitter.lua
 luafile ~/.config/nvim/maple.lua
 " luafile ~/.config/nvim/mason.lua
