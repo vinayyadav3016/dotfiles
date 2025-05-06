@@ -35,6 +35,7 @@
   "zig.debugLog": false,
   "coc.preferences.floatActions": true,
   "coc.preferences.jumpCommand": "vsplit",
+  "coc.preferences.noselect": true,
   "diagnostic.virtualText": false,
   "codeLens.enable": false,
   "diagnostic.messageTarget": "float",
