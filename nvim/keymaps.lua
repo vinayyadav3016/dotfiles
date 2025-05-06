@@ -46,3 +46,5 @@ vim.keymap.set('n', '<A-t>', ":split term://bash<CR>", opts)
 vim.keymap.set('n', '<A-v>', ":vsplit term://bash<CR>", opts)
 -- vim.keymap.set('n', '<leader>q', ":lua require('nvim-window').pick()<CR>", opt)
 --------------------------------------------------------------------------------
+vim.keymap.set('n', '<C-n>', ":Neotree toggle=true<CR>", opts)
+--------------------------------------------------------------------------------

@@ -88,6 +88,7 @@ if has("nvim")
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-tree/nvim-tree.lua'
+  Plug 'nvim-neo-tree/neo-tree.nvim'
   " Plug 'neovim/nvim-lspconfig'
   " Plug 'williamboman/nvim-lsp-installer'
   " Plug 'williamboman/mason-lspconfig.nvim'
@@ -100,6 +101,7 @@ if has("nvim")
   " Plug 'hrsh7th/cmp-cmdline'
   " Plug 'hrsh7th/nvim-cmp'
   " Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+  Plug 'nvim-tree/nvim-web-devicons'
   Plug 'MunifTanjim/nui.nvim'
 endif
 Plug  'SirVer/ultisnips'
