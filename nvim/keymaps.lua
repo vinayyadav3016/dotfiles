@@ -57,6 +57,39 @@ vim.keymap.set("n", "<C-n>", ":Neotree toggle=true<CR>", opts)
 vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
 vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
 vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap-from-window)")
+vim.keymap.set({ "n", "x", "o" }, "gS", function()
+    require("leap.remote").action()
+end)
+vim.keymap.set({ "x", "o" }, "aa", function()
+    -- Force linewise selection.
+    local V = vim.fn.mode(true):match("V") and "" or "V"
+    -- In any case, move horizontally, to trigger operations.
+    local input = vim.v.count > 1 and (vim.v.count - 1 .. "j") or "hl"
+    -- With `count=false` you can skip feeding count to the command
+    -- automatically (we need -1 here, see above).
+    require("leap.remote").action({ input = V .. input, count = false })
+end)
+-- Create remote versions of all a/i text objects by inserting `r`
+-- into the middle (`iw` becomes `irw`, etc.).
+-- A trick to avoid having to create separate hardcoded mappings for
+-- each text object: when entering `ar`/`ir`, consume the next
+-- character, and create the input from that character concatenated to
+-- `a`/`i`.
+-- do
+    -- local remote_text_object = function(prefix)
+        -- local ok, ch = pcall(vim.fn.getcharstr) -- pcall for handling <C-c>
+        -- if not ok or (ch == vim.keycode("<esc>")) then
+            -- return
+        -- end
+        -- require("leap.remote").action({ input = prefix .. ch })
+    -- end
+    -- vim.keymap.set({ "x", "o" }, "ar", function()
+        -- remote_text_object("a")
+    -- end)
+    -- vim.keymap.set({ "x", "o" }, "ir", function()
+        -- remote_text_object("i")
+    -- end)
+-- end
 --------------------------------------------------------------------------------
 ----------------------------- flash.nvim ---------------------------------------
 -- vim.keymap.set({'n', 'x', 'o'}, 's',  require('flash').jump(), opts)
