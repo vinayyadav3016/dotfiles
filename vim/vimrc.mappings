@@ -57,7 +57,7 @@ noremap <silent> \g :Git<cr>
 noremap <silent> \d :vertical rightbelow Gdiffsplit<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Format mapping
-noremap <silent> \f :Neoformat<cr>
+noremap <silent> \f :Neoformat<cr>:retab!<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <silent> \w :bp<cr>
 noremap <silent> \e :bn<cr>
