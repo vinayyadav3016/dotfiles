@@ -52,7 +52,7 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'preservim/nerdcommenter'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/matchit.zip'
-Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
+" Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
 Plug 'Yggdroot/indentLine'
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 " Plug 'nathanaelkane/vim-indent-guides'
