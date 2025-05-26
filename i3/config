@@ -204,8 +204,9 @@ bindsym $mod+mod1+s mode "save"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e      exec $HELPER/logout.py
 bindsym $mod+x            exec i3lock -i ~/.config/i3/lock_screen/lock.png
-bindsym $mod+Return       exec --no-startup-id xfce4-terminal --hide-menubar
-bindsym $mod+Shift+Return exec urxvt
+bindsym $mod+Shift+Return exec --no-startup-id xfce4-terminal --hide-menubar
+bindsym $mod+Return       exec --no-startup-id mate-terminal
+# bindsym $mod+Shift+Return exec urxvt
 #bindsym $mod+Return      exec i3-sensible-terminal
 bindsym $mod+Shift+g      exec gnome-calculator
 bindsym $mod+d            exec dmenu_run
