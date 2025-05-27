@@ -41,6 +41,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', {'run': 'make'}
+  Plug 'mikavilpas/yazi.nvim'
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [5] Utilities
