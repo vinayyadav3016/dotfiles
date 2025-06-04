@@ -14,7 +14,7 @@ Plug 'VundleVim/Vundle.vim'
 " [1] Themes
 Plug 'altercation/vim-colors-solarized'
 if has("nvim")
-  Plug 'Tsuzat/NeoSolarized.nvim', { 'branch': 'master' }
+  Plug 'vinayyadav3016/NeoSolarized.nvim', { 'branch': 'master' }
   Plug 'shaunsingh/solarized.nvim'
   Plug 'lifepillar/vim-solarized8'
 else
@@ -87,7 +87,7 @@ if has("nvim")
 else
 endif
 if has("nvim")
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'vinayyadav3016/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'after': 'nvim-treesitter'}
   Plug 'nvim-treesitter/playground'
   Plug 'nvim-lua/popup.nvim'

@@ -33,6 +33,24 @@
             "args": ["start"],
             "filetypes": ["sh"],
             "ignoredRootPaths": ["~"]
+        },
+        "lua": {
+            "command": "lua-language-server",
+            "filetypes": [
+                  "lua"
+            ],
+            "settings": {
+                "Lua": {
+                    "workspace.library": {
+                        "/usr/share/nvim/runtime/lua": true,
+                        "/usr/share/nvim/runtime/lua/vim": true,
+                        "/usr/share/nvim/runtime/lua/vim/lsp": true
+                    },
+                    "diagnostics": {
+                        "globals": [ "vim" ]
+                    }  
+                }
+            }
         }
     },
     "zig.enabled": true,

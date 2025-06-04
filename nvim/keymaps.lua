@@ -26,6 +26,8 @@ vim.keymap.set("n", "[f", "<Plug>(coc-fix-current)", opts)
 vim.keymap.set("n", "]f", ":<C-u>CocList diagnostics<CR>", opts)
 vim.keymap.set("n", "[q", ":<C-u>CocRestart<CR>", opts)
 vim.keymap.set("n", "]q", ":call CocAction('doHover')<CR>", opts)
+-- vim.keymap.set("n", "[w", vim.diagnostic.get_prev, opts)
+-- vim.keymap.set("n", "]w", vim.diagnostic.get_next, opts)
 --------------------------------------------------------------------------------
 -- vim.keymap.set('n', '', ":STextobjectGotoNextStart @function.inner<CR>", opts)
 --------------------------------------------------------------------------------
