@@ -1,45 +1,69 @@
 {
-  "languageserver":{
-    "clangd":{
-      "command":"clangd",
-      "filetypes":[
-        "c",
-        "cpp"
-      ],
-      "rootPatterns":[
-        "compile_commands.json",
-        ".git"
-      ],
-      "args":[
-        "--compile-commands-dir=.",
-        "--compile_args_from=filesystem",
-        "--all-scopes-completion",
-        "--background-index",
-        "--clang-tidy",
-        "--cross-file-rename",
-        "--completion-parse=always",
-        "--completion-style=detailed",
-        "--function-arg-placeholders",
-        "--header-insertion-decorators",
-        "--query-driver=/usr/bin/**/clang-*,/home/adem/GCC-10/bin/g++*",
-        "--header-insertion=never",
-        "--limit-results=0",
-        "-j=2",
-        "--pch-storage=memory"
-      ]
-    }
-  },
-  "hover.target": "float",
-  "zig.enabled": true,
-  "zig.startUpMessage": true,
-  "zig.path": "zls",
-  "zig.debugLog": false,
-  "coc.preferences.floatActions": true,
-  "coc.preferences.jumpCommand": "vsplit",
-  "diagnostic.virtualText": false,
-  "codeLens.enable": false,
-  "diagnostic.messageTarget": "float",
-  "inlayHint.display": false,
-  "signature.target": "float",
-  "signature.preferShownAbove": false
+    "languageserver":{
+        "clangd":{
+            "command":"clangd",
+            "filetypes":[
+                "c",
+                "cpp"
+            ],
+            "rootPatterns":[
+                "compile_commands.json",
+                ".git"
+            ],
+            "args":[
+                "--compile-commands-dir=.",
+                "--compile_args_from=filesystem",
+                "--all-scopes-completion",
+                "--background-index",
+                "--clang-tidy",
+                "--cross-file-rename",
+                "--completion-parse=always",
+                "--completion-style=detailed",
+                "--function-arg-placeholders",
+                "--header-insertion-decorators",
+                "--query-driver=/usr/bin/**/clang-*,/home/adem/GCC-10/bin/g++*",
+                "--header-insertion=never",
+                "--limit-results=0",
+                "-j=2",
+                "--pch-storage=memory"
+            ]
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPaths": ["~"]
+        },
+        "lua": {
+            "command": "lua-language-server",
+            "filetypes": [
+                  "lua"
+            ],
+            "settings": {
+                "Lua": {
+                    "workspace.library": {
+                        "/usr/share/nvim/runtime/lua": true,
+                        "/usr/share/nvim/runtime/lua/vim": true,
+                        "/usr/share/nvim/runtime/lua/vim/lsp": true
+                    },
+                    "diagnostics": {
+                        "globals": [ "vim" ]
+                    }  
+                }
+            }
+        }
+    },
+    "zig.enabled": true,
+    "zig.startUpMessage": true,
+    "zig.path": "zls",
+    "zig.debugLog": false,
+    "coc.preferences.floatActions": true,
+    "coc.preferences.jumpCommand": "vsplit",
+    "coc.preferences.noselect": true,
+    "diagnostic.virtualText": false,
+    "codeLens.enable": false,
+    "diagnostic.messageTarget": "float",
+    "inlayHint.display": false,
+    "signature.target": "float",
+    "signature.preferShownAbove": false
 }

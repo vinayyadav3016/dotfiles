@@ -14,7 +14,7 @@ Plug 'VundleVim/Vundle.vim'
 " [1] Themes
 Plug 'altercation/vim-colors-solarized'
 if has("nvim")
-  Plug 'Tsuzat/NeoSolarized.nvim', { 'branch': 'master' }
+  Plug 'vinayyadav3016/NeoSolarized.nvim', { 'branch': 'master' }
   Plug 'shaunsingh/solarized.nvim'
   Plug 'lifepillar/vim-solarized8'
 else
@@ -41,7 +41,8 @@ Plug 'christoomey/vim-run-interactive'
 Plug 'ctrlpvim/ctrlp.vim'
 if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
-  " Plug 'nvim-treesitter/telescope-fzf-native.nvim', {'run': 'make'}
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', {'run': 'make'}
+  Plug 'mikavilpas/yazi.nvim'
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [5] Utilities
@@ -53,12 +54,16 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'preservim/nerdcommenter'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/matchit.zip'
-Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
+" Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
 Plug 'Yggdroot/indentLine'
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 " Plug 'nathanaelkane/vim-indent-guides'
 if has("nvim")
   Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+  Plug 'rcarriga/nvim-notify'
+  Plug 'ggandor/leap.nvim'
+  Plug 'folke/flash.nvim'
+  Plug 'm4xshen/hardtime.nvim', {'after': 'MunifTanjim/nui.nvim'}
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Diary, notes, whatever. It's amazing
@@ -73,8 +78,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Snippets
 if has("nvim")
-  Plug 'hrsh7th/cmp-vsnip'
-  Plug 'hrsh7th/vim-vsnip'
+  " Plug 'hrsh7th/cmp-vsnip'
+  " Plug 'hrsh7th/vim-vsnip'
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [8] Autocomplete
@@ -83,24 +88,27 @@ if has("nvim")
 else
 endif
 if has("nvim")
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'vinayyadav3016/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'after': 'nvim-treesitter'}
   Plug 'nvim-treesitter/playground'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-tree/nvim-tree.lua'
-  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-neo-tree/neo-tree.nvim'
+  Plug 's1n7ax/nvim-window-picker'
+  " Plug 'neovim/nvim-lspconfig'
   " Plug 'williamboman/nvim-lsp-installer'
-  Plug 'williamboman/mason-lspconfig.nvim'
-  Plug 'williamboman/mason.nvim'
-  Plug 'nvimdev/lspsaga.nvim'
+  " Plug 'williamboman/mason-lspconfig.nvim'
+  " Plug 'williamboman/mason.nvim'
+  " Plug 'nvimdev/lspsaga.nvim'
   " nvim-cmp has a lot of dependencies
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'hrsh7th/cmp-cmdline'
-  Plug 'hrsh7th/nvim-cmp'
-  Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+  " Plug 'hrsh7th/cmp-nvim-lsp'
+  " Plug 'hrsh7th/cmp-buffer'
+  " Plug 'hrsh7th/cmp-path'
+  " Plug 'hrsh7th/cmp-cmdline'
+  " Plug 'hrsh7th/nvim-cmp'
+  " Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+  Plug 'nvim-tree/nvim-web-devicons'
   Plug 'MunifTanjim/nui.nvim'
 endif
 Plug  'SirVer/ultisnips'
@@ -166,10 +174,10 @@ let g:lightline = {
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 let g:fzf_layout = { 'down': '~25%'  }
-let g:webdevicons_enable_nerdtree = 0
+let g:webdevicons_enable_nerdtree = 1
 let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol='x'
-let NERDTreeDirArrowExpandable = '▷'
-let NERDTreeDirArrowCollapsible = '▼'
+" let NERDTreeDirArrowExpandable = ''
+" let NERDTreeDirArrowCollapsible = ''
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [3] Tmux
 let g:tmux_navigator_no_mappings = 1
@@ -192,6 +200,7 @@ let g:indentLine_char_list = ['┊']
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
+let g:shfmt_opt="-ci -s"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Set Vim Wiki to my Dropbox directory
 " let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
