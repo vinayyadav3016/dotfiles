@@ -1,10 +1,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! HighlightSearch()
-  if &hls
-    return 'H'
-  else
-    return ''
-  endif
+    if &hls
+        return 'H'
+    else
+        return ''
+    endif
 endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set statusline=

@@ -4,7 +4,7 @@
 "
 
 if &compatible
-  set nocompatible
+    set nocompatible
 end
 
 call plug#begin('~/.vim/bundle/')
@@ -13,13 +13,10 @@ Plug 'VundleVim/Vundle.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [1] Themes
 Plug 'altercation/vim-colors-solarized'
-if has("nvim")
-  Plug 'vinayyadav3016/NeoSolarized.nvim', { 'branch': 'master' }
-  Plug 'shaunsingh/solarized.nvim'
-  Plug 'lifepillar/vim-solarized8'
-else
-endif
 Plug 'lifepillar/vim-solarized8'
+if has("nvim")
+    Plug 'vinayyadav3016/NeoSolarized.nvim', { 'branch': 'master' }
+endif
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'navarasu/onedark.nvim'
@@ -29,6 +26,10 @@ Plug 'ap/vim-css-color'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
+if has("nvim")
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'mikavilpas/yazi.nvim'
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [3] Tmux
 " Several plugins to help work with Tmux
@@ -37,11 +38,8 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'christoomey/vim-run-interactive'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [4] search filesystem with ctrl+p
-Plug 'ctrlpvim/ctrlp.vim'
 if has("nvim")
-  Plug 'nvim-telescope/telescope.nvim'
-  Plug 'nvim-telescope/telescope-fzf-native.nvim', {'run': 'make'}
-  Plug 'mikavilpas/yazi.nvim'
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', {'run': 'make'}
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [5] Utilities
@@ -50,25 +48,22 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'sbdchd/neoformat'
 Plug 'liuchengxu/vim-which-key'
-Plug 'preservim/nerdcommenter'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/matchit.zip'
 " Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
-Plug 'Yggdroot/indentLine'
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
-" Plug 'nathanaelkane/vim-indent-guides'
 if has("nvim")
-  Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
-  Plug 'rcarriga/nvim-notify'
-  Plug 'ggandor/leap.nvim'
-  Plug 'folke/flash.nvim'
-  Plug 'm4xshen/hardtime.nvim', {'after': 'MunifTanjim/nui.nvim'}
+    Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+    Plug 'rcarriga/nvim-notify'
+    Plug 'ggandor/leap.nvim'
+    Plug 'folke/flash.nvim'
+    Plug 'm4xshen/hardtime.nvim', {'after': 'MunifTanjim/nui.nvim'}
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Diary, notes, whatever. It's amazing
 Plug 'vimwiki/vimwiki'
 if has("nvim")
-  Plug 'forest-nvim/maple.nvim'
+    Plug 'forest-nvim/maple.nvim'
 endif
 " Plug 'tbabej/taskwiki'
 " Plug 'jceb/vim-orgmode'
@@ -77,8 +72,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [7] Snippets
 if has("nvim")
-  " Plug 'hrsh7th/cmp-vsnip'
-  " Plug 'hrsh7th/vim-vsnip'
+    " Plug 'hrsh7th/cmp-vsnip'
+    " Plug 'hrsh7th/vim-vsnip'
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [8] Autocomplete
@@ -87,28 +82,28 @@ if has("nvim")
 else
 endif
 if has("nvim")
-  Plug 'vinayyadav3016/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'after': 'nvim-treesitter'}
-  Plug 'nvim-treesitter/playground'
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-tree/nvim-tree.lua'
-  Plug 'nvim-neo-tree/neo-tree.nvim'
-  Plug 's1n7ax/nvim-window-picker'
-  " Plug 'neovim/nvim-lspconfig'
-  " Plug 'williamboman/nvim-lsp-installer'
-  " Plug 'williamboman/mason-lspconfig.nvim'
-  " Plug 'williamboman/mason.nvim'
-  " Plug 'nvimdev/lspsaga.nvim'
-  " nvim-cmp has a lot of dependencies
-  " Plug 'hrsh7th/cmp-nvim-lsp'
-  " Plug 'hrsh7th/cmp-buffer'
-  " Plug 'hrsh7th/cmp-path'
-  " Plug 'hrsh7th/cmp-cmdline'
-  " Plug 'hrsh7th/nvim-cmp'
-  " Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-  Plug 'nvim-tree/nvim-web-devicons'
-  Plug 'MunifTanjim/nui.nvim'
+    Plug 'vinayyadav3016/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'after': 'nvim-treesitter'}
+    Plug 'nvim-treesitter/playground'
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-tree/nvim-tree.lua'
+    Plug 'nvim-neo-tree/neo-tree.nvim'
+    Plug 's1n7ax/nvim-window-picker'
+    " Plug 'neovim/nvim-lspconfig'
+    " Plug 'williamboman/nvim-lsp-installer'
+    " Plug 'williamboman/mason-lspconfig.nvim'
+    " Plug 'williamboman/mason.nvim'
+    " Plug 'nvimdev/lspsaga.nvim'
+    " nvim-cmp has a lot of dependencies
+    " Plug 'hrsh7th/cmp-nvim-lsp'
+    " Plug 'hrsh7th/cmp-buffer'
+    " Plug 'hrsh7th/cmp-path'
+    " Plug 'hrsh7th/cmp-cmdline'
+    " Plug 'hrsh7th/nvim-cmp'
+    " Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'MunifTanjim/nui.nvim'
 endif
 Plug  'SirVer/ultisnips'
 Plug  'honza/vim-snippets'
@@ -117,10 +112,10 @@ Plug  'honza/vim-snippets'
 Plug 'editorconfig/editorconfig-vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [10] Language
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'bfrg/vim-cpp-modern'
-Plug 'rust-lang/rust.vim'
-Plug 'ziglang/zig.vim'
+" Plug 'octol/vim-cpp-enhanced-highlight'
+" Plug 'bfrg/vim-cpp-modern'
+" Plug 'rust-lang/rust.vim'
+" Plug 'ziglang/zig.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [11] Latex
 Plug 'lervag/vimtex'
@@ -132,8 +127,8 @@ Plug 'ryanoasis/vim-devicons'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [13]
 if has("nvim")
-  Plug 'ldelossa/nvim-ide'
-  Plug 'FluxxField/smart-motion.nvim'
+    Plug 'ldelossa/nvim-ide'
+    Plug 'FluxxField/smart-motion.nvim'
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [14]
@@ -162,14 +157,14 @@ let g:airline_powerline_fonts = 1
 let g:airline_extensions = []
 let g:airline_highlighting_cache = 1
 let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
-      \ },
-      \ }
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'gitbranch#name'
+            \ },
+            \ }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [2] NerdTree
 let g:fzf_layout = { 'down': '~25%'  }
@@ -184,10 +179,10 @@ let g:tmux_navigator_save_on_switch = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [4] File
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]((\.(git|hg|svn))|(build|bin|lib))$',
-  \ 'file': '\v\.(exe|so|dll|o|a|out|so*|vs*)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+            \ 'dir':  '\v[\/]((\.(git|hg|svn))|(build|bin|lib))$',
+            \ 'file': '\v\.(exe|so|dll|o|a|out|so*|vs*)$',
+            \ 'link': 'some_bad_symbolic_links',
+            \ }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [5]  Utils
 let g:NERDCreateDefaultMappings = 1
@@ -219,17 +214,17 @@ let g:concealcursor="nc"
 " [9]  Editor
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [10] Language
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_posix_standard = 1
+" let g:cpp_class_scope_highlight = 1
+" let g:cpp_member_variable_highlight = 1
+" let g:cpp_class_decl_highlight = 1
+" let g:cpp_posix_standard = 1
 " let g:cpp_experimental_simple_template_highlight = 1 " slower
-let g:cpp_experimental_template_highlight = 1 " faster
-let g:cpp_concepts_highlight = 1
+" let g:cpp_experimental_template_highlight = 1 " faster
+" let g:cpp_concepts_highlight = 1
 " let g:cpp_no_function_highlight = 1
-let c_no_curly_error=1
-let g:cpp_simple_highlight = 1
-let g:cpp_named_requirements_highlight = 1
+" let c_no_curly_error=1
+" let g:cpp_simple_highlight = 1
+" let g:cpp_named_requirements_highlight = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [11] Latex
 let g:tex_flavor='latex'
