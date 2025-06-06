@@ -107,42 +107,42 @@ set diffopt+=vertical
 " You might have to force true color when using regular vim inside tmux as the
 " colorscheme can appear to be grayscale with "termguicolors" option enabled.
 if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 set termguicolors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up all of our plugins
 if filereadable(expand("~/.config/vim/vimrc.bundles"))
-  source ~/.config/vim/vimrc.bundles
+    source ~/.config/vim/vimrc.bundles
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
+    syntax on
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up all of our auto cmd
 if filereadable(expand("~/.config/vim/vimrc.auto_cmd"))
-  source ~/.config/vim/vimrc.auto_cmd
+    source ~/.config/vim/vimrc.auto_cmd
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up all of our colors
 if filereadable(expand("~/.config/vim/vimrc.colors"))
-  source ~/.config/vim/vimrc.colors
+    source ~/.config/vim/vimrc.colors
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up all of our mappings
 if filereadable(expand("~/.config/vim/vimrc.mappings"))
-  source ~/.config/vim/vimrc.mappings
+    source ~/.config/vim/vimrc.mappings
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up statusline
 if filereadable(expand("~/.config/vim/vimrc.statusline"))
-  source ~/.config/vim/vimrc.statusline
+    source ~/.config/vim/vimrc.statusline
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
