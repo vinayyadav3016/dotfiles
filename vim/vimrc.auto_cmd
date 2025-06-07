@@ -98,6 +98,7 @@ if has("nvim")
         autocmd FileType python inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
         autocmd FileType javascript inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
         autocmd FileType vim inoremap <buffer><silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+        autocmd CursorHold * silent call CocActionAsync('highlight')
     augroup END
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

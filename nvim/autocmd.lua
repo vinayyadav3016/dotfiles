@@ -1,0 +1,1 @@
+-- vim.api.nvim_create_autocmd("CursorHold", { pattern = { "*" }, CocActionAsync('highlight') })
