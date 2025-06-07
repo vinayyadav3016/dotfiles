@@ -65,5 +65,6 @@
     "diagnostic.messageTarget": "float",
     "inlayHint.display": false,
     "signature.target": "float",
-    "signature.preferShownAbove": false
+    "signature.preferShownAbove": false,
+    "colors.enable": true
 }

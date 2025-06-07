@@ -19,6 +19,7 @@ luafile ~/.config/nvim/hardtime.lua
 luafile ~/.config/nvim/leap.lua
 " luafile ~/.config/nvim/flash.lua
 luafile ~/.config/nvim/keymaps.lua
+luafile ~/.config/nvim/autocmd.lua
 " luafile ~/.config/nvim/solarized.lua
 " 66d910665d7fef9e441293bab0fa08f77d6c004e
 " -  [=[\s*\%(\d\+\|\$\)\%[,\%(\d\+\|\$\)]\s*]=],
