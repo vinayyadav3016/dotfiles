@@ -52,6 +52,7 @@ Plug 'matze/vim-move'
 Plug 'vim-scripts/matchit.zip'
 " Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
+Plug 'MattesGroeger/vim-bookmarks'
 if has("nvim")
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
     Plug 'rcarriga/nvim-notify'
@@ -195,6 +196,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 let g:shfmt_opt="-ci -s"
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
+let g:bookmark_auto_close = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Set Vim Wiki to my Dropbox directory
 " let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
