@@ -9,6 +9,7 @@ vim.keymap.set("n", ";h", require("telescope.builtin").help_tags, { desc = "Sear
 vim.keymap.set("n", ";g", require("telescope.builtin").live_grep, { desc = "Search by [G]rep" })
 vim.keymap.set("n", ";d", require("telescope.builtin").diagnostics, { desc = "Search [D]iagnostics" })
 vim.keymap.set("n", ";c", require("telescope.builtin").colorscheme, { desc = "Search [C]olorscheme" })
+vim.keymap.set("n", ";m", "<cmd>Telescope marks<CR>", { desc = "Search [M]arks" })
 vim.keymap.set("n", ";z", "<cmd>TSToggle highlight<CR>", { desc = "Search [Z]en" })
 --------------------------------------------------------------------------------
 ------------------------------ coc.nvim ----------------------------------------

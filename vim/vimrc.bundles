@@ -26,6 +26,7 @@ Plug 'ap/vim-css-color'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
 if has("nvim")
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'mikavilpas/yazi.nvim'

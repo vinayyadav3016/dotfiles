@@ -59,6 +59,7 @@ noremap <silent> \d :vertical rightbelow Gdiffsplit<cr>
 " Format mapping
 noremap <silent> \f :Neoformat<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" buffer mapping
 noremap <silent> \w :bp<cr>
 noremap <silent> \e :bn<cr>
 noremap <silent> \q :bd<cr>
