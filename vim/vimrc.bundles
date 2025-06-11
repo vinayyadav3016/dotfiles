@@ -52,9 +52,11 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/matchit.zip'
 " Plug 'mtth/scratch.vim' "Open a throwaway scratch buffer
+Plug 'Yggdroot/indentLine'
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 Plug 'MattesGroeger/vim-bookmarks'
 if has("nvim")
+    Plug 'tom-anders/telescope-vim-bookmarks.nvim'
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
     Plug 'rcarriga/nvim-notify'
     Plug 'ggandor/leap.nvim'
