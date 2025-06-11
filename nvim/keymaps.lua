@@ -10,6 +10,8 @@ vim.keymap.set("n", ";g", require("telescope.builtin").live_grep, { desc = "Sear
 vim.keymap.set("n", ";d", require("telescope.builtin").diagnostics, { desc = "Search [D]iagnostics" })
 vim.keymap.set("n", ";c", require("telescope.builtin").colorscheme, { desc = "Search [C]olorscheme" })
 vim.keymap.set("n", ";m", "<cmd>Telescope marks<CR>", { desc = "Search [M]arks" })
+vim.keymap.set("n", ";cm", "<cmd>vim_bookmarks current_file<CR>", { desc = "Search [C]urrecnt [M]arks" })
+vim.keymap.set("n", ";am", "<cmd>vim_bookmarks all<CR>", { desc = "Search [C]urrecnt [M]arks" })
 vim.keymap.set("n", ";z", "<cmd>TSToggle highlight<CR>", { desc = "Search [Z]en" })
 --------------------------------------------------------------------------------
 ------------------------------ coc.nvim ----------------------------------------
