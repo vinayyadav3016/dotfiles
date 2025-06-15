@@ -64,6 +64,12 @@ noremap <silent> \w :bp<cr>
 noremap <silent> \e :bn<cr>
 noremap <silent> \q :bd<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+xmap cm  <Plug>Commentary
+nmap cm  <Plug>Commentary
+omap cm  <Plug>Commentary
+" nmap cml <Plug>CommentaryLine
+" nmap cmb <Plug>Commentary<Plug>Commentary
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:insert_show()
     if &filetype == 'vim'
         execute 'h '.expand('<cword>')
