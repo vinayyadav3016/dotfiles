@@ -13,6 +13,9 @@ require("telescope").setup({
     pickers = {
         buffers = {
             initial_mode = "normal"
+        },
+        marks = {
+            initial_mode = "normal"
         }
     },
     extensions = {
