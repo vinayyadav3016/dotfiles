@@ -10,6 +10,14 @@ require("telescope").setup({
             },
         },
     },
+    pickers = {
+        buffers = {
+            initial_mode = "normal"
+        },
+        marks = {
+            initial_mode = "normal"
+        }
+    },
     extensions = {
         fzf = {
             fuzzy = true, -- false will only do exact matching

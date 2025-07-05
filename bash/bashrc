@@ -127,6 +127,7 @@ if [ -f ~/.config/bash/bash_aliases ]; then
 fi
 
 eval $(keychain --eval -q) > /dev/null 2>/dev/null
+eval "$(zoxide init bash)"
 
 # AGENT=`pgrep -u $USER ssh-agent`
 # if [[ ! -n "$AGENT" ]]; then
