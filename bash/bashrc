@@ -9,7 +9,7 @@ fi
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
-      *) return;;
+    *) return ;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -41,7 +41,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color) color_prompt=yes ;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -51,12 +51,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
@@ -69,22 +69,21 @@ unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
+    xterm* | rxvt*)
+        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+        ;;
+    *) ;;
 esac
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
 TaskIndicator() {
@@ -100,9 +99,9 @@ TaskIndicator() {
     #elif [[ `$TASK +READY +TOMORROW count` -gt "0" ]]; then
     #    echo "$DUETOMORROW"
     #if [[ `$TASK +READY 'urgency > 10' count` -gt "0" ]]; then
-        #echo "$URGENT"
+    #echo "$URGENT"
     #else
-        #echo '$'
+    #echo '$'
     #fi
 }
 
@@ -129,17 +128,16 @@ fi
 if [ -f ~/.config/bash/bash_aliases ]; then
     . ~/.config/bash/bash_aliases
 fi
-
-eval $(keychain --eval -q) > /dev/null 2>/dev/null
+eval $(keychain --eval -q) >/dev/null 2>/dev/null
 eval "$(zoxide init bash)"
 
 # AGENT=`pgrep -u $USER ssh-agent`
 # if [[ ! -n "$AGENT" ]]; then
-    # ssh-agent -s> "$XDG_RUNTIME_DIR/ssh-agent.env"
-    # cat $XDG_RUNTIME_DIR/ssh-agent.env
-    # ssh-add
+# ssh-agent -s> "$XDG_RUNTIME_DIR/ssh-agent.env"
+# cat $XDG_RUNTIME_DIR/ssh-agent.env
+# ssh-add
 # fi
 # if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
-    # source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-    # #eval "ssh-agent -s" > /dev/null
+# source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+# #eval "ssh-agent -s" > /dev/null
 # fi
