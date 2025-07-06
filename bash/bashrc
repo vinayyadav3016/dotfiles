@@ -2,7 +2,7 @@
 if [[ $OSTYPE == "darwin"* ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
-#bash
+
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -128,6 +128,7 @@ fi
 if [ -f ~/.config/bash/bash_aliases ]; then
     . ~/.config/bash/bash_aliases
 fi
+
 eval $(keychain --eval -q) >/dev/null 2>/dev/null
 eval "$(zoxide init bash)"
 

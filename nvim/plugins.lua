@@ -7,10 +7,10 @@
 -- {{ toggleterm
 -- keymappings within toggleterm buffer
 function _G.set_terminal_keymaps()
-  local opts = {noremap = true}
-  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<A-k>', [[<C-\><C-n><C-W>k]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-c>t', [[<C-\><C-n>:ToggleTerm<CR>]], opts)
+    local opts = {noremap = true}
+    vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+    vim.api.nvim_buf_set_keymap(0, 't', '<A-k>', [[<C-\><C-n><C-W>k]], opts)
+    vim.api.nvim_buf_set_keymap(0, 't', '<C-c>t', [[<C-\><C-n>:ToggleTerm<CR>]], opts)
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
@@ -29,6 +29,7 @@ require("bufferline").setup{
         show_buffer_close_icons = false,
     }
 }
+
 
 -- session manager
 -- require('session_manager').setup({
