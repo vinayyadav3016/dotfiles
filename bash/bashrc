@@ -1,4 +1,8 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
+if [[ $OSTYPE == "darwin"* ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+#bash
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
