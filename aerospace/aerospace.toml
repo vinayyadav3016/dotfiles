@@ -3,7 +3,12 @@
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = ['exec-and-forget sketchybar']
+
+# Notify Sketchybar about workspace change
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -15,7 +20,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 0
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -182,18 +187,38 @@ automatically-unhide-macos-hidden-apps = false
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
 
+################################################################################
+#include = /Users/vinay/.config/aerospace/aerospace_window_app.toml
+## workspace 1
 [[on-window-detected]]
-    if.app-name-regex-substring = 'wezterm'
-    run = 'move-node-to-workspace 5'
+    if.app-name-regex-substring = 'safari'
+    run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-    if.app-name-regex-substring = 'docker'
-    run = 'move-node-to-workspace 4'
+    if.app-name-regex-substring = 'ActivityMonitor'
+    run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'Home'
+    run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'SystemPreferences'
+    run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
     if.app-name-regex-substring = 'chrome'
     run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-    if.app-name-regex-substring = 'safari'
-    run = 'move-node-to-workspace 1'
+    if.app-name-regex-substring = 'wezterm'
+    run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'docker'
+    run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'wiregaurd'
+    run = 'move-node-to-workspace 4'
+################################################################################
