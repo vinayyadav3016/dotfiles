@@ -20,7 +20,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 0
+accordion-padding = 10
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -104,7 +104,7 @@ automatically-unhide-macos-hidden-apps = false
     # normalizations
     cmd-shift-v     = 'join-with up'
     cmd-v           = 'join-with left'
-    cmd-f           = 'fullscreen'
+    # cmd-f           = 'fullscreen'
     cmd-s           = 'layout v_accordion' # 'layout stacking' in i3
     cmd-shift-w     = 'layout h_accordion' # 'layout tabbed' in i3
     cmd-e           = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
@@ -207,6 +207,10 @@ automatically-unhide-macos-hidden-apps = false
     run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
+    if.app-name-regex-substring = 'System'
+    run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
     if.app-name-regex-substring = 'chrome'
     run = 'move-node-to-workspace 2'
 
@@ -219,6 +223,30 @@ automatically-unhide-macos-hidden-apps = false
     run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
-    if.app-name-regex-substring = 'wiregaurd'
+    if.app-name-regex-substring = 'virtualbox'
     run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'utm'
+    run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'wiregaurd'
+    run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'libre'
+    run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'word'
+    run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'excel'
+    run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'powerpoint'
+    run = 'move-node-to-workspace 6'
 ################################################################################
