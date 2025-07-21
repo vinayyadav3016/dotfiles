@@ -42,7 +42,7 @@ sketchybar -m --add space home left \
     --set home background.color=0xff57627A  \
     --set home background.height=21 \
     --set home background.padding_left=12 \
-    --set home click_script="aerospace workspace 1 && ~/.config/sketchybar/plugins/aerospace.sh 1" \
+    --set home click_script="aerospace workspace 1 ; ~/.config/sketchybar/plugins/aerospace.sh 1" \
     --set home script="~/.config/sketchybar/plugins/aerospace.sh 1" \
     --subscribe home aerospace_workspace_change
 
@@ -60,7 +60,7 @@ sketchybar -m --add space web left \
     --set web background.color=0xff57627A  \
     --set web background.height=21 \
     --set web background.padding_left=7 \
-    --set web click_script="aerospace workspace 2 && ~/.config/sketchybar/plugins/aerospace.sh 2" \
+    --set web click_script="aerospace workspace 2 ; ~/.config/sketchybar/plugins/aerospace.sh 2" \
     --set web script="~/.config/sketchybar/plugins/aerospace.sh 2" \
     --subscribe web aerospace_workspace_change
 
@@ -77,7 +77,7 @@ sketchybar -m --add space code left \
     --set code background.color=0xff57627A  \
     --set code background.height=21 \
     --set code background.padding_left=7 \
-    --set code click_script="aerospace workspace 3 && ~/.config/sketchybar/plugins/aerospace.sh 3" \
+    --set code click_script="aerospace workspace 3 ; ~/.config/sketchybar/plugins/aerospace.sh 3" \
     --set code script="~/.config/sketchybar/plugins/aerospace.sh 3" \
     --subscribe code aerospace_workspace_change
 
@@ -95,7 +95,7 @@ sketchybar -m --add space docker left \
     --set docker background.color=0xff57627A  \
     --set docker background.height=21 \
     --set docker background.padding_left=7 \
-    --set docker click_script="aerospace workspace 4 && ~/.config/sketchybar/plugins/aerospace.sh 4" \
+    --set docker click_script="aerospace workspace 4 ; ~/.config/sketchybar/plugins/aerospace.sh 4" \
     --set docker script="~/.config/sketchybar/plugins/aerospace.sh 4" \
     --subscribe docker aerospace_workspace_change
 
@@ -113,7 +113,7 @@ sketchybar -m --add space other left \
     --set other background.color=0xff57627A  \
     --set other background.height=21 \
     --set other background.padding_left=7 \
-    --set other click_script="aerospace workspace 5 && ~/.config/sketchybar/plugins/aerospace.sh 5" \
+    --set other click_script="aerospace workspace 5 ; ~/.config/sketchybar/plugins/aerospace.sh 5" \
     --set other script="~/.config/sketchybar/plugins/aerospace.sh 5" \
     --subscribe other aerospace_workspace_change
 
@@ -130,7 +130,7 @@ sketchybar -m --add space document left \
     --set document background.color=0xff57627A  \
     --set document background.height=21 \
     --set document background.padding_left=7 \
-    --set document click_script="aerospace workspace 6 && ~/.config/sketchybar/plugins/aerospace.sh 6" \
+    --set document click_script="aerospace workspace 6 ; ~/.config/sketchybar/plugins/aerospace.sh 6" \
     --set document script="~/.config/sketchybar/plugins/aerospace.sh 6" \
     --subscribe document aerospace_workspace_change
 
@@ -148,7 +148,7 @@ sketchybar -m --add space music left \
     --set music background.color=0xff57627A  \
     --set music background.height=21 \
     --set music background.padding_left=7 \
-    --set music click_script="aerospace workspace 7 && ~/.config/sketchybar/plugins/aerospace.sh 7" \
+    --set music click_script="aerospace workspace 7 ; ~/.config/sketchybar/plugins/aerospace.sh 7" \
     --set music script="~/.config/sketchybar/plugins/aerospace.sh 7" \
     --subscribe music aerospace_workspace_change
 
@@ -165,7 +165,7 @@ sketchybar -m --add space extra left \
     --set extra background.color=0xff57627A  \
     --set extra background.height=21 \
     --set extra background.padding_left=7 \
-    --set extra click_script="aerospace workspace 8 && ~/.config/sketchybar/plugins/aerospace.sh 8" \
+    --set extra click_script="aerospace workspace 8 ; ~/.config/sketchybar/plugins/aerospace.sh 8" \
     --set extra script="~/.config/sketchybar/plugins/aerospace.sh 8" \
     --subscribe extra aerospace_workspace_change
 
@@ -182,7 +182,7 @@ sketchybar -m --add space game left \
     --set game background.color=0xff57627A  \
     --set game background.height=21 \
     --set game background.padding_left=7 \
-    --set game click_script="aerospace workspace 9 && ~/.config/sketchybar/plugins/aerospace.sh 9" \
+    --set game click_script="aerospace workspace 9 ; ~/.config/sketchybar/plugins/aerospace.sh 9" \
     --set game script="~/.config/sketchybar/plugins/aerospace.sh 9" \
     --subscribe game aerospace_workspace_change
 
