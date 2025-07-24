@@ -56,13 +56,24 @@ wezterm.on(
     --     { Text = ' ' },
     --   }
     -- end
-    return { }
+    return {Text = ' ' }
     -- return {
     --   { Background = { Color = 'green' } },
     --   { Text = ' ' },
     -- }
     -- return title
   end
+)
+
+wezterm.on(
+    'format-window-title',
+    function(tab, pane, tabs, panes, config)
+        local index = ''
+        if #tabs > 1 then
+          index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
+        end
+        return index
+    end
 )
 
 config.keys = {
