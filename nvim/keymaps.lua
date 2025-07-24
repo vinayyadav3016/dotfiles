@@ -14,6 +14,9 @@ vim.keymap.set("n", ";cm", "<cmd>vim_bookmarks current_file<CR>", { desc = "Sear
 vim.keymap.set("n", ";am", "<cmd>vim_bookmarks all<CR>", { desc = "Search [C]urrecnt [M]arks" })
 vim.keymap.set("n", ";z", "<cmd>TSToggle highlight<CR>", { desc = "Search [Z]en" })
 --------------------------------------------------------------------------------
+vim.keymap.set("n", ";;", ";", { desc = "Repeat Last Move" })
+vim.keymap.set("n", ",,", ",", { desc = "Repeat Last Move Reverseed" })
+--------------------------------------------------------------------------------
 ------------------------------ coc.nvim ----------------------------------------
 vim.keymap.set("n", "[w", "<Plug>(coc-diagnostic-prev)", opts)
 vim.keymap.set("n", "]w", "<Plug>(coc-diagnostic-next)", opts)
