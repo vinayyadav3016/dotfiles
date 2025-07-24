@@ -1,0 +1,257 @@
+############## BAR ############## 
+sketchybar -m --bar \
+    height=38 \
+    position=top \
+    padding_left=0 \
+    padding_right=0 \
+    color=0xff3b4252 \
+    shadow=off \
+    topmost=off
+
+############## GLOBAL DEFAULTS ############## 
+sketchybar -m --default \
+    updates=when_shown \
+    drawing=on \
+    cache_scripts=on \
+    icon.font="Hack Nerd Font:Bold:14.0" \
+    icon.color=0xffffffff \
+    label.font="JetBrains Mono Nerd:Bold:12.0" \
+    label.color=0xffeceff4 \
+    label.highlight_color=0xff8CABC8 \
+    background.color=0xff57627A
+
+############## SPACE DEFAULTS ############## 
+sketchybar -m --default \
+    icon.padding_left=8 \
+    icon.padding_right=8 \
+    label.padding_left=0 \
+    label.padding_right=0
+
+sketchybar --add event aerospace_workspace_change
+############## PRIMARY DISPLAY SPACES ############## 
+# SPACE 1: Home  ICON
+sketchybar -m --add space home left \
+    --set home icon=\
+    --set home associated_display=1 \
+    --set home associated_space=1 \
+    --set home icon.padding_left=5 \
+    --set home icon.padding_right=5 \
+    --set home label.padding_right=0 \
+    --set home label.padding_left=0 \
+    --set home label.color=0xffeceff4 \
+    --set home background.color=0xff57627A  \
+    --set home background.height=21 \
+    --set home background.padding_left=12 \
+    --set home click_script="aerospace workspace 1 ; ~/.config/sketchybar/plugins/aerospace.sh 1" \
+    --set home script="~/.config/sketchybar/plugins/aerospace.sh 1" \
+    --subscribe home aerospace_workspace_change
+
+# SPACE 2: WEB ICON
+sketchybar -m --add space web left \
+    --set web icon= \
+    --set web icon.highlight_color=0xff8CABC8 \
+    --set web associated_display=1 \
+    --set web associated_space=2 \
+    --set web icon.padding_left=5 \
+    --set web icon.padding_right=5 \
+    --set web label.padding_right=0 \
+    --set web label.padding_left=0 \
+    --set web label.color=0xffeceff4 \
+    --set web background.color=0xff57627A  \
+    --set web background.height=21 \
+    --set web background.padding_left=7 \
+    --set web click_script="aerospace workspace 2 ; ~/.config/sketchybar/plugins/aerospace.sh 2" \
+    --set web script="~/.config/sketchybar/plugins/aerospace.sh 2" \
+    --subscribe web aerospace_workspace_change
+
+# SPACE 3: CODE ICON
+sketchybar -m --add space code left \
+    --set code icon=\
+    --set code associated_display=1 \
+    --set code associated_space=3 \
+    --set code icon.padding_left=5 \
+    --set code icon.padding_right=5 \
+    --set code label.padding_right=0 \
+    --set code label.padding_left=0 \
+    --set code label.color=0xffeceff4 \
+    --set code background.color=0xff57627A  \
+    --set code background.height=21 \
+    --set code background.padding_left=7 \
+    --set code click_script="aerospace workspace 3 ; ~/.config/sketchybar/plugins/aerospace.sh 3" \
+    --set code script="~/.config/sketchybar/plugins/aerospace.sh 3" \
+    --subscribe code aerospace_workspace_change
+
+# SPACE 4: Docker ICON
+sketchybar -m --add space docker left \
+    --set docker icon= \
+    --set docker icon.highlight_color=0xff8CABC8 \
+    --set docker associated_display=1 \
+    --set docker associated_space=3 \
+    --set docker icon.padding_left=5 \
+    --set docker icon.padding_right=5 \
+    --set docker label.padding_right=0 \
+    --set docker label.padding_left=0 \
+    --set docker label.color=0xffeceff4 \
+    --set docker background.color=0xff57627A  \
+    --set docker background.height=21 \
+    --set docker background.padding_left=7 \
+    --set docker click_script="aerospace workspace 4 ; ~/.config/sketchybar/plugins/aerospace.sh 4" \
+    --set docker script="~/.config/sketchybar/plugins/aerospace.sh 4" \
+    --subscribe docker aerospace_workspace_change
+
+# SPACE 5: OTHER ICON
+sketchybar -m --add space other left \
+    --set other icon= \
+    --set other icon.highlight_color=0xff8CABC8 \
+    --set other associated_display=1 \
+    --set other associated_space=5 \
+    --set other icon.padding_left=5 \
+    --set other icon.padding_right=5 \
+    --set other label.padding_right=0 \
+    --set other label.padding_left=0 \
+    --set other label.color=0xffeceff4 \
+    --set other background.color=0xff57627A  \
+    --set other background.height=21 \
+    --set other background.padding_left=7 \
+    --set other click_script="aerospace workspace 5 ; ~/.config/sketchybar/plugins/aerospace.sh 5" \
+    --set other script="~/.config/sketchybar/plugins/aerospace.sh 5" \
+    --subscribe other aerospace_workspace_change
+
+# SPACE 6: document ICON
+sketchybar -m --add space document left \
+    --set document icon= \
+    --set document associated_display=1 \
+    --set document associated_space=6 \
+    --set document icon.padding_left=5 \
+    --set document icon.padding_right=5 \
+    --set document label.padding_right=0 \
+    --set document label.padding_left=0 \
+    --set document label.color=0xffeceff4 \
+    --set document background.color=0xff57627A  \
+    --set document background.height=21 \
+    --set document background.padding_left=7 \
+    --set document click_script="aerospace workspace 6 ; ~/.config/sketchybar/plugins/aerospace.sh 6" \
+    --set document script="~/.config/sketchybar/plugins/aerospace.sh 6" \
+    --subscribe document aerospace_workspace_change
+
+# SPACE 7: MUSIC ICON
+sketchybar -m --add space music left \
+    --set music icon= \
+    --set music icon.highlight_color=0xff8CABC8 \
+    --set music associated_display=1 \
+    --set music associated_space=7 \
+    --set music icon.padding_left=5 \
+    --set music icon.padding_right=5 \
+    --set music label.padding_right=0 \
+    --set music label.padding_left=0 \
+    --set music label.color=0xffeceff4 \
+    --set music background.color=0xff57627A  \
+    --set music background.height=21 \
+    --set music background.padding_left=7 \
+    --set music click_script="aerospace workspace 7 ; ~/.config/sketchybar/plugins/aerospace.sh 7" \
+    --set music script="~/.config/sketchybar/plugins/aerospace.sh 7" \
+    --subscribe music aerospace_workspace_change
+
+# SPACE 8: Extra ICON
+sketchybar -m --add space extra left \
+    --set extra icon=\
+    --set extra associated_display=1 \
+    --set extra associated_space=8 \
+    --set extra icon.padding_left=5 \
+    --set extra icon.padding_right=5 \
+    --set extra label.padding_right=0 \
+    --set extra label.padding_left=0 \
+    --set extra label.color=0xffeceff4 \
+    --set extra background.color=0xff57627A  \
+    --set extra background.height=21 \
+    --set extra background.padding_left=7 \
+    --set extra click_script="aerospace workspace 8 ; ~/.config/sketchybar/plugins/aerospace.sh 8" \
+    --set extra script="~/.config/sketchybar/plugins/aerospace.sh 8" \
+    --subscribe extra aerospace_workspace_change
+
+# SPACE 9: Game ICON
+sketchybar -m --add space game left \
+    --set game icon=\
+    --set game associated_display=1 \
+    --set game associated_space=9 \
+    --set game icon.padding_left=5 \
+    --set game icon.padding_right=5 \
+    --set game label.padding_right=0 \
+    --set game label.padding_left=0 \
+    --set game label.color=0xffeceff4 \
+    --set game background.color=0xff57627A  \
+    --set game background.height=21 \
+    --set game background.padding_left=7 \
+    --set game click_script="aerospace workspace 9 ; ~/.config/sketchybar/plugins/aerospace.sh 9" \
+    --set game script="~/.config/sketchybar/plugins/aerospace.sh 9" \
+    --subscribe game aerospace_workspace_change
+
+# # WINDOW TITLE
+# sketchybar -m --add item title left \
+#     --set title icon= \
+#     --set title label.padding_left=9 \
+#     --set title background.color=0xff57627A  \
+#     --set title background.height=21 \
+#     --set title background.padding_left=7 \
+#     --set title script="~/.config/sketchybar/plugins/window_title.sh" \
+#     --set title update_freq=0 \
+#     --subscribe title window_focus front_app_switched space_change title_change
+
+############## ITEM DEFAULTS ###############
+sketchybar -m --default \
+    icon.padding_left=8 \
+    icon.padding_right=0 \
+    label.padding_left=8 \
+    label.padding_right=6 \
+    background.height=21 \
+    background.padding_right=7 \
+    background.padding_left=0
+
+############## RIGHT ITEMS ############## 
+# DATE TIME
+sketchybar -m --add item date_time right \
+    --set date_time icon= \
+    --set date_time background.padding_right=12 \
+    --set date_time update_freq=60 \
+    --set date_time script="~/.config/sketchybar/plugins/date_time.sh" \
+
+# RAM USAGE
+sketchybar -m --add item topmem right \
+    --set topmem icon= \
+    --set topmem update_freq=2 \
+    --set topmem script="~/.config/sketchybar/plugins/topmem.sh" \
+
+# CPU USAGE
+sketchybar -m --add item cpu_percent right \
+    --set cpu_percent icon= \
+    --set cpu_percent update_freq=2 \
+    --set cpu_percent script="~/.config/sketchybar/plugins/cpu.sh" \
+
+# BATTERY STATUS
+sketchybar -m --add item battery right \
+    --set battery update_freq=30 \
+    --set battery script="~/.config/sketchybar/plugins/battery.sh" \
+
+# VOLUME STATUS
+sketchybar --add item volume right \
+    --set volume update_freq=3 \
+   --set volume script="~/.config/sketchybar/plugins/volume.sh" \
+   --subscribe volume volume_change
+
+# MIC STATUS
+sketchybar -m --add item mic right \
+    --set mic update_freq=3 \
+    --set mic script="~/.config/sketchybar/plugins/mic.sh" \
+    --set mic click_script="~/.config/sketchybar/plugins/mic_click.sh"
+
+# TOP PROCESS
+sketchybar -m --add item topproc right \
+    --set topproc drawing=off \
+    --set topproc label.padding_right=10 \
+    --set topproc update_freq=15 \
+    --set topproc script="~/.config/sketchybar/plugins/topproc.sh"
+
+############## FINALIZING THE SETUP ##############
+sketchybar -m --update
+
+echo "sketchybar configuration loaded.."

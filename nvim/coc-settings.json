@@ -6,11 +6,32 @@
                 "c",
                 "cpp"
             ],
+            "compilationDatabaseCandidates":[
+                "compile_commands.json",
+                ".git"
+            ],
             "rootPatterns":[
                 "compile_commands.json",
                 ".git"
             ],
             "args":[
+                "--compile-commands-dir=.",
+                "--compile_args_from=filesystem",
+                "--all-scopes-completion",
+                "--background-index",
+                "--clang-tidy",
+                "--cross-file-rename",
+                "--completion-parse=always",
+                "--completion-style=detailed",
+                "--function-arg-placeholders",
+                "--header-insertion-decorators",
+                "--query-driver=/usr/bin/**/clang-*,/home/adem/GCC-10/bin/g++*",
+                "--header-insertion=never",
+                "--limit-results=0",
+                "-j=2",
+                "--pch-storage=memory"
+            ],
+            "arguments":[
                 "--compile-commands-dir=.",
                 "--compile_args_from=filesystem",
                 "--all-scopes-completion",

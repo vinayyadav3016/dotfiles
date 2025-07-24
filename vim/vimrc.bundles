@@ -19,6 +19,7 @@ if has("nvim")
 endif
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
+Plug 'ryanoasis/vim-devicons'
 Plug 'navarasu/onedark.nvim'
 Plug 'ap/vim-css-color'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
