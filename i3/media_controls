@@ -11,8 +11,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 bindsym XF86TouchpadToggle exec $HELPER/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay      exec playerctl play-pause
-bindsym XF86AudioPause     exec playerctl play-pause
-bindsym XF86AudioPlayPause exec playerctl play-pause
-bindsym XF86AudioNext      exec playerctl next
-bindsym XF86AudioPrev      exec playerctl previous
+bindsym XF86AudioPlay      exec playerctl -p strawberry play-pause
+bindsym XF86AudioPause     exec playerctl -p strawberry play-pause
+bindsym XF86AudioPlayPause exec playerctl -p strawberry play-pause
+bindsym XF86AudioNext      exec playerctl -p strawberry next
+bindsym XF86AudioPrev      exec playerctl -p strawberry previous
