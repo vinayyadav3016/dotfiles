@@ -43,3 +43,5 @@ assign [class="Darktable"]    $workspace19
 assign [class="clementine"]   $workspace20
 assign [class="Clementine"]   $workspace20
 assign [class="pulseaudio"]   $workspace20
+assign [class="strawberry"]   $workspace20
+assign [class="Strawberry"]   $workspace20
