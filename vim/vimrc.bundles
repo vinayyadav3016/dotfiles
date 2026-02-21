@@ -109,6 +109,7 @@ if has("nvim")
     " Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
     Plug 'nvim-tree/nvim-web-devicons'
     Plug 'MunifTanjim/nui.nvim'
+    Plug 'Freed-Wu/cppinsights.nvim'
 endif
 Plug  'SirVer/ultisnips'
 Plug  'honza/vim-snippets'
@@ -203,6 +204,8 @@ let g:shfmt_opt="-ci -s"
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
 let g:bookmark_auto_close = 1
+let g:neoformat_enabled_latex = [""]
+let g:latexindent_opt="-m -l"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [6] Set Vim Wiki to my Dropbox directory
 " let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]

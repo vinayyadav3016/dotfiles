@@ -1,0 +1,2 @@
+require('cppinsights.nvim').setup({
+})
