@@ -30,6 +30,7 @@ alias ln='ln -i'
 alias ports='netstat -tulanp'
 alias mkdir='mkdir -pv'
 alias fsize='du -h -d 1'
+alias dfsl='diff --side-by-side --suppress-common-lines'
 ################################################################################
 ###################################  Pacman  ###################################
 alias pacnor='pacman -Qt'

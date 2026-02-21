@@ -17,6 +17,7 @@ luafile ~/.config/nvim/maple.lua
 " luafile ~/.config/nvim/lsp.lua
 luafile ~/.config/nvim/hardtime.lua
 luafile ~/.config/nvim/leap.lua
+"luafile ~/.config/nvim/cppinsights.lua
 " luafile ~/.config/nvim/flash.lua
 luafile ~/.config/nvim/keymaps.lua
 luafile ~/.config/nvim/autocmd.lua
