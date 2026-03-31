@@ -60,7 +60,7 @@ if has("nvim")
     Plug 'tom-anders/telescope-vim-bookmarks.nvim'
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
     Plug 'rcarriga/nvim-notify'
-    Plug 'ggandor/leap.nvim'
+    Plug 'https://codeberg.org/andyg/leap.nvim'
     Plug 'folke/flash.nvim'
     Plug 'm4xshen/hardtime.nvim', {'after': 'MunifTanjim/nui.nvim'}
 endif
