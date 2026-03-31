@@ -62,6 +62,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias vimservd='vim --servername tmp'
 alias vimserve='vim --servername tmp --remote'
 alias htop='htop --no-mouse'
+alias sshno='ssh -o PubkeyAuthentication=no'
 ################################################################################
 ###########################  Use nvim for vim ##################################
 #alias vim="nvim"
