@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-require("leap").set_default_mappings()
+-- require("leap").add_default_mappings()
 --------------------------------------------------------------------------------
 -- require('leap').opts.preview_filter =
 -- function (ch0, ch1, ch2)

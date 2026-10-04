@@ -47,8 +47,8 @@ Thumbs.db
 ##########
 *catkin*
 *devel*
-*gtest*
-*test_*
+#*gtest*
+#*test_*
 #*data/*
 
 # CMake Files#
@@ -72,3 +72,5 @@ build/*
 ################
 *~
 *.swp
+
+**/.claude/settings.local.json

@@ -1,9 +1,16 @@
---------------------------------------------------------------------------------
-require'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup({
     -- A list of parser names, or "all"
     ensure_installed = {
-        "arduino", "bash", "c", "cpp", "json", "latex", "lua", "python",
-        "rust", "zig",
+        "arduino",
+        "bash",
+        "c",
+        "cpp",
+        "json",
+        "latex",
+        "lua",
+        "python",
+        "rust",
+        "zig",
     },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -12,7 +19,7 @@ require'nvim-treesitter.configs'.setup {
     -- installed locally
     auto_install = true,
     -- List of parsers to ignore installing (for "all")
-    ignore_install = { "javascript" },
+    ignore_install = { "javascript", "md", "markdown", "markdown_inline" },
     -- If you need to change the installation directory of the parsers
     -- (see -> Advanced Setup)
     -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run
@@ -26,15 +33,15 @@ require'nvim-treesitter.configs'.setup {
         -- `latex` in this list as this is the name of the parser)
         -- list of language that will be disabled
         -- disable = { "c", "cpp"},
-        disable = {},
+        disable = {"markdown", "md"},
         -- Or use a function for more flexibility, e.g. to disable slow
         -- treesitter highlight for large files
         -- disable = function(lang, buf)
-            -- local max_filesize = 100 * 1024 -- 100 KB
-            -- local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-            -- if ok and stats and stats.size > max_filesize then
-                -- return true
-            -- end
+        -- local max_filesize = 100 * 1024 -- 100 KB
+        -- local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        -- if ok and stats and stats.size > max_filesize then
+        -- return true
+        -- end
         -- end,
         -- Setting this to true will run `:h syntax` and tree-sitter at the
         -- same time.
@@ -45,5 +52,5 @@ require'nvim-treesitter.configs'.setup {
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
     },
-}
+})
 --------------------------------------------------------------------------------

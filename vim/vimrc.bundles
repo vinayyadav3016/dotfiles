@@ -62,6 +62,7 @@ if has("nvim")
     Plug 'rcarriga/nvim-notify'
     Plug 'https://codeberg.org/andyg/leap.nvim'
     Plug 'folke/flash.nvim'
+    Plug 'coder/claudecode.nvim'
     Plug 'm4xshen/hardtime.nvim', {'after': 'MunifTanjim/nui.nvim'}
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -87,9 +88,9 @@ if has("nvim")
 else
 endif
 if has("nvim")
-    Plug 'vinayyadav3016/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'vinayyadav3016/nvim-treesitter', {'branch' : 'main', 'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'after': 'nvim-treesitter'}
-    Plug 'nvim-treesitter/playground'
+    " Plug 'nvim-treesitter/playground'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-tree/nvim-tree.lua'

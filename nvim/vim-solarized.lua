@@ -9,18 +9,25 @@
 -- This is Vim's default color scheme. It doesn't define the Normal
 -- highlighting, it uses whatever the colors used to be.
 
-vim.cmd.highlight('clear')
-vim.g.colors_name = 'vim'
+vim.cmd.highlight("clear")
+vim.g.colors_name = "vim"
+
+vim.api.nvim_set_hl(0, "@function", { link = "Function" })
+vim.api.nvim_set_hl(0, "@keyword", { link = "Keyword" })
+vim.api.nvim_set_hl(0, "@variable", { link = "Identifier" })
+vim.api.nvim_set_hl(0, "@comment", { link = "Comment" })
+vim.api.nvim_set_hl(0, "@type", { link = "Type" })
+vim.api.nvim_set_hl(0, "@string", { link = "String" })
 
 local hi = function(name, val)
-  -- Force links
-  val.force = true
+    -- Force links
+    val.force = true
 
-  -- Make sure that `cterm` attribute is not populated from `gui`
-  val.cterm = val.cterm or {}
+    -- Make sure that `cterm` attribute is not populated from `gui`
+    val.cterm = val.cterm or {}
 
-  -- Define global highlight
-  vim.api.nvim_set_hl(0, name, val)
+    -- Define global highlight
+    vim.api.nvim_set_hl(0, name, val)
 end
 
 --stylua: ignore start
@@ -286,4 +293,99 @@ else
   hi('Underlined',   { fg = '#80a0ff', underline = true,          ctermfg = 'LightBlue', cterm = { underline = true } })
   hi('Ignore',       {                                            ctermfg = 'Black' })
 end
+
+local highlights = {
+    -- Identifiers
+    ["@variable"] = { link = "Variable", default = true },
+    ["@variable.builtin"] = { link = "Special", default = true },
+    ["@variable.parameter"] = { link = "Identifier", default = true },
+    ["@variable.member"] = { link = "Identifier", default = true },
+
+    ["@constant"] = { link = "Constant", default = true },
+    ["@constant.builtin"] = { link = "Special", default = true },
+    ["@constant.macro"] = { link = "Define", default = true },
+
+    ["@module"] = { link = "Include", default = true },
+    ["@label"] = { link = "Label", default = true },
+    -- Literals
+    ["@string"] = { link = "String", default = true },
+    ["@string.regexp"] = { link = "String", default = true },
+    ["@string.escape"] = { link = "SpecialChar", default = true },
+    ["@string.special"] = { link = "SpecialChar", default = true },
+    ["@string.special.symbol"] = { link = "Identifier", default = true },
+
+    ["@character"] = { link = "Character", default = true },
+    ["@character.special"] = { link = "SpecialChar", default = true },
+
+    ["@boolean"] = { link = "Boolean", default = true },
+    ["@number"] = { link = "Number", default = true },
+    ["@number.float"] = { link = "Float", default = true },
+    -- Types
+    ["@type"] = { link = "Type", default = true },
+    ["@type.builtin"] = { link = "Type", default = true },
+    ["@type.qualifier"] = { link = "Type", default = true },
+    ["@type.definition"] = { link = "Typedef", default = true },
+
+    ["@attribute"] = { link = "PreProc", default = true },
+    ["@property"] = { link = "Identifier", default = true },
+    -- Functions
+    ["@function"] = { link = "Function", default = true },
+    ["@function.builtin"] = { link = "Special", default = true },
+    ["@function.macro"] = { link = "Macro", default = true },
+    ["@function.method"] = { link = "Function", default = true },
+
+    ["@constructor"] = { link = "Special", default = true },
+    ["@operator"] = { link = "Operator", default = true },
+    -- Keyword
+    ["@keyword"] = { link = "Keyword", default = true },
+    ["@keyword.function"] = { link = "Keyword", default = true },
+    ["@keyword.operator"] = { link = "Operator", default = true },
+    ["@keyword.import"] = { link = "Include", default = true },
+    ["@keyword.repeat"] = { link = "Repeat", default = true },
+    ["@keyword.return"] = { link = "Keyword", default = true },
+    ["@keyword.debug"] = { link = "Debug", default = true },
+    ["@keyword.exception"] = { link = "Exception", default = true },
+
+    ["@keyword.conditional"] = { link = "Conditional", default = true },
+    ["@keyword.directive"] = { link = "PreProc", default = true },
+    -- Punctutation
+    ["@punctutation.delimiter"] = { link = "Delimiter", default = true },
+    ["@punctutation.bracket"] = { link = "Delimiter", default = true },
+    ["@punctutation.special"] = { link = "Delimiter", default = true },
+    -- Comments
+    ["@comment"] = { link = "Comment", default = true },
+
+    ["@comment.note"] = { link = "SpecialComment", default = true },
+    ["@comment.warning"] = { link = "WarningMsg", default = true },
+    ["@comment.error"] = { link = "Error", default = true },
+    ["@comment.todo"] = { link = "Todo", default = true },
+    -- Markup
+    ["@markup.strong"] = { bold = true, default = true },
+    ["@markup.emphasis"] = { italic = true, default = true },
+    ["@markup.underline"] = { underline = true },
+    ["@markup.strike"] = { strikethrough = true },
+
+    ["@markup.math"] = { link = "Special", default = true },
+    ["@markup.environment"] = { link = "Macro", default = true },
+
+    ["@markup.heading"] = { link = "Title", default = true },
+
+    ["@markup.raw"] = { link = "SpecialComment", default = true },
+
+    ["@markup.link"] = { link = "Underlined", default = true },
+    ["@markup.link.label"] = { link = "SpecialChar", default = true },
+    ["@markup.link.url"] = { link = "Keyword", default = true },
+
+    ["@markup.list"] = { link = "Keyword", default = true },
+
+    ["@tag"] = { link = "Label", default = true },
+    ["@tag.delimiter"] = { link = "Delimiter", default = true },
+    ["@tag.attribute"] = { link = "Identifier", default = true },
+  }
+
+for k, v in pairs(highlights) do
+    hi(k,v);
+    -- vim.api.nvim_set_hl(0, k, v)
+end
+
 --stylua: ignore end
