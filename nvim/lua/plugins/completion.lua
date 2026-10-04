@@ -30,7 +30,7 @@ return {
                     border = "rounded",
                     draw = { columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } } },
                 },
-                list = { selection = { preselect = true, auto_insert = false } },
+                list = { selection = { preselect = false, auto_insert = true } },
             },
             signature = { enabled = true, window = { border = "rounded" } },
             snippets = { preset = "default" }, -- uses vim.snippet, no LuaSnip required
@@ -40,7 +40,13 @@ return {
                     lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
                 },
             },
-            cmdline = { enabled = true },
+            cmdline = {
+                enabled = true,
+                completion = {
+                    list = { selection = { preselect = false, auto_insert = true } },
+                    menu = { auto_show = true },
+                },
+            },
         },
         opts_extend = { "sources.default" },
     },
