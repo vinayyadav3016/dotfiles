@@ -60,7 +60,7 @@ map("n", "[f", function()
     vim.lsp.buf.code_action({
         context = {
             only = { "quickfix" },
-            diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 }),
+            -- diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 }),
         },
         apply = true,
     })

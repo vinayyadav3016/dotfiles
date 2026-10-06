@@ -1,3 +1,21 @@
+vim.api.nvim_create_autocmd("CursorHold", {
+    group = vim.api.nvim_create_augroup("AutoDiagFloat", { clear = true }),
+    callback = function()
+        -- skip if a float is already open
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+            if vim.api.nvim_win_get_config(win).relative ~= "" then
+                return
+            end
+        end
+        vim.diagnostic.open_float(nil, {
+            focus = false,
+            scope = "cursor", -- only diagnostics under the cursor, not the whole line
+            border = "rounded",
+            source = true,
+            close_events = { "CursorMoved", "InsertEnter", "BufLeave", "FocusLost" },
+        })
+    end,
+})
 -- vim.api.nvim_create_autocmd("FileType", {
 --     pattern = "*",
 --     callback = function()

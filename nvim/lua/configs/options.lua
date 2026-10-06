@@ -1,5 +1,6 @@
 local o = vim.opt
 vim.highlight.priorities.semantic_tokens = 95  -- treesitter is 100
+o.updatetime = 10
 -- o.number = true
 -- o.relativenumber = true
 -- o.signcolumn = "yes" -- avoids layout shift when diagnostics appear
