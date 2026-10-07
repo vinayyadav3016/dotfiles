@@ -66,6 +66,7 @@ return {
         "kevinhwang91/nvim-ufo",
         dependencies = { "kevinhwang91/promise-async" },
         event = "BufReadPost",
+        enable = false,
         opts = {
             provider_selector = function()
                 return { "lsp", "indent" }
@@ -119,6 +120,21 @@ return {
                 end,
                 desc = "Toggle zen mode",
             },
+        },
+    },
+    {
+        "stevearc/dressing.nvim",
+        event = "VeryLazy",
+        opts = {
+            input = {
+                enabled = true,
+                default_prompt = "Rename",
+                border = "rounded",
+                relative = "cursor", -- float appears at the cursor, like coc
+                prefer_width = 40,
+                win_options = { winblend = 0 },
+            },
+            select = { enabled = true }, -- also prettifies code action menus
         },
     },
 }

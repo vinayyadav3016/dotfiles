@@ -114,7 +114,9 @@ set termguicolors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load up all of our plugins
 if filereadable(expand("~/.config/vim/vimrc.bundles"))
-    source ~/.config/vim/vimrc.bundles
+    if !has("nvim")
+        source ~/.config/vim/vimrc.bundles
+    endif
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Switch syntax highlighting on, when the terminal has colors
