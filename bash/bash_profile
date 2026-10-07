@@ -1,2 +1,11 @@
 ##/* vim: set filetype=sh : */
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+##
+# Your previous /Users/vinay/.bash_profile file was backed up as /Users/vinay/.bash_profile.macports-saved_2025-07-27_at_14:00:22
+##
+
+# MacPorts Installer addition on 2025-07-27_at_14:00:22: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+

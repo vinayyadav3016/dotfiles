@@ -102,8 +102,8 @@ automatically-unhide-macos-hidden-apps = false
     cmd-comma = 'layout accordion horizontal vertical'
     # Consider using 'join-with' command as a 'split' replacement if you want to enable
     # normalizations
-    cmd-shift-\     = 'join-with up'
-    cmd-\           = 'join-with left'
+    # cmd-shift-\     = 'join-with up'
+    # cmd-\           = 'join-with left'
     # cmd-f           = 'fullscreen'
     cmd-s           = 'layout v_accordion' # 'layout stacking' in i3
     cmd-shift-w     = 'layout h_accordion' # 'layout tabbed' in i3
@@ -151,7 +151,7 @@ automatically-unhide-macos-hidden-apps = false
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     cmd-tab = 'workspace-back-and-forth'
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-    cmd-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     cmd-shift-semicolon = 'mode service'
@@ -233,6 +233,14 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-name-regex-substring = 'wiregaurd'
     run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'remote'
+    run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+    if.app-name-regex-substring = 'okular'
+    run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
     if.app-name-regex-substring = 'libre'

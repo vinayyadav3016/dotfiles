@@ -1,6 +1,6 @@
 ############## BAR ############## 
 sketchybar -m --bar \
-    height=38 \
+    height=42 \
     position=top \
     padding_left=0 \
     padding_right=0 \

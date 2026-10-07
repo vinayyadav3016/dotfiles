@@ -14,8 +14,17 @@ config.initial_rows = 28
 config.native_macos_fullscreen_mode = true
 -- config.window_decorations = "RESIZE"
 
+-- config.dpi = 72
+-- config.front_end = 'WebGpu'
+-- config.freetype_load_target = 'HorizontalLcd'
+-- config.freetype_render_target = 'HorizontalLcd'
+-- config.freetype_load_flags = 'DEFAULT'   -- hinting on
+
+config.window_background_opacity = 1.0
+config.macos_window_background_blur = 0
+
 -- or, changing the font size and color scheme.
-config.font_size = 10
+config.font_size = 10.8
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
 
 -- use only bash
@@ -76,6 +85,17 @@ wezterm.on(
     end
 )
 
+wezterm.on('window-resized', function(window, pane)
+    local overrides = window:get_config_overrides() or {}
+    local low_dpi = window:get_dimensions().dpi <= 79
+    if low_dpi then
+        -- overrides.dpi = 80
+    else
+        -- overrides.dpi = window:get_dimensions().dpi;
+    end
+    window:set_config_overrides(overrides)
+end)
+
 config.keys = {
     {key="LeftArrow", mods="CMD", action=wezterm.action{ActivateTabRelative=-1}},
     {key="RightArrow", mods="CMD", action=wezterm.action{ActivateTabRelative=1}},
@@ -88,6 +108,12 @@ config.keys = {
     {key="7", mods="OPT", action=wezterm.action.ActivateTab(6)},
     {key="8", mods="OPT", action=wezterm.action.ActivateTab(7)},
     {key="9", mods="OPT", action=wezterm.action.ActivateTab(8)},
+    -- { key = 'D', mods = 'CMD|SHIFT',
+    --     action = wezterm.action_callback(function(window, pane)
+    --       local d = window:get_dimensions()
+    --       window:toast_notification('WezTerm', 'dpi = ' .. d.dpi, nil, 4000)
+    --     end),
+    -- },
 }
 -- Finally, return the configuration to wezterm:
 return config
